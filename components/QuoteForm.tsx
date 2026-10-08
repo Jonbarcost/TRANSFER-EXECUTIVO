@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useId, type FormEvent } from 'react';
-import { SITE } from '@/lib/site';
+import { SITE, visitOrigin } from '@/lib/site';
 import { fill, type Dict, type ErrorCode, type Lang } from '@/lib/i18n';
 
 type Place = { label: string; lat: number; lon: number; city?: string; state_code?: string };
@@ -78,6 +78,10 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState<ErrorCode | ''>('');
   const [loading, setLoading] = useState(false);
+  const [source, setSource] = useState('');
+
+  // De onde veio a visita (?origem=...), lido uma vez ao abrir a página.
+  useEffect(() => setSource(visitOrigin(window.location.search)), []);
 
   // Qualquer mudança invalida a estimativa anterior.
   useEffect(() => setResult(null), [origin, destination, date, time, roundTrip, returnDate, returnTime, passengers]);
@@ -118,6 +122,8 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
           `Estimativa do site: ${brl(result.price.min)} a ${brl(result.price.max)} (${result.km.toLocaleString('pt-BR')} km)`,
           result.tolls.total > 0 && `Pedágios incluídos: ${brlCents(result.tolls.total)} (${result.tolls.names.join(', ')})`,
           result.tollUnknown && 'Pode haver pedágio não incluído.',
+          // "Origem" sozinho já é o local de embarque; aqui é o canal por onde o cliente chegou.
+          source && `Origem do contato: ${source}`,
         ]
           .filter(Boolean)
           .join('\n')
