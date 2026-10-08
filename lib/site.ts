@@ -1,7 +1,11 @@
 // Dados do negócio exibidos no site. Confirmar antes de publicar.
 export const SITE = {
   name: 'Transfer Executivo Rio',
-  description: 'Transfer executivo no Rio de Janeiro: aeroportos, hotéis, Região dos Lagos e Serra.',
+  url: 'https://transfer-executivo-amber.vercel.app', // endereço público, sem barra no fim. Trocar se houver domínio próprio.
+  // Título e descrição para buscadores e para o cartão que aparece ao compartilhar o link.
+  title: 'Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio',
+  description:
+    'Transfer executivo no Rio de Janeiro: aeroportos Galeão e Santos Dumont, hotéis, Serra e Região dos Lagos. Veja a estimativa de preço na hora e combine direto com o motorista pelo WhatsApp.',
   whatsapp: '5521999879096', // só dígitos com DDI, ex.: '5521999999999'. Vazio: o WhatsApp pede o contato.
   maxPassengers: 4, // confirmado pelo motorista
 };

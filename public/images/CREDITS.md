@@ -17,6 +17,11 @@ Licenças conferidas nas páginas individuais em 8 de outubro de 2026. Todas as 
 - As versões adaptadas de `arara-azul.webp` e `macaco-prego.webp`, incluindo sua apresentação com máscara, permanecem disponíveis respectivamente sob CC BY-SA 2.0 e CC BY-SA 3.0. A foto da arara-vermelha permanece sob CC BY 2.0; a paisagem sob CC0. Nenhum dos fotógrafos endossa o serviço.
 - Estes créditos podem ser acessados pelo link no rodapé do site. Os arquivos podem ser baixados diretamente de `/images/`.
 
+## Imagem de compartilhamento e ícone
+
+- `app/opengraph-image.jpg` (1200 × 630 px) aparece quando o link do site é compartilhado. É um recorte de `rio.webp` (a cidade e a Enseada de Botafogo, abaixo do Corcovado) com um degradê verde e o nome do site. A estátua do Cristo Redentor fica fora do quadro. Fotografia e licença: as mesmas de `rio.webp` (CC0).
+- `app/icon.png` (192 × 192 px) é o ícone do site, desenhado para este projeto a partir da bússola da marca. Não usa fotografia.
+
 ## Cristo Redentor — direitos separados
 
 Os direitos de imagem da estátua do Cristo Redentor são da Mitra Arquiepiscopal do Rio de Janeiro. O uso comercial pede autorização da Arquidiocese; a licença da fotografia não substitui essa autorização. A autorização não foi obtida neste trabalho e deve ser providenciada pelo responsável pelo serviço antes do uso comercial. A fotografia foi escolhida por mostrar o Cristo distante, integrado à paisagem urbana, nunca como logotipo ou estátua isolada.
