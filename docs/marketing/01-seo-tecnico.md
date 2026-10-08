@@ -17,7 +17,7 @@ Entrega de 8 de outubro de 2026. Publicado em <https://transfer-executivo-amber.
 
 ### Como o site aparece para buscadores e ao compartilhar o link
 
-- **Título:** "Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio", e o equivalente em cada idioma. Antes era só o nome do site.
+- **Título:** "Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo", e o equivalente em cada idioma. Antes era só o nome do site. O final do título mudou em 8/10, quando o responsável definiu o nome do negócio como "Transfer Executivo".
 - **Descrição:** diz o que o site faz (aeroportos Galeão e Santos Dumont, hotéis, Serra, Região dos Lagos, estimativa na hora, combinar pelo WhatsApp) e, desde 8/10, que o veículo é confortável e climatizado.
 - **Posicionamento (8/10, aprovado pelo responsável):** os textos do site não citam mais motorista. O topo fala em "veículo confortável e climatizado", o segundo item do quadro de vantagens virou "Veículo executivo: confortável, climatizado e limpo", o aviso abaixo do preço ficou "Estimativa sujeita a confirmação" e o do WhatsApp, "O pedido é enviado em português". Vale para os 15 idiomas.
 - **Imagem de compartilhamento:** é a imagem que redes sociais e aplicativos de mensagem mostram quando alguém compartilha o link (padrão Open Graph). É um recorte da foto do site (cidade e Enseada de Botafogo) com o nome "Transfer Executivo". A estátua do Cristo fica fora do quadro.
@@ -278,4 +278,4 @@ O ambiente em que trabalhei não alcança `google.com`, `fonts.googleapis.com`, 
 - **Outras hospedagens: nada foi testado.** Só li as páginas oficiais citadas na seção 5. Na Netlify, não encontrei na documentação atual a frase sobre uso comercial no plano Free; na Cloudflare, não encontrei declaração oficial sobre o assunto.
 - **Regras do Registro.br para registrar um domínio (por exemplo, documentos exigidos): não consegui ler.** As páginas só abriram o resumo, que traz o preço.
 
-Fora do escopo, mas visto na medição: o link da marca no topo tem nome acessível "Transfer Executivo Rio" e texto visível "Transfer Executivo / Rio de Janeiro". O Lighthouse aponta a diferença (não afeta a nota).
+Fora do escopo, mas visto na medição: o link da marca no topo tem um nome acessível diferente do texto visível "Transfer Executivo / Rio de Janeiro". Na medição era "Transfer Executivo Rio"; desde 8/10 é "Transfer Executivo". O Lighthouse aponta a diferença (não afeta a nota).

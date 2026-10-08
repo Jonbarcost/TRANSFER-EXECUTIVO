@@ -1,4 +1,4 @@
-# Transfer Executivo Rio — Codex
+# Transfer Executivo — Codex
 
 Leia `CLAUDE.md` antes de editar. Ele contém as decisões obrigatórias do produto.
 

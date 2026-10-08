@@ -17,7 +17,7 @@ Dados que entram no perfil:
 
 | Campo | O que colocar | Situação |
 | --- | --- | --- |
-| Nome | `Transfer Executivo Rio` | Confirmar (seção 3, item 1) |
+| Nome | `Transfer Executivo` | Decidido pelo responsável em 8/10 (seção 3, item 1) |
 | Categoria | Escolher na lista do cadastro (passo B3) | Pendente |
 | Endereço | Não inserir | Regra do Google (F6, F9) |
 | Área de cobertura | Cidades onde o serviço busca passageiros, até 20 | Pendente (seção 3, item 6) |
@@ -51,7 +51,7 @@ No pedido deste trabalho esta lista se chama "O motorista precisa fazer/fornecer
 
 Em ordem de prioridade:
 
-1. **Confirmar o nome do negócio.** O perfil precisa usar o nome real, do jeito que aparece no site e que os clientes conhecem (F1). Hoje o site mostra o nome de duas formas: "Transfer Executivo Rio" no título, no rodapé e nos dados lidos pelo Google; "Transfer Executivo", com "Rio de Janeiro" embaixo, no topo da página e na imagem de compartilhamento. Qual é o nome usado com os clientes (WhatsApp, cartão)? [PREENCHER PELO RESPONSÁVEL]. Com a resposta, o site e o perfil ficam com o mesmo nome. Acertar o topo do site é uma mudança pequena de código, que depende de aprovação.
+1. **Nome do negócio: decidido em 8/10.** O responsável escolheu "Transfer Executivo". O perfil precisa usar o nome real, do jeito que aparece no site e que os clientes conhecem (F1). O site foi acertado no mesmo dia: título, rodapé e dados lidos pelo Google usam "Transfer Executivo"; "Rio de Janeiro" aparece só como indicação de cidade, abaixo do nome, no topo e na imagem de compartilhamento. Usar o mesmo nome no WhatsApp Business e em cartões.
 2. **Dizer qual Conta do Google será a dona do perfil e do Search Console:** [PREENCHER PELO RESPONSÁVEL]. Ativar nela a verificação em duas etapas (F23).
 3. **Confirmar que o negócio não recebe clientes em nenhum endereço:** [PREENCHER PELO RESPONSÁVEL]. O kit segue o pedido deste trabalho (empresa de área de atendimento). Se houver um endereço comercial onde clientes são atendidos, avisar antes: o tipo de perfil muda.
 4. **Search Console** (passo A): feito em 8/10. O arquivo de verificação foi publicado, o responsável mostrou a visão geral da propriedade aberta, com os dados em processamento, e informou que o envio do sitemap ficou verde. Fica opcional dar acesso a outra pessoa (A7). Os números levam alguns dias para aparecer.
@@ -104,7 +104,7 @@ Antes de criar:
 Passos:
 
 1. **Abrir** <https://business.google.com/add> e clicar em "Inclua sua empresa no Google" (F4). Daí em diante é seguir as telas. A ajuda do Google não descreve cada tela, então as perguntas abaixo podem aparecer com outras palavras e em outra ordem.
-2. **Nome:** `Transfer Executivo Rio`, igual ao do site, sem slogan, serviço, telefone ou indicação de local a mais. Acréscimos no nome podem levar à suspensão do perfil (F1).
+2. **Nome:** `Transfer Executivo`, igual ao do site, sem slogan, serviço, telefone ou indicação de local a mais. Não escrever "Rio" nem "Rio de Janeiro" no nome. Acréscimos no nome podem levar à suspensão do perfil (F1).
 3. **Categoria:** digitar uma palavra na caixa e escolher uma opção da lista. Não dá para criar categoria (F7).
    - Regras: escolher a opção mais específica que descreva o negócio (F1, F7) e usar o menor número possível de categorias (F1). A diretriz manda escolher categorias que completem a frase "Essa empresa É", e não "Essa empresa TEM" (F1).
    - Palavras para testar: `transfer`, `traslado`, `aeroporto`, `motorista`, `transporte`, `executivo`.
@@ -150,7 +150,7 @@ Se o método for gravação de vídeo (F9). O vídeo vai só para a análise do 
 - **Se for reprovado:** o Google informa o motivo. Tocar em "Corrija os problemas" e gravar outro vídeo, com tudo o que estava no primeiro e o que faltou.
 - **Para apagar o vídeo:** "Mais" → "Configurações do Perfil da Empresa" → "Configurações avançadas" → "Uploads de vídeos" → "Excluir vídeos".
 
-Não sei o que existe com o nome "Transfer Executivo Rio" (seção 3, item 5). Se não houver nada com esse nome, não há como prever o resultado da análise.
+Não sei o que existe com o nome "Transfer Executivo" (seção 3, item 5). Se não houver nada com esse nome, não há como prever o resultado da análise.
 
 ### D. Completar o perfil
 
@@ -374,14 +374,14 @@ Mensagem para quem disse que sim. Trocar `LINK` pelo link do passo F, rotina 1.
 Português:
 
 ```text
-Olá! Obrigado por viajar com a Transfer Executivo Rio. Se puder, conte como foi a viagem em uma avaliação no Google: LINK
+Olá! Obrigado por viajar com a Transfer Executivo. Se puder, conte como foi a viagem em uma avaliação no Google: LINK
 A sua opinião sincera ajuda outros viajantes e ajuda a melhorar o serviço. Obrigado!
 ```
 
 Inglês:
 
 ```text
-Hello! Thank you for travelling with Transfer Executivo Rio. If you can, please tell us how your trip went in a Google review: LINK
+Hello! Thank you for travelling with Transfer Executivo. If you can, please tell us how your trip went in a Google review: LINK
 Your honest opinion helps other travellers and helps us improve the service. Thank you!
 ```
 
