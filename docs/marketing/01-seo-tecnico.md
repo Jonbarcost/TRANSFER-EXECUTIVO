@@ -120,20 +120,21 @@ Não foram alterados: preços (`lib/pricing.ts`), APIs e validações. Nenhuma d
 
 Já decidido pelo responsável em 8/10: um endereço por idioma (opção A) e WhatsApp visível no rodapé.
 
+Já feito pelo responsável em 8/10: o teste do site publicado no celular (cotação real aberta com `?origem=teste`, mensagem do WhatsApp e troca de idioma pelo seletor). Ele informou que deu tudo certo.
+
 Em ordem de prioridade:
 
-1. **Fazer uma cotação de verdade no celular** (origem, destino, data, calcular, abrir o WhatsApp) e trocar de idioma uma vez pelo seletor. O fluxo foi testado aqui com respostas simuladas das APIs; a cotação real no site publicado não pôde ser testada deste ambiente (seção 6).
+1. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio. Trocar depois exige redirecionar o endereço antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* um domínio próprio é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
 2. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
-3. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio. Trocar depois exige redirecionar o endereço antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* um domínio próprio é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
-4. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
+3. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
    - Horário de atendimento: [PREENCHER PELO MOTORISTA]
    - Idiomas que o motorista fala além do português: [PREENCHER PELO MOTORISTA]
    - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
    - Existe endereço comercial que possa ser público? Se não, fica só "Rio de Janeiro, RJ": [PREENCHER PELO MOTORISTA]
    - Fotos reais do carro e do motorista, tiradas por ele: [PREENCHER PELO MOTORISTA]
    - Quer divulgar um preço "a partir de"? Hoje o site só mostra a faixa calculada: [PREENCHER PELO MOTORISTA]
-5. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
-6. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
+4. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
+5. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
 
 ## 4. Decisão: um endereço por idioma
 
@@ -220,7 +221,7 @@ O ambiente em que trabalhei não alcança `google.com`, `fonts.googleapis.com`, 
 
 - **Teste de Pesquisa Aprimorada do Google: não rodei.** O que fiz no lugar: conferi os dados contra o vocabulário do schema.org (pacote `schema-dts`, sem erros) e contra os campos obrigatórios da documentação do Google. Para rodar: [abrir o teste já com o endereço do site](https://search.google.com/test/rich-results?url=https%3A%2F%2Ftransfer-executivo-amber.vercel.app%2F). O teste pode listar campos opcionais ausentes (rua, horário, preço, imagem). São os dados que não temos e que não foram inventados.
 - **PageSpeed Insights no site publicado: não rodei.** As notas acima são de um Lighthouse local. Para rodar: [abrir o PageSpeed Insights já com o endereço do site](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Ftransfer-executivo-amber.vercel.app%2F) e olhar a aba "Celular".
-- **Cotação real no site publicado: não testei.** O cálculo (`/api/quote`) não pôde ser chamado daqui. A busca de endereços (`/api/places`) respondeu com sugestões reais depois da primeira publicação do dia; depois da última não pude repetir, porque o `robots.txt` novo bloqueia `/api/` e a minha ferramenta de leitura obedece a ele. O código das APIs não foi alterado.
+- **Cotação real no site publicado: eu não pude testar daqui.** Quem testou foi o responsável, no celular, em 8/10: cotação aberta com `?origem=teste`, mensagem do WhatsApp e troca de idioma pelo seletor. Ele informou que deu tudo certo.
 - **Marcações hreflang no site publicado: não li diretamente.** A ferramenta que usei para abrir o site publicado não mostra essas marcações. Elas foram conferidas nas 15 páginas do build local, que é o mesmo código. Para conferir: no PageSpeed Insights, grupo SEO, item sobre `hreflang` válido.
 - **Build local.** Rodou com cópias locais das fontes do Google, porque o ambiente não alcança o Google Fonts. O build de verdade rodou na Vercel e terminou com sucesso.
 - **Como o Google vai mostrar o site.** Título, descrição, ícone e destaque de empresa são decisões do Google; a documentação diz que nada disso é garantido.
