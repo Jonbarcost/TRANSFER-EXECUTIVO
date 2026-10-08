@@ -43,7 +43,7 @@ Alterados:
 - `public/images/CREDITS.md`: registro do logotipo.
 - `CLAUDE.md`: posicionamento e estado atual.
 
-Este kit não mexe no código do site. Em 8/10, com aprovação do responsável, os textos do site passaram a seguir o mesmo posicionamento (registro em `01-seo-tecnico.md`). A etiqueta do Search Console entra no código quando o responsável mandar a dele (passo A3).
+Este kit não mexe no código do site. Em 8/10, com aprovação do responsável, os textos do site passaram a seguir o mesmo posicionamento (registro em `01-seo-tecnico.md`). No mesmo dia entrou no site o arquivo de verificação do Search Console que ele mandou: `public/googlebdac6e0ab5717dbd.html` (passo A3).
 
 ## 3. O responsável precisa fazer ou fornecer
 
@@ -54,7 +54,7 @@ Em ordem de prioridade:
 1. **Confirmar o nome do negócio.** O perfil precisa usar o nome real, do jeito que aparece no site e que os clientes conhecem (F1). Hoje o site mostra o nome de duas formas: "Transfer Executivo Rio" no título, no rodapé e nos dados lidos pelo Google; "Transfer Executivo", com "Rio de Janeiro" embaixo, no topo da página e na imagem de compartilhamento. Qual é o nome usado com os clientes (WhatsApp, cartão)? [PREENCHER PELO RESPONSÁVEL]. Com a resposta, o site e o perfil ficam com o mesmo nome. Acertar o topo do site é uma mudança pequena de código, que depende de aprovação.
 2. **Dizer qual Conta do Google será a dona do perfil e do Search Console:** [PREENCHER PELO RESPONSÁVEL]. Ativar nela a verificação em duas etapas (F23).
 3. **Confirmar que o negócio não recebe clientes em nenhum endereço:** [PREENCHER PELO RESPONSÁVEL]. O kit segue o pedido deste trabalho (empresa de área de atendimento). Se houver um endereço comercial onde clientes são atendidos, avisar antes: o tipo de perfil muda.
-4. **Fazer o Search Console** (passo A) e mandar a etiqueta de verificação para ser colocada no site.
+4. **Fazer o Search Console** (passo A). O arquivo de verificação chegou e foi publicado em 8/10. Falta clicar em "Verificar" (passo A4), enviar o sitemap (A5) e dar acesso a quem cuida do site (A7).
 5. **Criar e verificar o perfil** (passos B e C). Para a verificação por vídeo, dizer antes o que existe com o nome do negócio: [PREENCHER PELO RESPONSÁVEL] (veículo com a marca, cartão de visita, uniforme, documento como alvará, fatura ou conta).
 6. **Escolher as áreas de cobertura** (passo B5): [PREENCHER PELO RESPONSÁVEL]. Se o serviço não busca passageiros no estado inteiro, avisar: a descrição, as respostas e a regra do site falam em todo o estado e precisam mudar.
 7. **Tirar as fotos do veículo** (passo E).
@@ -78,8 +78,14 @@ O Search Console é gratuito e não é obrigatório para aparecer no Google (F31
 
 1. **Entrar** em <https://search.google.com/search-console> com a Conta do Google do responsável.
 2. **Adicionar a propriedade:** no seletor de propriedades, "+ Adicionar propriedade". Escolher a propriedade de prefixo de URL e digitar exatamente `https://transfer-executivo-amber.vercel.app/`, com `https://` e a barra no final (F32). A propriedade de domínio não serve aqui: ela só aceita verificação por DNS (F32), e o DNS de `vercel.app` não é do negócio.
-3. **Pegar a etiqueta:** escolher o método "Tag HTML" e copiar a etiqueta inteira, parecida com `<meta name="google-site-verification" content="..." />` (F33). Mandar essa linha para quem cuida do site e clicar em "Verificar mais tarde" (F32). A etiqueta é própria da conta que a gerou (F33).
-4. **Verificar:** depois do aviso de que a etiqueta está publicada no site, voltar à propriedade e clicar em "Verificar" (F32). A etiqueta precisa continuar no site. O Google confere de tempos em tempos; se ela sumir, ele avisa e, depois de um período de carência, o acesso expira (F33).
+3. **Pegar a prova de que o site é seu.** Há dois métodos para esse tipo de propriedade, e qualquer um serve (F33):
+   - "Tag HTML": copiar a etiqueta inteira, parecida com `<meta name="google-site-verification" content="..." />`.
+   - Arquivo HTML: baixar o arquivo que o Google oferece, com nome parecido com `google….html`. Ele precisa ir para a raiz do site com o mesmo nome e o mesmo conteúdo (F33).
+
+   Mandar a etiqueta ou o arquivo para quem cuida do site e clicar em "Verificar mais tarde" (F32). Os dois são próprios da conta que os gerou (F33).
+
+   **Feito em 8/10:** o responsável mandou o arquivo `googlebdac6e0ab5717dbd.html`, que foi publicado na raiz do site.
+4. **Verificar:** depois do aviso de que a etiqueta ou o arquivo está publicado no site, voltar à propriedade e clicar em "Verificar" (F32). A prova precisa continuar no site. O Google confere de tempos em tempos; se ela sumir, ele avisa e, depois de um período de carência, o acesso expira (F33).
 5. **Enviar o sitemap:** abrir o relatório "Sitemaps", colar `https://transfer-executivo-amber.vercel.app/sitemap.xml` em "Adicionar um novo sitemap" e clicar em "Enviar". O status esperado é "Processado" (F34). Enviar o sitemap não garante que todas as páginas entrem no Google (F34).
 6. **Pedir a indexação da página inicial (opcional):** colar `https://transfer-executivo-amber.vercel.app/` na barra de inspeção, no topo, e clicar em "Solicitar indexação" (F35). Há limite diário e não há garantia (F35). O rastreamento pode levar de alguns dias a algumas semanas, e repetir o pedido não acelera (F38).
 7. **Dar acesso a quem cuida do site:** "Configurações" → "Usuários e permissões" → "Adicionar usuário". Digitar o e-mail da Conta do Google da pessoa, escolher o nível de permissão e salvar (F37). *Recomendação minha:* "Usuário pleno", que vê todos os dados (F37) e pode usar a inspeção de URL (F38).
@@ -436,7 +442,7 @@ Search Console:
 
 - F31: [Sobre o Search Console](https://support.google.com/webmasters/answer/9128668?hl=pt-BR). Gratuito e não obrigatório.
 - F32: [Adicionar uma propriedade](https://support.google.com/webmasters/answer/34592?hl=pt-BR). Prefixo de URL e domínio; os dados levam alguns dias.
-- F33: [Verificar a propriedade do site](https://support.google.com/webmasters/answer/9008080?hl=pt-BR). Método da etiqueta HTML.
+- F33: [Verificar a propriedade do site](https://support.google.com/webmasters/answer/9008080?hl=pt-BR). Métodos da etiqueta HTML e do arquivo HTML.
 - F34: [Relatório de sitemaps](https://support.google.com/webmasters/answer/7451001?hl=pt-BR).
 - F35: [Ferramenta de inspeção de URL](https://support.google.com/webmasters/answer/9012289?hl=pt-BR).
 - F36: [Relatório de Performance](https://support.google.com/webmasters/answer/7576553?hl=pt-BR).
@@ -446,7 +452,7 @@ Search Console:
 Outros:
 
 - F40: [Política de mensagens do WhatsApp Business](https://whatsappbusiness.com/policy/) (em inglês), atualizada em 23/9/2026. Vale para o aplicativo WhatsApp Business. O endereço `business.whatsapp.com/policy` leva a ela.
-- Next.js 16.4, documentação que acompanha o pacote instalado: [`verification`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#verification). É por onde a etiqueta do Search Console entra no site.
+- Next.js 16.4, documentação que acompanha o pacote instalado: [pasta `public`](https://nextjs.org/docs/app/api-reference/file-conventions/public-folder), por onde o arquivo de verificação é servido na raiz do site, e [`verification`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#verification), que serviria para a etiqueta.
 
 Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura minha:
 

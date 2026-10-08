@@ -139,7 +139,7 @@ Em ordem de prioridade:
    - Fotos reais do veículo, sem motorista (decisão do responsável em 8/10): [PREENCHER PELO MOTORISTA]
    - Quer divulgar um preço "a partir de"? Hoje o site só mostra a faixa calculada: [PREENCHER PELO MOTORISTA]
 3. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
-4. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
+4. **Código de verificação do Search Console.** Recebido em 8/10 como arquivo e publicado na raiz do site (`googlebdac6e0ab5717dbd.html`). Falta clicar em "Verificar" no Search Console e enviar o sitemap (kit `02-perfil-google-e-search-console.md`, passo A).
 
 ### Para rever quando houver receita
 
