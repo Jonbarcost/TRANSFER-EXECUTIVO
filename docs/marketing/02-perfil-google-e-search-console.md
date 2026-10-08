@@ -1,33 +1,34 @@
 # Perfil da Empresa no Google e Search Console (Agente 3)
 
-Kit para o motorista executar. Entrega de 8 de outubro de 2026. **Nada foi cadastrado, enviado ou publicado em nome dele.**
+Kit para o responsável pelo negócio executar. Entrega de 8 de outubro de 2026. **Nada foi cadastrado, enviado ou publicado em nome do negócio.**
 
 As regras vêm da ajuda oficial do Google, consultada em 8/10/2026. Cada regra traz o número da fonte entre parênteses, por exemplo (F5); a lista está na seção 6. O que não vem de fonte oficial está marcado como *recomendação*, *dedução* ou *leitura minha*.
 
 ## 1. Resumo
 
+- **Posicionamento, informado pelo responsável em 8/10:** serviço executivo para clientes exigentes, não um aplicativo de corridas. Veículo confortável, climatizado e limpo. O perfil não traz informação de motorista: os motoristas serão designados pelo responsável.
 - O pedido deste trabalho define o perfil como empresa de área de atendimento, sem endereço à mostra. O Google chama isso de **empresa de serviço local**: a que vai até o cliente e não o recebe no próprio endereço. Nesse caso o perfil mostra a **área de cobertura** e não mostra endereço (F1, F5, F6).
-- O perfil é gratuito (F4). O dono do negócio deve manter a propriedade do perfil (F2, F21); por isso quem cria é o motorista, na Conta do Google dele.
+- O perfil é gratuito (F4). O dono do negócio deve manter a propriedade do perfil (F2, F21); por isso quem cria é o responsável, na Conta do Google dele.
 - *Recomendação minha:* fazer o Search Console primeiro e o perfil depois. O Google diz que, em alguns casos, verifica o perfil na hora quando o site já foi verificado no Search Console (F8). Não é garantido.
-- Os textos prontos (seção 5) usam o que o site mostra, o que o motorista confirmou e o público descrito no pedido deste trabalho. As cidades e os serviços citados dependem da conferência dele (seção 3, item 9).
+- Os textos prontos (seção 5) usam o que o site mostra, o que o responsável informou e o público descrito no pedido deste trabalho. As cidades e os serviços citados dependem da conferência dele (seção 3, item 9).
 - Três cuidados para o perfil não ser suspenso nem restringido: nome igual ao do site, sem palavras a mais (F1); nenhum endereço à mostra (F1); avaliações pedidas a todos os clientes, sem incentivo (F17, F18).
 
 Dados que entram no perfil:
 
 | Campo | O que colocar | Situação |
 | --- | --- | --- |
-| Nome | `Transfer Executivo Rio` | Confirmar com o motorista (seção 3, item 1) |
+| Nome | `Transfer Executivo Rio` | Confirmar (seção 3, item 1) |
 | Categoria | Escolher na lista do cadastro (passo B3) | Pendente |
 | Endereço | Não inserir | Regra do Google (F6, F9) |
-| Área de cobertura | Cidades onde ele busca passageiros, até 20 | Pendente (seção 3, item 6) |
+| Área de cobertura | Cidades onde o serviço busca passageiros, até 20 | Pendente (seção 3, item 6) |
 | Telefone | `+55 21 99987-9096` | Confirmar se atende ligação (seção 3, item 8) |
 | Site | `https://transfer-executivo-amber.vercel.app/?origem=perfil-google` | Pronto |
 | Horário | Deixar em branco | Regra do Google (F1) |
 | Descrição | Seção 5 | Pronta; conferir as cidades (seção 3, item 9) |
-| Serviços | Seção 5 | Conferir com o motorista (seção 3, item 9) |
+| Serviços | Seção 5 | Conferir (seção 3, item 9) |
 | Chat | WhatsApp, `https://wa.me/5521999879096` | Pronto |
 | Logotipo | `docs/marketing/logo-perfil-google.png` | Pronto |
-| Fotos | Lista do passo E | Pendente |
+| Fotos | Só do veículo, lista do passo E | Pendente |
 
 ## 2. Arquivos
 
@@ -38,32 +39,35 @@ Criados:
 
 Alterados:
 
-- `docs/marketing/01-seo-tecnico.md`: observação sobre o horário de atendimento.
+- `docs/marketing/01-seo-tecnico.md`: observação sobre o horário de atendimento e esclarecimento sobre quem responde pelo negócio.
 - `public/images/CREDITS.md`: registro do logotipo.
-- `CLAUDE.md`: estado atual.
+- `CLAUDE.md`: posicionamento e estado atual.
 
-O código do site não mudou nesta etapa. A etiqueta do Search Console entra no código quando o motorista mandar a dele (passo A3).
+O código do site não mudou nesta etapa. A etiqueta do Search Console entra no código quando o responsável mandar a dele (passo A3).
 
-## 3. O motorista precisa fazer ou fornecer
+## 3. O responsável precisa fazer ou fornecer
+
+No pedido deste trabalho esta lista se chama "O motorista precisa fazer/fornecer". O responsável esclareceu em 8/10 que é ele quem responde pelo negócio e quem designa os motoristas.
 
 Em ordem de prioridade:
 
-1. **Confirmar o nome do negócio.** O perfil precisa usar o nome real, do jeito que aparece no site e que os clientes conhecem (F1). Hoje o site mostra o nome de duas formas: "Transfer Executivo Rio" no título, no rodapé e nos dados lidos pelo Google; "Transfer Executivo", com "Rio de Janeiro" embaixo, no topo da página e na imagem de compartilhamento. Qual é o nome que ele usa com os clientes (WhatsApp, cartão)? [PREENCHER PELO MOTORISTA]. Com a resposta, o site e o perfil ficam com o mesmo nome. Acertar o topo do site é uma mudança pequena de código, que depende de aprovação.
-2. **Dizer qual Conta do Google será a dona do perfil e do Search Console:** [PREENCHER PELO MOTORISTA]. Ativar nela a verificação em duas etapas (F23).
-3. **Confirmar que ele não recebe clientes em nenhum endereço:** [PREENCHER PELO MOTORISTA]. O kit segue o pedido deste trabalho (empresa de área de atendimento). Se houver um endereço comercial onde ele atende clientes, avisar antes: o tipo de perfil muda.
+1. **Confirmar o nome do negócio.** O perfil precisa usar o nome real, do jeito que aparece no site e que os clientes conhecem (F1). Hoje o site mostra o nome de duas formas: "Transfer Executivo Rio" no título, no rodapé e nos dados lidos pelo Google; "Transfer Executivo", com "Rio de Janeiro" embaixo, no topo da página e na imagem de compartilhamento. Qual é o nome usado com os clientes (WhatsApp, cartão)? [PREENCHER PELO RESPONSÁVEL]. Com a resposta, o site e o perfil ficam com o mesmo nome. Acertar o topo do site é uma mudança pequena de código, que depende de aprovação.
+2. **Dizer qual Conta do Google será a dona do perfil e do Search Console:** [PREENCHER PELO RESPONSÁVEL]. Ativar nela a verificação em duas etapas (F23).
+3. **Confirmar que o negócio não recebe clientes em nenhum endereço:** [PREENCHER PELO RESPONSÁVEL]. O kit segue o pedido deste trabalho (empresa de área de atendimento). Se houver um endereço comercial onde clientes são atendidos, avisar antes: o tipo de perfil muda.
 4. **Fazer o Search Console** (passo A) e mandar a etiqueta de verificação para ser colocada no site.
-5. **Criar e verificar o perfil** (passos B e C). Para a verificação por vídeo, dizer antes o que ele tem com o nome do negócio: [PREENCHER PELO MOTORISTA] (veículo com a marca, cartão de visita, uniforme, documento como alvará, fatura ou conta).
-6. **Escolher as áreas de cobertura** (passo B5): [PREENCHER PELO MOTORISTA]. Se ele não busca passageiros no estado inteiro, avisar: a descrição, as respostas e a regra do site falam em todo o estado e precisam mudar.
-7. **Tirar as fotos** (passo E).
+5. **Criar e verificar o perfil** (passos B e C). Para a verificação por vídeo, dizer antes o que existe com o nome do negócio: [PREENCHER PELO RESPONSÁVEL] (veículo com a marca, cartão de visita, uniforme, documento como alvará, fatura ou conta).
+6. **Escolher as áreas de cobertura** (passo B5): [PREENCHER PELO RESPONSÁVEL]. Se o serviço não busca passageiros no estado inteiro, avisar: a descrição, as respostas e a regra do site falam em todo o estado e precisam mudar.
+7. **Tirar as fotos do veículo** (passo E).
 8. **Responder ao que falta para os textos.** O que ficar sem resposta fica fora do perfil:
-   - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
-   - Idiomas que ele fala além do português: [PREENCHER PELO MOTORISTA]
-   - Formas de pagamento aceitas: [PREENCHER PELO MOTORISTA]
-   - Leva cadeirinha infantil? Quantas malas cabem? [PREENCHER PELO MOTORISTA]
-   - O que acontece quando o voo atrasa e quando o cliente cancela: [PREENCHER PELO MOTORISTA]
-   - Mês e ano em que começou o serviço (data de abertura): [PREENCHER PELO MOTORISTA]
-   - Instagram, TikTok ou Facebook do negócio, se existirem: [PREENCHER PELO MOTORISTA]
-9. **Conferir os serviços e as cidades** citados na seção 5 e tirar o que ele não faz.
+   - O número do WhatsApp também atende ligação? [PREENCHER PELO RESPONSÁVEL]
+   - Idiomas de atendimento pelo WhatsApp, além do português: [PREENCHER PELO RESPONSÁVEL]
+   - Formas de pagamento aceitas: [PREENCHER PELO RESPONSÁVEL]
+   - Quantas malas cabem no bagageiro? Há cadeirinha infantil? [PREENCHER PELO RESPONSÁVEL]
+   - O que acontece quando o voo atrasa e quando o cliente cancela: [PREENCHER PELO RESPONSÁVEL]
+   - Modelo do veículo, se quiser divulgar. Hoje os textos dizem só "confortável, climatizado e limpo": [PREENCHER PELO RESPONSÁVEL]
+   - Mês e ano em que começou o serviço (data de abertura): [PREENCHER PELO RESPONSÁVEL]
+   - Instagram, TikTok ou Facebook do negócio, se existirem: [PREENCHER PELO RESPONSÁVEL]
+9. **Conferir os serviços e as cidades** citados na seção 5 e tirar o que o negócio não faz.
 10. **Depois do perfil verificado:** copiar o link de avaliação (passo F, rotina 1) e colar na mensagem pronta da seção 5.
 
 ## 4. Passo a passo
@@ -72,8 +76,8 @@ Em ordem de prioridade:
 
 O Search Console é gratuito e não é obrigatório para aparecer no Google (F31). Serve para confirmar que o Google encontra o site e ver por quais buscas as pessoas chegam (F31). É também por onde se envia o sitemap (F34).
 
-1. **Entrar** em <https://search.google.com/search-console> com a Conta do Google do motorista.
-2. **Adicionar a propriedade:** no seletor de propriedades, "+ Adicionar propriedade". Escolher a propriedade de prefixo de URL e digitar exatamente `https://transfer-executivo-amber.vercel.app/`, com `https://` e a barra no final (F32). A propriedade de domínio não serve aqui: ela só aceita verificação por DNS (F32), e o DNS de `vercel.app` não é do motorista.
+1. **Entrar** em <https://search.google.com/search-console> com a Conta do Google do responsável.
+2. **Adicionar a propriedade:** no seletor de propriedades, "+ Adicionar propriedade". Escolher a propriedade de prefixo de URL e digitar exatamente `https://transfer-executivo-amber.vercel.app/`, com `https://` e a barra no final (F32). A propriedade de domínio não serve aqui: ela só aceita verificação por DNS (F32), e o DNS de `vercel.app` não é do negócio.
 3. **Pegar a etiqueta:** escolher o método "Tag HTML" e copiar a etiqueta inteira, parecida com `<meta name="google-site-verification" content="..." />` (F33). Mandar essa linha para quem cuida do site e clicar em "Verificar mais tarde" (F32). A etiqueta é própria da conta que a gerou (F33).
 4. **Verificar:** depois do aviso de que a etiqueta está publicada no site, voltar à propriedade e clicar em "Verificar" (F32). A etiqueta precisa continuar no site. O Google confere de tempos em tempos; se ela sumir, ele avisa e, depois de um período de carência, o acesso expira (F33).
 5. **Enviar o sitemap:** abrir o relatório "Sitemaps", colar `https://transfer-executivo-amber.vercel.app/sitemap.xml` em "Adicionar um novo sitemap" e clicar em "Enviar". O status esperado é "Processado" (F34). Enviar o sitemap não garante que todas as páginas entrem no Google (F34).
@@ -86,8 +90,9 @@ Os dados do Search Console levam alguns dias para aparecer (F32).
 
 Antes de criar:
 
-- **Quem cria é o motorista**, com uma Conta do Google (F3). Só o dono ou um representante autorizado pode verificar e gerenciar o perfil (F2). Criar o perfil não tem custo (F4).
-- **Uma empresa, um perfil** (F1). Pesquisar antes o nome no Google Maps: se já existir um perfil do negócio, o caminho é reivindicar, não criar outro (F4).
+- **Quem cria é o responsável pelo negócio**, com uma Conta do Google (F3). Só o dono ou um representante autorizado pode verificar e gerenciar o perfil (F2). Criar o perfil não tem custo (F4).
+- **O perfil é da empresa que presta o serviço.** Agentes e empresas de geração de leads não se qualificam (F2).
+- **Uma empresa, um perfil** (F1). Pesquisar antes o nome no Google Maps: se já existir um perfil do negócio, o caminho é reivindicar, não criar outro (F4). *Leitura minha:* quando houver outros motoristas, o serviço continua em nome do negócio e o perfil continua um só.
 - **Usar a mesma Conta do Google do Search Console.** *Dedução minha:* a página do Google diz que a verificação pode ser instantânea para quem verificou o site no Search Console (F8), mas não detalha as condições.
 
 Passos:
@@ -96,25 +101,25 @@ Passos:
 2. **Nome:** `Transfer Executivo Rio`, igual ao do site, sem slogan, serviço, telefone ou indicação de local a mais. Acréscimos no nome podem levar à suspensão do perfil (F1).
 3. **Categoria:** digitar uma palavra na caixa e escolher uma opção da lista. Não dá para criar categoria (F7).
    - Regras: escolher a opção mais específica que descreva o negócio (F1, F7) e usar o menor número possível de categorias (F1). A diretriz manda escolher categorias que completem a frase "Essa empresa É", e não "Essa empresa TEM" (F1).
-   - Palavras para testar: `transfer`, `traslado`, `aeroporto`, `motorista`, `transporte`.
+   - Palavras para testar: `transfer`, `traslado`, `aeroporto`, `motorista`, `transporte`, `executivo`.
    - Não encontrei na ajuda uma lista pública das categorias em português. O que confirmei: a documentação do Google Maps para programadores lista os tipos de lugar `chauffeur_service`, `transportation_service` e `taxi_service` (F30), em tradução livre: serviço de motorista, de transporte e de táxi. Essa página não diz que eles são categorias do Perfil da Empresa.
-   - *Recomendação minha:* escolher a opção que descreve transfer com motorista. Não escolher táxi se o serviço não for táxi, porque o perfil precisa representar o negócio com precisão (F1). Em dúvida, mandar as opções que aparecerem antes de salvar.
+   - *Recomendação minha:* escolher a opção que descreve transporte executivo com motorista. Não escolher táxi: o responsável definiu que o serviço não é táxi nem aplicativo de corridas, e o perfil precisa representar o negócio com precisão (F1). Em dúvida, mandar as opções que aparecerem antes de salvar.
    - Trocar a categoria depois pode exigir nova verificação (F7).
 4. **Endereço:** não inserir. Quem não atende clientes no próprio endereço pode não informar endereço e listar só a área de cobertura (F6), e a orientação para empresa de serviço local é não adicionar o endereço ao perfil (F9).
    - Se alguma tela perguntar por loja ou escritório que os clientes visitam, a resposta é não.
-   - A ajuda também diz que, para verificar a empresa, é preciso um endereço que o Google consiga localizar (F6). *Recomendação minha:* se a tela exigir endereço para continuar, informar o endereço verdadeiro de onde ele trabalha e, logo depois, conferir em "Editar perfil" → "Unidade" → "Local da empresa" → "Editar" que a opção "Exibir o endereço comercial para os clientes" está desligada (F6). Com o endereço oculto, o perfil mostra só a área de cobertura (F6).
+   - A ajuda também diz que, para verificar a empresa, é preciso um endereço que o Google consiga localizar (F6). *Recomendação minha:* se a tela exigir endereço para continuar, informar o endereço verdadeiro de onde o negócio funciona e, logo depois, conferir em "Editar perfil" → "Unidade" → "Local da empresa" → "Editar" que a opção "Exibir o endereço comercial para os clientes" está desligada (F6). Com o endereço oculto, o perfil mostra só a área de cobertura (F6).
 5. **Área de cobertura:** até 20 áreas, por cidade, CEP ou outra região. Não dá para definir por raio (F5).
    - A área toda não deve passar de 2 horas de carro de onde a empresa está (F1, F5). A mesma diretriz admite áreas maiores "se for adequado" (F1).
-   - O que colocar: as cidades onde ele busca passageiros [PREENCHER PELO MOTORISTA].
-   - *Recomendação minha:* começar pela cidade do Rio de Janeiro e pelas cidades onde ele mais busca passageiros. A ajuda do Google não diz se o destino da viagem precisa estar na área.
+   - O que colocar: as cidades onde o serviço busca passageiros [PREENCHER PELO RESPONSÁVEL].
+   - *Recomendação minha:* começar pela cidade do Rio de Janeiro e pelas cidades onde há mais embarques. A ajuda do Google não diz se o destino da viagem precisa estar na área.
    - Para mudar depois: "Editar perfil" → "Local" → "Área de cobertura" → "Editar" → "Salvar" (F5). A aba aparece como "Local" numa página da ajuda e como "Unidade" em outra (F5, F6).
-6. **Telefone:** `+55 21 99987-9096`, o mesmo do site. O número precisa ser controlado pela empresa (F1). O perfil ganha um botão de ligar (F25). Se ele não atende ligação nesse número, dá para não mostrar o telefone: "Mais" → "Configurações do Perfil da Empresa" → "Configurações avançadas" → em "Número de telefone", ativar "Não mostrar" (F10).
+6. **Telefone:** `+55 21 99987-9096`, o mesmo do site. O número precisa ser controlado pela empresa (F1). O perfil ganha um botão de ligar (F25). Se o negócio não atende ligação nesse número, dá para não mostrar o telefone: "Mais" → "Configurações do Perfil da Empresa" → "Configurações avançadas" → em "Número de telefone", ativar "Não mostrar" (F10).
 7. **Site:** `https://transfer-executivo-amber.vercel.app/?origem=perfil-google`, com `https://` (F10). É o site do próprio negócio, como a regra pede (F1). O final `?origem=perfil-google` faz o pedido chegar ao WhatsApp com a linha "Origem do contato: perfil-google". Usar esse final é *recomendação minha*: a ajuda do Google não trata do assunto.
 8. **Seguir para a verificação** (passo C).
 
 Se outra pessoa ajudar a cuidar do perfil:
 
-- **O motorista continua dono.** As diretrizes pedem que o representante incentive o dono a criar a conta, a manter a propriedade do perfil e a adicionar o representante como gerente (F2).
+- **O responsável continua dono.** As diretrizes pedem que o representante incentive o dono a criar a conta, a manter a propriedade do perfil e a adicionar o representante como gerente (F2).
 - **Convidar o ajudante:** "Mais" → "Configurações do Perfil da Empresa" → "Pessoas e acesso" → "Adicionar" → e-mail da pessoa → "Administrador" → "Convidar" (F20). O administrador edita o perfil e responde avaliações, mas não adiciona nem remove pessoas e não exclui o perfil (F20). Quem acaba de entrar espera sete dias para usar alguns recursos (F20).
 - **Deveres do representante autorizado** (F2): nunca reivindicar o perfil sem o consentimento expresso do dono, manter o dono informado do que faz no perfil e devolver a propriedade assim que ele pedir. O telefone e o site do perfil precisam ser os oficiais do negócio, confirmados pelo dono (F2).
 - **Política para terceiros** (F21): o Google chama de terceiro a agência autorizada que gerencia o perfil de uma empresa que não é dela. Essa política diz que o cliente mantém a propriedade ou a copropriedade do perfil o tempo todo, que a autorização precisa ser explícita e a verbal não basta, que o cliente é informado de todas as mudanças e que o acesso é devolvido em até sete dias úteis depois do pedido. Quem cobra pelo serviço precisa informar antes, por escrito, que o Perfil da Empresa em si não tem custo. É proibido prometer posição no Google. *Leitura minha:* a página cita agências; vale seguir as mesmas regras quando o ajudante for uma pessoa.
@@ -127,19 +132,19 @@ Se outra pessoa ajudar a cuidar do perfil:
 - A análise leva até 5 dias úteis e, em casos raros, mais (F8).
 - No método do cartão-postal: não pedir código novo, porque o Google invalida o que já enviou; não mexer no nome, no endereço nem na categoria enquanto espera; e não passar o código a ninguém, nem a quem ajuda no perfil (F8). *Recomendação minha:* ter o mesmo cuidado com o código nos outros métodos.
 
-Se o método for gravação de vídeo (F9):
+Se o método for gravação de vídeo (F9). O vídeo vai só para a análise do Google e pode ser apagado depois:
 
 - **Como precisa ser:** uma gravação só, sem cortes nem edição, com pelo menos 30 segundos, feita e enviada pelo celular, pelo próprio Perfil da Empresa.
 - **O que mostrar, sendo empresa de serviço local:**
-  1. Onde ele atua: placas de rua e pontos de referência próximos. Quem trabalha de casa grava as placas e as referências do bairro.
-  2. O negócio: as ferramentas e os equipamentos de trabalho e o que tiver com o nome do negócio. A página cita cartão de visita, uniforme, veículo com a marca da empresa e material de divulgação.
-  3. Que ele é o responsável: gravar a si mesmo prestando o serviço ou, no exemplo da página, abrindo um veículo com a marca da empresa. Também vale mostrar um documento com o mesmo nome do perfil, como alvará, fatura ou conta de consumo.
+  1. Onde o negócio atua: placas de rua e pontos de referência próximos. Quem trabalha de casa grava as placas e as referências do bairro.
+  2. O negócio: as ferramentas e os equipamentos de trabalho e o que existir com o nome do negócio. A página cita cartão de visita, uniforme, veículo com a marca da empresa e material de divulgação.
+  3. Que quem grava responde pelo negócio: gravar a prestação do serviço ou, no exemplo da página, a abertura de um veículo com a marca da empresa. Também vale mostrar um documento com o mesmo nome do perfil, como alvará, fatura ou conta de consumo.
 - **O que não pode aparecer:** números fiscais, de conta bancária ou de identificação, informações particulares e rostos de outras pessoas. *Recomendação minha:* ao mostrar um documento, cobrir números como CPF e CNPJ.
 - **Passos:** no perfil, "Fazer verificação" → "Vídeo da empresa" → "Avançar". O celular pode pedir o número de telefone e a permissão de localização, câmera e microfone. Depois "Avançar" → "Comece a gravar" → "Iniciar gravação" → "Parar gravação" → "Fazer upload de vídeo".
 - **Se for reprovado:** o Google informa o motivo. Tocar em "Corrija os problemas" e gravar outro vídeo, com tudo o que estava no primeiro e o que faltou.
-- O vídeo pode ser apagado depois em "Mais" → "Configurações do Perfil da Empresa" → "Configurações avançadas" → "Uploads de vídeos" → "Excluir vídeos".
+- **Para apagar o vídeo:** "Mais" → "Configurações do Perfil da Empresa" → "Configurações avançadas" → "Uploads de vídeos" → "Excluir vídeos".
 
-Não sei o que o motorista tem com o nome "Transfer Executivo Rio" (seção 3, item 5). Se não houver nada com esse nome, não há como prever o resultado da análise.
+Não sei o que existe com o nome "Transfer Executivo Rio" (seção 3, item 5). Se não houver nada com esse nome, não há como prever o resultado da análise.
 
 ### D. Completar o perfil
 
@@ -159,6 +164,8 @@ Para editar o perfil é preciso estar na Conta do Google ligada a ele (F10).
 
 ### E. Fotos
 
+Só do veículo. Por decisão do responsável, o perfil não mostra motoristas.
+
 Regras do Google (F13):
 
 - Formato JPG ou PNG, entre 10 KB e 5 MB. Tamanho recomendado: 720 × 720 px. Mínimo: 250 × 250 px.
@@ -166,28 +173,29 @@ Regras do Google (F13):
 - Vídeo: até 30 segundos, até 75 MB, resolução de no mínimo 720 px.
 - As fotos só aparecem depois que o perfil é verificado.
 
-Lista para o motorista tirar, com o celular, de dia (*a lista e as quantidades são minhas*, a partir do pedido deste trabalho):
+Lista de fotos (*a lista e as quantidades são minhas*):
 
 | Foto | Quantidade |
 | --- | --- |
-| Carro por fora: frente em diagonal, lateral e traseira | 3 |
-| Carro por dentro: banco de trás, onde o passageiro senta, e visão geral | 2 |
+| Veículo por fora: frente em diagonal, lateral e traseira | 3 |
+| Veículo por dentro: banco de trás, onde o passageiro senta, e visão geral do interior | 3 |
 | Bagageiro aberto: vazio e com malas | 2 |
-| Motorista: sozinho e ao lado do carro | 2 |
 
-O Google sugere pelo menos três fotos dos serviços e três da equipe (F14).
+*Recomendação minha:* fotografar de dia, com o veículo limpo e sem pessoas na foto. É o que mostra ao cliente o que os textos dizem: confortável, climatizado e limpo.
+
+O Google sugere pelo menos três fotos dos serviços e também fotos da equipe (F14). São dicas. As da equipe ficam de fora, pela decisão acima.
 
 Como enviar, pelo computador: abrir a Pesquisa Google ou o Maps, procurar o nome e a cidade do negócio, clicar em "Fotos" e em "Adicionar fotos". Para o logotipo e a capa: "Adicionar logotipo" e "Adicionar foto de capa" (F13). Não li a versão dessa página para celular.
 
 - **Logotipo:** `docs/marketing/logo-perfil-google.png`.
-- **Capa:** a melhor foto do carro. A capa deve representar bem a empresa e nem sempre é a primeira imagem exibida (F13).
+- **Capa:** a melhor foto do veículo. A capa deve representar bem a empresa e nem sempre é a primeira imagem exibida (F13).
 
 Cuidados:
 
-- Só fotos reais, tiradas por ele (regra do projeto). O Google orienta usar mídia que a própria pessoa capturou e evitar capturas de tela, bancos de fotos, colagens, fotos muito editadas e imagens criadas por terceiros (F41). O conteúdo precisa representar com precisão o negócio (F17).
-- Não publicar o rosto de outra pessoa sem o consentimento dela (F17). Isso vale para passageiros.
+- Só fotos reais do veículo do serviço (regra do projeto). O Google orienta usar mídia que a própria pessoa capturou e evitar capturas de tela, bancos de fotos, colagens, fotos muito editadas e imagens criadas por terceiros (F41). O conteúdo precisa representar com precisão o negócio (F17).
+- Não publicar o rosto de outra pessoa sem o consentimento dela (F17). Isso vale para passageiros e para motoristas.
 - Não usar a estátua do Cristo Redentor como logotipo nem alterar a imagem dela (regra do projeto).
-- *Recomendação minha:* se ele preferir não mostrar a placa do carro, enquadrar sem a placa, em vez de borrar a foto.
+- *Recomendação minha:* para não mostrar a placa, enquadrar sem ela, em vez de borrar a foto.
 
 ### F. Avaliações
 
@@ -196,8 +204,8 @@ O que o Google permite e proíbe (F17):
 - **Pode:** pedir avaliações que representem uma experiência verdadeira, sem incentivo e sem tentar influenciar a nota ou o texto.
 - **Não pode:** dar pagamento, desconto, produto ou serviço em troca de avaliação, da alteração ou da retirada de uma avaliação negativa.
 - **Não pode:** desencorajar avaliações negativas nem pedir avaliação só aos clientes satisfeitos.
-- **Não pode:** exigir nem pressionar o cliente a avaliar no local, nem pedir um texto específico. *Leitura minha:* para ele, o local é o carro.
-- **Não pode:** avaliação com conflito de interesses. A política cita emprego atual ou anterior, relação contratual ou de consultoria, concorrentes e relações familiares. *Leitura minha:* por isso o motorista não avalia o próprio negócio nem pede avaliação a parentes ou a quem trabalha para ele.
+- **Não pode:** exigir nem pressionar o cliente a avaliar no local, nem pedir um texto específico. *Leitura minha:* neste serviço, o local é o carro.
+- **Não pode:** avaliação com conflito de interesses. A política cita emprego atual ou anterior, relação contratual ou de consultoria, concorrentes e relações familiares. *Leitura minha:* por isso ninguém do negócio avalia o próprio serviço, e não se pede avaliação a parentes nem a quem trabalha para o negócio, motoristas incluídos.
 
 Quem viola a política contra engajamento falso (avaliações falsas ou incentivadas) pode ter essas avaliações removidas e o perfil restringido: um período sem receber avaliações novas, as avaliações e notas fora do ar por um período e um aviso no perfil de que avaliações falsas foram removidas (F18). Nos outros casos, a política diz que o conteúdo é removido (F17).
 
@@ -207,7 +215,7 @@ Rotina:
 
 1. **Pegar o link uma vez:** abrir o perfil em <https://business.google.com>, "Ler avaliações", ícone "Receba mais avaliações" e "Copiar" (F15). O QR code só é gerado pelo navegador do computador (F15).
 2. **Colar o link** na mensagem pronta da seção 5 e guardar a mensagem no celular.
-3. **Perguntar a todo cliente, no fim da viagem, se pode mandar o link pelo WhatsApp.** A pergunta pronta está na seção 5. *Leitura minha:* é o jeito de cumprir as duas políticas ao mesmo tempo. Perguntar a todos, do mesmo jeito, e não só a quem pareceu satisfeito.
+3. **Perguntar a todo cliente, no fim da viagem, se pode enviar o link pelo WhatsApp.** A pergunta pronta está na seção 5. *Leitura minha:* é o jeito de cumprir as duas políticas ao mesmo tempo. Perguntar a todos, do mesmo jeito, e não só a quem pareceu satisfeito.
 4. **Mandar a mesma mensagem a quem disse que sim.** O Google cita o WhatsApp entre os meios para enviar o pedido (F15). *Recomendação minha:* uma vez só, na conversa em que o cliente fez o pedido. Se ele pedir para não receber mensagens, não mandar.
 5. **Responder às avaliações.** Exige perfil verificado: "Ler avaliações" → "Responder" (F19). A resposta é pública e o cliente é avisado (F19). O Google orienta respostas gentis e curtas, sem vender nada. Na avaliação negativa: conferir o que houve, reconhecer o erro quando existir, não atacar o cliente e não expor dados dele (F16).
 6. **Avaliação que viola as regras:** "Ler avaliações" → "Denunciar", ao lado da avaliação → escolher o motivo → "Enviar denúncia" (F42). Só as avaliações que violam as políticas do Google podem ser removidas, e a análise costuma levar vários dias (F42).
@@ -257,55 +265,57 @@ O que o Google diz que pesa nos resultados locais (F26):
 
 ## 5. Textos prontos
 
+Os textos falam em nome do negócio, sem citar motorista, e usam as palavras do responsável sobre o veículo: confortável, climatizado e limpo. Não citam modelo, ano, seguro nem pontualidade, que não foram informados.
+
 Não encontrei na ajuda do Google como cadastrar um campo em dois idiomas nem regra sobre tradução automática da descrição. Por isso há três opções de descrição: português, inglês e bilíngue. *Recomendação minha:* a bilíngue, porque o público inclui estrangeiros.
 
 Os textos em inglês seguem o vocabulário da versão em inglês do site.
 
 ### Descrição
 
-Português (579 caracteres):
+Português (634 caracteres):
 
 ```text
-Transfer com motorista no Rio de Janeiro e em todo o estado. Buscamos você no Aeroporto do Galeão, no Santos Dumont, no hotel ou em casa e levamos ao seu destino: Zona Sul, Barra da Tijuca, Petrópolis, Teresópolis, Búzios, Arraial do Cabo, Cabo Frio, Angra dos Reis, Paraty e outros destinos. Atendemos até 4 passageiros por viagem. No nosso site você informa origem, destino, data e horário e vê na hora a estimativa de distância, tempo e valor. Depois envia o pedido pelo WhatsApp e combina tudo direto com o motorista, sem intermediários. O site está disponível em 15 idiomas.
+Transfer executivo no Rio de Janeiro e em todo o estado, para clientes exigentes. Veículo confortável, climatizado e limpo. Buscamos você no Aeroporto do Galeão, no Santos Dumont, no hotel ou em casa e levamos ao seu destino: Zona Sul, Barra da Tijuca, Petrópolis, Teresópolis, Búzios, Arraial do Cabo, Cabo Frio, Angra dos Reis, Paraty e outros destinos. Atendemos até 4 passageiros por viagem. No nosso site você informa origem, destino, data e horário e vê na hora a estimativa de distância, tempo e valor. Depois envia o pedido pelo WhatsApp e combina tudo direto conosco, sem intermediários. O site está disponível em 15 idiomas.
 ```
 
-Inglês (700 caracteres):
+Inglês (749 caracteres):
 
 ```text
-Transfers with a driver in the city of Rio de Janeiro and across Rio de Janeiro state. We pick you up at Galeão Airport (GIG), Santos Dumont Airport (SDU), your hotel or your home and take you to your destination: the South Zone, Barra da Tijuca, Petrópolis, Teresópolis, Búzios, Arraial do Cabo, Cabo Frio, Angra dos Reis, Paraty and other destinations. Up to 4 passengers per trip. On our website you enter pickup, drop-off, date and time and instantly see the estimated distance, travel time and fare. Then you send your request by WhatsApp and arrange everything directly with the driver, with no middlemen. The website is available in 15 languages; your request reaches the driver in Portuguese.
+Executive transfers in the city of Rio de Janeiro and across Rio de Janeiro state, for discerning travellers. Comfortable, air-conditioned, clean vehicle. We pick you up at Galeão Airport (GIG), Santos Dumont Airport (SDU), your hotel or your home and take you to your destination: the South Zone, Barra da Tijuca, Petrópolis, Teresópolis, Búzios, Arraial do Cabo, Cabo Frio, Angra dos Reis, Paraty and other destinations. Up to 4 passengers per trip. On our website you enter pickup, drop-off, date and time and instantly see the estimated distance, travel time and fare. Then you send your request by WhatsApp and arrange everything directly with us, with no middlemen. The website is available in 15 languages; your request is sent in Portuguese.
 ```
 
-Bilíngue (738 caracteres):
+Bilíngue (721 caracteres):
 
 ```text
-Transfer com motorista no Rio de Janeiro e em todo o estado: aeroportos Galeão e Santos Dumont, hotéis, Petrópolis, Búzios, Arraial do Cabo, Angra dos Reis, Paraty e outros destinos. Até 4 passageiros por viagem. No nosso site você vê a estimativa na hora e envia o pedido pelo WhatsApp, direto para o motorista.
+Transfer executivo no Rio de Janeiro e em todo o estado, em veículo confortável, climatizado e limpo: aeroportos Galeão e Santos Dumont, hotéis, Petrópolis, Búzios, Angra dos Reis, Paraty e outros destinos. Até 4 passageiros por viagem. No nosso site você vê a estimativa na hora e envia o pedido pelo WhatsApp.
 
-ENGLISH: Transfers with a driver in Rio de Janeiro and across the state: Galeão (GIG) and Santos Dumont (SDU) airports, hotels, Petrópolis, Búzios, Arraial do Cabo, Angra dos Reis, Paraty and other destinations. Up to 4 passengers per trip. On our website you get an instant estimate and send your request by WhatsApp, straight to the driver. Website available in 15 languages; your request reaches the driver in Portuguese.
+ENGLISH: Executive transfers in Rio de Janeiro and across the state, in a comfortable, air-conditioned, clean vehicle: Galeão (GIG) and Santos Dumont (SDU) airports, hotels, Petrópolis, Búzios, Angra dos Reis, Paraty and other destinations. Up to 4 passengers per trip. On our website you get an instant estimate and send your request by WhatsApp. Website in 15 languages; your request is sent in Portuguese.
 ```
 
 ### Serviços
 
-Cadastrar a tabela em português. *Recomendação minha:* a tabela em inglês fica de apoio para responder a clientes estrangeiros. A ajuda do Google não informa limite de caracteres para serviços; as descrições são curtas de propósito. O motorista tira da lista o que não faz.
+Cadastrar a tabela em português. *Recomendação minha:* a tabela em inglês fica de apoio para responder a clientes estrangeiros. A ajuda do Google não informa limite de caracteres para serviços; as descrições são curtas de propósito. O responsável tira da lista o que o negócio não faz.
 
 | Nome (português) | Descrição (português) |
 | --- | --- |
-| Transfer do Aeroporto do Galeão (GIG) | Do Aeroporto do Galeão para o endereço que você escolher no estado do Rio de Janeiro. Até 4 passageiros. |
-| Transfer do Aeroporto Santos Dumont (SDU) | Do Aeroporto Santos Dumont para o endereço que você escolher no estado do Rio de Janeiro. Até 4 passageiros. |
-| Transfer para os aeroportos | Do hotel ou de casa para o Galeão ou o Santos Dumont. Você informa data e horário no pedido, e o motorista confirma pelo WhatsApp. |
-| Transfer para Búzios, Arraial do Cabo e Cabo Frio | Do Rio de Janeiro para a Região dos Lagos, de porta a porta. Até 4 passageiros. |
-| Transfer para Petrópolis e Teresópolis | Do Rio de Janeiro para a Serra, de porta a porta. Até 4 passageiros. |
-| Transfer para Angra dos Reis e Paraty | Do Rio de Janeiro para Angra dos Reis ou Paraty, de porta a porta. Até 4 passageiros. |
-| Ida e volta no mesmo dia | O motorista leva, espera e traz de volta no mesmo dia. O tempo de espera entra na estimativa do site. |
+| Transfer executivo do Aeroporto do Galeão (GIG) | Do Aeroporto do Galeão para o endereço que você escolher no estado do Rio de Janeiro. Veículo confortável e climatizado. Até 4 passageiros. |
+| Transfer executivo do Aeroporto Santos Dumont (SDU) | Do Aeroporto Santos Dumont para o endereço que você escolher no estado do Rio de Janeiro. Veículo confortável e climatizado. Até 4 passageiros. |
+| Transfer executivo para os aeroportos | Do hotel ou de casa para o Galeão ou o Santos Dumont. Você informa data e horário no pedido, e a confirmação chega pelo WhatsApp. |
+| Transfer executivo para Búzios, Arraial do Cabo e Cabo Frio | Do Rio de Janeiro para a Região dos Lagos, de porta a porta. Até 4 passageiros. |
+| Transfer executivo para Petrópolis e Teresópolis | Do Rio de Janeiro para a Serra, de porta a porta. Até 4 passageiros. |
+| Transfer executivo para Angra dos Reis e Paraty | Do Rio de Janeiro para Angra dos Reis ou Paraty, de porta a porta. Até 4 passageiros. |
+| Ida e volta no mesmo dia | Levamos, esperamos e trazemos de volta no mesmo dia. O tempo de espera entra na estimativa do site. |
 
 | Name (English) | Description (English) |
 | --- | --- |
-| Transfer from Galeão Airport (GIG) | From Galeão Airport to the address you choose in Rio de Janeiro state. Up to 4 passengers. |
-| Transfer from Santos Dumont Airport (SDU) | From Santos Dumont Airport to the address you choose in Rio de Janeiro state. Up to 4 passengers. |
-| Transfer to the airports | From your hotel or home to Galeão or Santos Dumont. You enter the date and time in the request, and the driver confirms on WhatsApp. |
-| Transfer to Búzios, Arraial do Cabo and Cabo Frio | From Rio de Janeiro to the Lakes Region, door to door. Up to 4 passengers. |
-| Transfer to Petrópolis and Teresópolis | From Rio de Janeiro to the mountains, door to door. Up to 4 passengers. |
-| Transfer to Angra dos Reis and Paraty | From Rio de Janeiro to Angra dos Reis or Paraty, door to door. Up to 4 passengers. |
-| Same-day round trip | The driver takes you, waits and brings you back on the same day. Waiting time is included in the website estimate. |
+| Executive transfer from Galeão Airport (GIG) | From Galeão Airport to the address you choose in Rio de Janeiro state. Comfortable, air-conditioned vehicle. Up to 4 passengers. |
+| Executive transfer from Santos Dumont Airport (SDU) | From Santos Dumont Airport to the address you choose in Rio de Janeiro state. Comfortable, air-conditioned vehicle. Up to 4 passengers. |
+| Executive transfer to the airports | From your hotel or home to Galeão or Santos Dumont. You enter the date and time in the request, and we confirm on WhatsApp. |
+| Executive transfer to Búzios, Arraial do Cabo and Cabo Frio | From Rio de Janeiro to the Lakes Region, door to door. Up to 4 passengers. |
+| Executive transfer to Petrópolis and Teresópolis | From Rio de Janeiro to the mountains, door to door. Up to 4 passengers. |
+| Executive transfer to Angra dos Reis and Paraty | From Rio de Janeiro to Angra dos Reis or Paraty, door to door. Up to 4 passengers. |
+| Same-day round trip | We take you, wait and bring you back on the same day. Waiting time is included in the website estimate. |
 
 ### Perguntas e respostas
 
@@ -313,29 +323,31 @@ Respostas para quando um cliente perguntar no perfil. Servem também para o What
 
 | Pergunta | Resposta |
 | --- | --- |
-| Como faço a reserva? | Pelo nosso site. Você informa origem, destino, data, horário e passageiros, vê a estimativa e envia o pedido pelo WhatsApp. O motorista confirma por lá. |
-| O valor do site é o preço final? | É uma estimativa, mostrada como faixa. O motorista confirma o valor pelo WhatsApp. |
+| Como faço a reserva? | Pelo nosso site. Você informa origem, destino, data, horário e passageiros, vê a estimativa e envia o pedido pelo WhatsApp. A confirmação chega por lá. |
+| O valor do site é o preço final? | É uma estimativa, mostrada como faixa. O valor é confirmado pelo WhatsApp. |
+| Como é o veículo? | Confortável, climatizado e limpo. |
 | Quantas pessoas cabem? | Até 4 passageiros por viagem. |
 | Vocês buscam no aeroporto? | Sim, no Galeão (GIG) e no Santos Dumont (SDU). No pedido, escreva o número do voo no campo Observações. |
 | Fazem viagens para outras cidades? | Sim. Atendemos saídas de todo o estado do Rio de Janeiro, para destinos como Búzios, Arraial do Cabo, Cabo Frio, Petrópolis, Teresópolis, Angra dos Reis e Paraty. |
 | O pedágio está incluído? | A estimativa do site soma os pedágios conhecidos do trajeto e avisa quando pode haver algum não incluído. |
-| Fazem ida e volta no mesmo dia? | Sim. O motorista espera, e o tempo de espera entra na estimativa do site. |
-| Em que idioma posso pedir? | O site funciona em 15 idiomas. O pedido chega ao motorista em português. |
-| Posso levar cadeirinha ou bagagem grande? | Escreva no campo Observações do pedido. O motorista responde pelo WhatsApp se é possível. |
+| Fazem ida e volta no mesmo dia? | Sim. Esperamos no destino, e o tempo de espera entra na estimativa do site. |
+| Em que idioma posso pedir? | O site funciona em 15 idiomas. O pedido é enviado em português. |
+| Posso levar cadeirinha ou bagagem grande? | Escreva no campo Observações do pedido. Respondemos pelo WhatsApp se é possível. |
 
 | Question | Answer |
 | --- | --- |
-| How do I book? | On our website. Enter pickup, drop-off, date, time and passengers, see the estimate and send the request by WhatsApp. The driver confirms on WhatsApp. |
-| Is the amount on the website the final price? | It is an estimate, shown as a range. The driver confirms the amount on WhatsApp. |
+| How do I book? | On our website. Enter pickup, drop-off, date, time and passengers, see the estimate and send the request by WhatsApp. We confirm on WhatsApp. |
+| Is the amount on the website the final price? | It is an estimate, shown as a range. We confirm the amount on WhatsApp. |
+| What is the vehicle like? | Comfortable, air-conditioned and clean. |
 | How many passengers can you take? | Up to 4 passengers per trip. |
 | Do you pick up at the airport? | Yes, at Galeão (GIG) and Santos Dumont (SDU). Add your flight number in the Notes field of the request. |
 | Do you go to other cities? | Yes. We serve pickups anywhere in Rio de Janeiro state, to destinations such as Búzios, Arraial do Cabo, Cabo Frio, Petrópolis, Teresópolis, Angra dos Reis and Paraty. |
 | Are tolls included? | The website estimate adds the known tolls on the route and tells you when a toll may not be included. |
-| Do you do same-day round trips? | Yes. The driver waits, and the waiting time is included in the website estimate. |
-| Which language can I use? | The website works in 15 languages. Your request reaches the driver in Portuguese. |
-| Can I bring a child seat or large luggage? | Write it in the Notes field of the request. The driver will tell you on WhatsApp whether it is possible. |
+| Do you do same-day round trips? | Yes. We wait at the destination, and the waiting time is included in the website estimate. |
+| Which language can I use? | The website works in 15 languages. Your request is sent in Portuguese. |
+| Can I bring a child seat or large luggage? | Write it in the Notes field of the request. We will tell you on WhatsApp whether it is possible. |
 
-Sem resposta até o motorista informar (seção 3, item 8): formas de pagamento, atraso de voo, cancelamento, idiomas que ele fala.
+Sem resposta até o responsável informar (seção 3, item 8): formas de pagamento, atraso de voo, cancelamento, idiomas de atendimento, modelo do veículo.
 
 ### Pergunta e mensagem para pedir avaliação
 
@@ -344,7 +356,7 @@ Iguais para todos os clientes, sem incentivo e sem pedir nota.
 Pergunta no fim da viagem:
 
 ```text
-Posso te mandar pelo WhatsApp o link para avaliar a viagem no Google?
+Posso enviar pelo WhatsApp o link para avaliar a viagem no Google?
 ```
 
 ```text
@@ -373,8 +385,8 @@ Modelos para adaptar. O Google orienta respostas curtas, gentis e sem venda (F16
 
 | Situação | Português | Inglês |
 | --- | --- | --- |
-| Avaliação positiva | Obrigado pela avaliação. Foi um prazer fazer o seu transfer. | Thank you for your review. It was a pleasure to drive you. |
-| Avaliação negativa | Obrigado por contar o que aconteceu. Lamento que a viagem não tenha sido como você esperava. Vou verificar o que houve. | Thank you for telling me what happened. I am sorry the trip was not what you expected. I will look into it. |
+| Avaliação positiva | Obrigado pela avaliação. Foi um prazer atender você. | Thank you for your review. It was a pleasure to have you with us. |
+| Avaliação negativa | Obrigado por contar o que aconteceu. Lamentamos que a viagem não tenha sido como você esperava. Vamos verificar o que houve. | Thank you for telling us what happened. We are sorry the trip was not what you expected. We will look into it. |
 
 ## 6. Fontes
 
@@ -444,9 +456,10 @@ Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura mi
 - o que fazer se a tela exigir endereço;
 - começar a área de cobertura pelo Rio;
 - o nível de acesso de quem cuida do site;
+- o perfil continuar um só quando houver outros motoristas;
 - aplicar a política de terceiros a um ajudante que não é agência;
 - os cuidados com o código de verificação fora do cartão-postal e com números em documentos no vídeo;
-- a lista de fotos e a foto sem a placa;
+- a lista de fotos, as dicas para fotografar e a foto sem a placa;
 - a descrição bilíngue e o uso da tabela de serviços em inglês;
 - a leitura sobre "no local" e sobre conflito de interesses nas avaliações;
 - perguntar antes de mandar o link e mandar uma vez só;
@@ -455,7 +468,7 @@ Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura mi
 
 ## 7. O que não foi possível verificar
 
-- **As telas do cadastro.** Não abri o cadastro do Perfil da Empresa nem o Search Console: os dois exigem a conta do motorista. Os nomes de botões vêm das páginas de ajuda. A ajuda não descreve cada tela da criação do perfil.
+- **As telas do cadastro.** Não abri o cadastro do Perfil da Empresa nem o Search Console: os dois exigem a conta do responsável. Os nomes de botões vêm das páginas de ajuda. A ajuda não descreve cada tela da criação do perfil.
 - **Versão das páginas de ajuda.** Li as versões em português do Brasil. Em algumas leituras o mesmo link abriu em português de Portugal, com outros nomes ("área de serviço", "morada", "Guardar"). Algumas páginas avisam que têm trechos traduzidos por IA, com possíveis erros.
 - **A lista de categorias em português.** Não encontrei lista pública na ajuda.
 - **Se a verificação será instantânea.** A página diz que acontece "em alguns casos" (F8).
@@ -466,4 +479,4 @@ Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura mi
 - **Se o final `?origem=` no site interfere em alguma coisa no perfil.** A ajuda não trata do assunto.
 - **A página do WhatsApp sobre o link `wa.me`.** Continua bloqueada para leitura automática, e a ajuda do Google não informa o formato do link (F12). O link é o que o site já usa.
 - **Os textos em inglês** não passaram por revisão de falante nativo.
-- **Dados do negócio.** Tudo o que está marcado como [PREENCHER PELO MOTORISTA].
+- **Dados do negócio.** Tudo o que está marcado como [PREENCHER PELO RESPONSÁVEL]. As qualidades do veículo (confortável, climatizado e limpo) foram informadas pelo responsável; eu não vi o veículo.

@@ -118,6 +118,8 @@ Não foram alterados: preços (`lib/pricing.ts`), APIs e validações. Nenhuma d
 
 ## 3. O motorista precisa fazer ou fornecer
 
+Esclarecimento do responsável em 8/10: o negócio é um serviço executivo para clientes exigentes; é ele quem responde pelo negócio e quem vai designar os motoristas. Onde este documento diz "o motorista", leia "o responsável". Nenhuma informação de motorista deve ser divulgada.
+
 Já decidido pelo responsável em 8/10: um endereço por idioma (opção A) e WhatsApp visível no rodapé.
 
 Já feito pelo responsável em 8/10: o teste do site publicado no celular (cotação real aberta com `?origem=teste`, mensagem do WhatsApp e troca de idioma pelo seletor). Ele informou que deu tudo certo.
@@ -129,10 +131,10 @@ Em ordem de prioridade:
 1. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
 2. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
    - Horário de atendimento: [PREENCHER PELO MOTORISTA]. No Perfil da Empresa, o Google orienta serviços de transporte e quem só atende com hora marcada a não informar horário (kit `02-perfil-google-e-search-console.md`, passo D3). *Recomendação minha:* se o perfil ficar sem horário, deixar o site sem horário também.
-   - Idiomas que o motorista fala além do português: [PREENCHER PELO MOTORISTA]
+   - Idiomas de atendimento além do português: [PREENCHER PELO MOTORISTA]
    - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
    - Existe endereço comercial que possa ser público? Se não, fica só "Rio de Janeiro, RJ": [PREENCHER PELO MOTORISTA]
-   - Fotos reais do carro e do motorista, tiradas por ele: [PREENCHER PELO MOTORISTA]
+   - Fotos reais do veículo, sem motorista (decisão do responsável em 8/10): [PREENCHER PELO MOTORISTA]
    - Quer divulgar um preço "a partir de"? Hoje o site só mostra a faixa calculada: [PREENCHER PELO MOTORISTA]
 3. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
 4. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
