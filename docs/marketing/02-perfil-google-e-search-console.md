@@ -1,6 +1,6 @@
 # Perfil da Empresa no Google e Search Console (Agente 3)
 
-Kit para o responsável pelo negócio executar. Entrega de 8 de outubro de 2026. **Nada foi cadastrado, enviado ou publicado em nome do negócio.**
+Kit para o responsável pelo negócio executar. Entrega de 8 de outubro de 2026. **Eu não cadastrei, enviei nem publiquei nada em nome do negócio.** O perfil foi criado pelo próprio responsável em 8/10 e está em análise no Google (seção 3, item 5).
 
 As regras vêm da ajuda oficial do Google, consultada em 8/10/2026. Cada regra traz o número da fonte entre parênteses, por exemplo (F5); a lista está na seção 6. O que não vem de fonte oficial está marcado como *recomendação*, *dedução* ou *leitura minha*.
 
@@ -18,12 +18,12 @@ Dados que entram no perfil:
 | Campo | O que colocar | Situação |
 | --- | --- | --- |
 | Nome | `Transfer Executivo` | Decidido pelo responsável em 8/10 (seção 3, item 1) |
-| Categoria | Escolher na lista do cadastro (passo B3) | Pendente |
+| Categoria | `Serviço de motorista` | Escolhida pelo responsável em 8/10 (passo B3) |
 | Endereço | Não inserir | Regra do Google (F6, F9) |
-| Área de cobertura | Cidades onde o serviço busca passageiros, até 20 | Pendente (seção 3, item 6) |
+| Área de cobertura | Cidades do passo B5, até 20 | Cadastrada como "Brasil" em 8/10: trocar (seção 3, item 6) |
 | Telefone | `+55 21 99987-9096` | Confirmar se atende ligação (seção 3, item 8) |
 | Site | `https://transfer-executivo-amber.vercel.app/?origem=perfil-google` | Pronto |
-| Horário | Deixar em branco | Regra do Google (F1) |
+| Horário | Sem horário | Cadastrado como "Aberto 24 horas" em 8/10: trocar (passo D3). Regra do Google (F1) |
 | Descrição | Seção 5 | Pronta; conferir as cidades (seção 3, item 9) |
 | Serviços | Seção 5 | Conferir (seção 3, item 9) |
 | Chat | WhatsApp, `https://wa.me/5521999879096` | Pronto |
@@ -55,8 +55,8 @@ Em ordem de prioridade:
 2. **Dizer qual Conta do Google será a dona do perfil e do Search Console:** [PREENCHER PELO RESPONSÁVEL]. Ativar nela a verificação em duas etapas (F23).
 3. **Confirmar que o negócio não recebe clientes em nenhum endereço:** [PREENCHER PELO RESPONSÁVEL]. O kit segue o pedido deste trabalho (empresa de área de atendimento). Se houver um endereço comercial onde clientes são atendidos, avisar antes: o tipo de perfil muda.
 4. **Search Console** (passo A): feito em 8/10. O arquivo de verificação foi publicado, o responsável mostrou a visão geral da propriedade aberta, com os dados em processamento, e informou que o envio do sitemap ficou verde. Fica opcional dar acesso a outra pessoa (A7). Os números levam alguns dias para aparecer.
-5. **Criar e verificar o perfil** (passos B e C). Para a verificação por vídeo, dizer antes o que existe com o nome do negócio: [PREENCHER PELO RESPONSÁVEL] (veículo com a marca, cartão de visita, uniforme, documento como alvará, fatura ou conta).
-6. **Escolher as áreas de cobertura** (passo B5): [PREENCHER PELO RESPONSÁVEL]. Se o serviço não busca passageiros no estado inteiro, avisar: a descrição, as respostas e a regra do site falam em todo o estado e precisam mudar.
+5. **Criar e verificar o perfil** (passos B e C): criado pelo responsável em 8/10. Às 18h35 ele mostrou o painel do perfil: nome "Transfer Executivo", categoria "Serviço de motorista", perfil ainda não visível ao público e o aviso "O Google está processando sua verificação. Isso pode levar até 5 dias." Não sei qual foi o método de verificação. Falta o resultado: o Google avisa por e-mail (F8). Até lá, não mexer em nome, categoria nem endereço (passo C).
+6. **Corrigir a área de cobertura e o horário.** O painel de 8/10 mostrava "Áreas de cobertura: Brasil" e "Horário: Aberto 24 horas". Trocar "Brasil" pelas cidades do passo B5 e deixar o perfil sem horário (passo D3). Cidades que ficaram no perfil: [PREENCHER PELO RESPONSÁVEL]. Se o serviço não busca passageiros no estado inteiro, avisar: a descrição, as respostas e a regra do site falam em todo o estado e precisam mudar.
 7. **Tirar as fotos do veículo** (passo E).
 8. **Responder ao que falta para os textos.** O que ficar sem resposta fica fora do perfil:
    - O número do WhatsApp também atende ligação? [PREENCHER PELO RESPONSÁVEL]
@@ -110,6 +110,7 @@ Passos:
    - Palavras para testar: `transfer`, `traslado`, `aeroporto`, `motorista`, `transporte`, `executivo`.
    - Não encontrei na ajuda uma lista pública das categorias em português. O que confirmei: a documentação do Google Maps para programadores lista os tipos de lugar `chauffeur_service`, `transportation_service` e `taxi_service` (F30), em tradução livre: serviço de motorista, de transporte e de táxi. Essa página não diz que eles são categorias do Perfil da Empresa.
    - *Recomendação minha:* escolher a opção que descreve transporte executivo com motorista. Não escolher táxi: o responsável definiu que o serviço não é táxi nem aplicativo de corridas, e o perfil precisa representar o negócio com precisão (F1). Em dúvida, mandar as opções que aparecerem antes de salvar.
+   - **Escolhida pelo responsável em 8/10:** "Serviço de motorista". *Leitura minha:* descreve transporte com motorista e não é táxi.
    - Trocar a categoria depois pode exigir nova verificação (F7).
 4. **Endereço:** não inserir. Quem não atende clientes no próprio endereço pode não informar endereço e listar só a área de cobertura (F6), e a orientação para empresa de serviço local é não adicionar o endereço ao perfil (F9).
    - Se alguma tela perguntar por loja ou escritório que os clientes visitam, a resposta é não.
@@ -117,8 +118,24 @@ Passos:
 5. **Área de cobertura:** até 20 áreas, por cidade, CEP ou outra região. Não dá para definir por raio (F5).
    - A área toda não deve passar de 2 horas de carro de onde a empresa está (F1, F5). A mesma diretriz admite áreas maiores "se for adequado" (F1).
    - O que colocar: as cidades onde o serviço busca passageiros [PREENCHER PELO RESPONSÁVEL].
-   - *Recomendação minha:* começar pela cidade do Rio de Janeiro e pelas cidades onde há mais embarques. A ajuda do Google não diz se o destino da viagem precisa estar na área.
-   - Para mudar depois: "Editar perfil" → "Local" → "Área de cobertura" → "Editar" → "Salvar" (F5). A aba aparece como "Local" numa página da ajuda e como "Unidade" em outra (F5, F6).
+   - *Recomendação minha:* começar por Rio de Janeiro, Niterói, Petrópolis e Teresópolis e acrescentar as vizinhas onde houver embarques, por exemplo Duque de Caxias, São Gonçalo e Nova Iguaçu. Na lista de sugestões, escolher a cidade, não o estado. A ajuda do Google não diz se o destino da viagem precisa estar na área.
+   - No limite ou acima de 2 horas: Cabo Frio, Arraial do Cabo, Angra dos Reis, Armação dos Búzios e Paraty (tabela abaixo). Entram só se o responsável entender que a exceção "se for adequado" vale para o negócio (F1). A ajuda não explica quando ela vale. Fora da área, essas cidades continuam citadas na descrição como destinos.
+   - Para mudar depois: "Editar perfil" → "Local" → ao lado de "Área de cobertura", "Editar" → acrescentar as áreas e, em "Áreas de cobertura selecionadas", tirar as que não valem → "Salvar" (F5). Só pode ficar sem nenhuma área quem tem loja com endereço informado (F5). As edições, se aprovadas, levam até 48 horas para aparecer (F5). A aba aparece como "Local" numa página da ajuda e como "Unidade" em outra (F5, F6).
+   - **Situação em 8/10:** o painel mostrava "Áreas de cobertura: Brasil". Trocar pelas cidades acima.
+
+   Tempo de carro a partir do Rio de Janeiro, segundo um site não oficial (F44). A rota é calculada entre as sedes das cidades, e não a partir de Copacabana. O site informa que consultou as rotas em 25/9/2026.
+
+   | Cidade | Distância | Via livre | Movimento normal | Trânsito pesado |
+   | --- | --- | --- | --- | --- |
+   | Petrópolis | 65 km | 50 min | 56 min | 1h05 |
+   | Teresópolis | 95 km | 1h12 | 1h21 | 1h34 |
+   | Cabo Frio | 154 km | 1h54 | 2h08 | 2h28 |
+   | Angra dos Reis | 156 km | 2h08 | 2h23 | 2h46 |
+   | Arraial do Cabo | 165 km | 2h06 | 2h21 | 2h44 |
+   | Armação dos Búzios | 176 km | 2h17 | 2h33 | 2h58 |
+   | Paraty | 257 km | 3h19 | 3h43 | 4h19 |
+
+   Não consultei o tempo até Niterói, Duque de Caxias, São Gonçalo e Nova Iguaçu, cidades da região metropolitana do Rio. A sugestão delas não tem fonte.
 6. **Telefone:** `+55 21 99987-9096`, o mesmo do site. O número precisa ser controlado pela empresa (F1). O perfil ganha um botão de ligar (F25). Se o negócio não atende ligação nesse número, dá para não mostrar o telefone: "Mais" → "Configurações do Perfil da Empresa" → "Configurações avançadas" → em "Número de telefone", ativar "Não mostrar" (F10).
 7. **Site:** `https://transfer-executivo-amber.vercel.app/?origem=perfil-google`, com `https://` (F10). É o site do próprio negócio, como a regra pede (F1). O final `?origem=perfil-google` faz o pedido chegar ao WhatsApp com a linha "Origem do contato: perfil-google". Usar esse final é *recomendação minha*: a ajuda do Google não trata do assunto.
 8. **Seguir para a verificação** (passo C).
@@ -135,7 +152,8 @@ Se outra pessoa ajudar a cuidar do perfil:
 ### C. Verificar o perfil
 
 - O Google escolhe o método sozinho, não dá para trocar, e às vezes ele pede mais de um (F8). Os métodos são telefone ou SMS, e-mail, gravação de vídeo, videochamada e cartão-postal (F8).
-- A análise leva até 5 dias úteis e, em casos raros, mais (F8).
+- A análise leva até 5 dias úteis e, em casos raros, mais (F8). Quando a empresa é verificada, o Google manda um e-mail de confirmação (F8). Se o botão "Fazer verificação" voltar a aparecer no perfil, o Google não conseguiu verificar a empresa por completo (F8).
+- **Editar o perfil durante a análise:** a ajuda não trata desse período. O que ela diz: algumas empresas precisam verificar o perfil antes de mudar as informações (F10); mudar o nome depois da verificação pode exigir verificar de novo, e mudar o endereço exige (F10); trocar a categoria também pode exigir (F7); e um pedido para refazer a verificação provavelmente vem de dados da empresa alterados nos últimos dias, sem dizer quais (F8). *Recomendação minha:* até sair o resultado, não mexer em nome, categoria nem endereço. A área de cobertura e o horário cadastrados em 8/10 precisam ser corrigidos de qualquer jeito (seção 3, item 6); *leitura minha:* é melhor corrigir antes do resultado do que logo depois.
 - No método do cartão-postal: não pedir código novo, porque o Google invalida o que já enviou; não mexer no nome, no endereço nem na categoria enquanto espera; e não passar o código a ninguém, nem a quem ajuda no perfil (F8). *Recomendação minha:* ter o mesmo cuidado com o código nos outros métodos.
 
 Se o método for gravação de vídeo (F9). O vídeo vai só para a análise do Google e pode ser apagado depois:
@@ -158,7 +176,7 @@ Depois da verificação:
 
 1. **Descrição:** até 750 caracteres, sem links, sem preços, ofertas ou promoções (F1, F10). Textos na seção 5.
 2. **Serviços:** "Editar serviços" → "Adicionar mais serviços" → "Adicionar um serviço personalizado" → "Salvar" (F11). O recurso aparece para algumas categorias (F11). No nome do serviço não entram preço nem telefone (F11). Lista na seção 5.
-3. **Horário:** deixar em branco. A diretriz diz que não devem informar horário as empresas que só atendem com hora marcada e cita "Serviços de transporte e aeroportos" entre os exemplos (F1).
+3. **Horário:** deixar sem horário. A diretriz diz que não devem informar horário as empresas que só atendem com hora marcada e cita "Serviços de transporte e aeroportos" entre os exemplos (F1). Em 8/10 o painel mostrava "Horário: Aberto 24 horas". Para tirar: "Editar perfil" → "Horário" → ao lado de "Horário", "Editar" → "Aberto sem horário normal" → "Salvar" (F43). É a opção para o horário não aparecer no perfil (F43). Na tela o nome da opção pode ser outro: a versão em inglês da ajuda diz "Open with no main hours".
 4. **Chat por WhatsApp:** "Editar perfil" → "Contato" → "Chat" → "Editar" → escolher "WhatsApp" → colar `https://wa.me/5521999879096` → "Salvar" (F12). Exige perfil verificado e só existe em algumas regiões (F12). Cadastrar só o WhatsApp: se cadastrar WhatsApp e mensagem de texto, só a mensagem de texto aparece para o cliente (F12).
 5. **Redes sociais:** um link por rede, recurso disponível só em algumas regiões (F10). Só se o negócio tiver perfis próprios.
 6. **Atributos:** "Editar perfil" → "Mais" → "Editar" → "Sim" ou "Não" → "Salvar". Alguns só existem para certos locais, países ou categorias (F27). Marcar só o que for verdade.
@@ -402,12 +420,12 @@ Ajuda do Perfil da Empresa no Google:
 - F2: [Diretrizes de qualificação e propriedade da empresa](https://support.google.com/business/answer/13763036?hl=pt-BR). Quem se qualifica; só o dono ou representante autorizado gerencia; deveres do representante.
 - F3: [Crie seu Perfil da Empresa](https://support.google.com/business/answer/7039811?hl=pt-BR). Precisa de Conta do Google; o perfil é para quem tem loja ou presta serviço presencial.
 - F4: [Adicionar ou reivindicar seu Perfil da Empresa](https://support.google.com/business/answer/2911778?hl=pt-BR). Endereço para criar; sem custo; perfil já existente se reivindica.
-- F5: [Gerenciar as áreas de cobertura](https://support.google.com/business/answer/9157481?hl=pt-BR). Até 20 áreas; cidade, CEP ou região; sem raio; até 2 horas de carro.
+- F5: [Gerenciar as áreas de cobertura](https://support.google.com/business/answer/9157481?hl=pt-BR). Até 20 áreas; cidade, CEP ou região; sem raio; até 2 horas de carro; como tirar uma área; edições aparecem em até 48 horas.
 - F6: [Gerenciar seu endereço comercial](https://support.google.com/business/answer/2853879?hl=pt-BR). Quem não atende no endereço pode não informar endereço; como ocultar.
 - F7: [Gerenciar sua categoria de negócios](https://support.google.com/business/answer/7249669?hl=pt-BR). Categoria específica; não se cria categoria; mudar pode exigir nova verificação.
-- F8: [Verificar sua empresa no Google](https://support.google.com/business/answer/7107242?hl=pt-BR). Métodos; o Google escolhe; até 5 dias úteis; verificação instantânea; cuidados com o código do cartão-postal.
+- F8: [Verificar sua empresa no Google](https://support.google.com/business/answer/7107242?hl=pt-BR). Métodos; o Google escolhe; até 5 dias úteis; verificação instantânea; cuidados com o código do cartão-postal; e-mail de confirmação; pedido para refazer a verificação.
 - F9: [Verificar sua empresa com uma gravação de vídeo](https://support.google.com/business/answer/14271705?hl=pt-BR). O que mostrar, requisitos e passos.
-- F10: [Editar o Perfil da Empresa](https://support.google.com/business/answer/3039617?hl=pt-BR). Descrição de até 750 caracteres; site com endereço completo; telefone; redes sociais; data de abertura; perguntas e respostas.
+- F10: [Editar o Perfil da Empresa](https://support.google.com/business/answer/3039617?hl=pt-BR). Descrição de até 750 caracteres; site com endereço completo; telefone; redes sociais; data de abertura; perguntas e respostas; quando mudar nome ou endereço exige nova verificação.
 - F11: [Gerenciar seus serviços](https://support.google.com/business/answer/9455399?hl=pt-BR). Serviços sugeridos e personalizados; o que não entra no nome.
 - F12: [Converse com clientes pelo Perfil da Empresa](https://support.google.com/business/answer/15013580?hl=pt-BR). Chat por WhatsApp ou mensagem de texto.
 - F13: [Gerenciar fotos e vídeos](https://support.google.com/business/answer/6103862?hl=pt-BR). Formato, tamanho, logotipo e capa.
@@ -426,6 +444,7 @@ Ajuda do Perfil da Empresa no Google:
 - F27: [Gerenciar os atributos da sua empresa](https://support.google.com/business/answer/9049526?hl=pt-BR).
 - F28: [Criar e gerenciar posts](https://support.google.com/business/answer/7342169?hl=pt-BR).
 - F42: [Denunciar avaliações impróprias no seu Perfil da Empresa](https://support.google.com/business/answer/4596773?hl=pt-BR). Passos da denúncia; só avaliações que violam as políticas podem ser removidas.
+- F43: [Editar horário de funcionamento](https://support.google.com/business/answer/15300403?hl=pt-BR). Como deixar o perfil sem horário.
 
 Política de conteúdo do Google Maps:
 
@@ -452,6 +471,7 @@ Search Console:
 Outros:
 
 - F40: [Política de mensagens do WhatsApp Business](https://whatsappbusiness.com/policy/) (em inglês), atualizada em 23/9/2026. Vale para o aplicativo WhatsApp Business. O endereço `business.whatsapp.com/policy` leva a ela.
+- F44: valorfinal.com.br, páginas de tempo de viagem do Rio de Janeiro a [Petrópolis](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-petropolis), [Teresópolis](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-teresopolis), [Cabo Frio](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-cabo-frio), [Arraial do Cabo](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-arraial-do-cabo), [Angra dos Reis](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-angra-dos-reis), [Armação dos Búzios](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-armacao-dos-buzios) e [Paraty](https://valorfinal.com.br/tempo-de-viagem/rio-de-janeiro-para-paraty). Site não oficial. Segundo as páginas, a rota é calculada pelo OpenStreetMap, via Geoapify, entre as sedes das cidades (li essa explicação em três das sete páginas) e foi consultada em 25/9/2026.
 - Next.js 16.4, documentação que acompanha o pacote instalado: [pasta `public`](https://nextjs.org/docs/app/api-reference/file-conventions/public-folder), por onde o arquivo de verificação é servido na raiz do site, e [`verification`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#verification), que serviria para a etiqueta.
 
 Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura minha:
@@ -460,7 +480,8 @@ Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura mi
 - o final `?origem=perfil-google` no site;
 - qual categoria escolher;
 - o que fazer se a tela exigir endereço;
-- começar a área de cobertura pelo Rio;
+- as cidades sugeridas para a área de cobertura e os tempos de carro, que vêm de um site não oficial;
+- o que editar e o que não editar no perfil enquanto a verificação está em análise;
 - o nível de acesso de quem cuida do site;
 - o perfil continuar um só quando houver outros motoristas;
 - aplicar a política de terceiros a um ajudante que não é agência;
@@ -474,7 +495,9 @@ Sem fonte oficial, marcado no texto como recomendação, dedução ou leitura mi
 
 ## 7. O que não foi possível verificar
 
-- **As telas do cadastro.** Não abri o cadastro do Perfil da Empresa nem o Search Console: os dois exigem a conta do responsável. Os nomes de botões vêm das páginas de ajuda. A ajuda não descreve cada tela da criação do perfil.
+- **As telas do cadastro.** Não abri o cadastro do Perfil da Empresa nem o Search Console: os dois exigem a conta do responsável. Os nomes de botões vêm das páginas de ajuda. A ajuda não descreve cada tela da criação do perfil. Do perfil criado em 8/10 vi só a imagem do painel que o responsável mandou: nome, categoria, área de cobertura, horário e o aviso de análise. Não vi o telefone, o site nem a descrição cadastrados.
+- **Tempos de carro.** Vêm de um site não oficial e partem da sede do município do Rio, não de Copacabana (F44). Não consultei Niterói, Duque de Caxias, São Gonçalo nem Nova Iguaçu.
+- **Edições durante a análise da verificação.** A ajuda não diz se mudar a área de cobertura ou o horário nesse período interfere na análise (F8, F10).
 - **Versão das páginas de ajuda.** Li as versões em português do Brasil. Em algumas leituras o mesmo link abriu em português de Portugal, com outros nomes ("área de serviço", "morada", "Guardar"). Algumas páginas avisam que têm trechos traduzidos por IA, com possíveis erros.
 - **A lista de categorias em português.** Não encontrei lista pública na ajuda.
 - **Se a verificação será instantânea.** A página diz que acontece "em alguns casos" (F8).
