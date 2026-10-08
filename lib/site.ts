@@ -1,6 +1,6 @@
 // Dados do negócio exibidos no site. Confirmar antes de publicar.
 export const SITE = {
-  name: 'Transfer Executivo Rio',
+  name: 'Transfer Executivo', // nome decidido pelo responsável em 2026-10-08; o perfil no Google usa o mesmo
   url: 'https://transfer-executivo-amber.vercel.app', // endereço público, sem barra no fim. Trocar se houver domínio próprio.
   whatsapp: '5521999879096', // só dígitos com DDI, ex.: '5521999999999'. Vazio: o WhatsApp pede o contato.
   maxPassengers: 4, // confirmado pelo motorista

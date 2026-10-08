@@ -5,7 +5,7 @@
 // ao compartilhar o link.
 const pt = {
   langName: 'Português',
-  metaTitle: 'Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio',
+  metaTitle: 'Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo',
   metaDescription:
     'Transfer executivo no Rio de Janeiro, em veículo confortável e climatizado: aeroportos Galeão e Santos Dumont, hotéis, Serra e Região dos Lagos. Veja a estimativa de preço na hora e combine direto pelo WhatsApp.',
   skipToQuote: "Ir para a estimativa",
@@ -62,7 +62,7 @@ export type ErrorCode = keyof Dict['errors'];
 
 const en: Dict = {
   langName: 'English',
-  metaTitle: 'Rio de Janeiro transfers: airports, hotels, the mountains and the Lakes Region | Transfer Executivo Rio',
+  metaTitle: 'Rio de Janeiro transfers: airports, hotels, the mountains and the Lakes Region | Transfer Executivo',
   metaDescription:
     'Transfers in Rio de Janeiro in a comfortable, air-conditioned vehicle: Galeão (GIG) and Santos Dumont (SDU) airports, hotels, the mountains and the Lakes Region. See a price estimate instantly and arrange it directly on WhatsApp.',
   skipToQuote: "Skip to estimate",
@@ -116,7 +116,7 @@ const en: Dict = {
 
 const es: Dict = {
   langName: 'Español',
-  metaTitle: 'Traslados en Río de Janeiro: aeropuertos, hoteles, la Sierra y la Región de los Lagos | Transfer Executivo Rio',
+  metaTitle: 'Traslados en Río de Janeiro: aeropuertos, hoteles, la Sierra y la Región de los Lagos | Transfer Executivo',
   metaDescription:
     'Traslados en Río de Janeiro en vehículo cómodo y climatizado: aeropuertos Galeão (GIG) y Santos Dumont (SDU), hoteles, la Sierra y la Región de los Lagos. Mira la estimación de precio al instante y coordina directo por WhatsApp.',
   skipToQuote: "Ir a la estimación",
@@ -170,7 +170,7 @@ const es: Dict = {
 
 const fr: Dict = {
   langName: 'Français',
-  metaTitle: 'Transferts à Rio de Janeiro : aéroports, hôtels, la montagne et la Région des Lacs | Transfer Executivo Rio',
+  metaTitle: 'Transferts à Rio de Janeiro : aéroports, hôtels, la montagne et la Région des Lacs | Transfer Executivo',
   metaDescription:
     'Transferts à Rio de Janeiro en véhicule confortable et climatisé : aéroports Galeão (GIG) et Santos Dumont (SDU), hôtels, la montagne et la Région des Lacs. Obtenez une estimation de prix immédiate et organisez tout directement sur WhatsApp.',
   skipToQuote: "Aller à l’estimation",
@@ -224,7 +224,7 @@ const fr: Dict = {
 
 const de: Dict = {
   langName: 'Deutsch',
-  metaTitle: 'Transfers in Rio de Janeiro: Flughäfen, Hotels, Berge und die Seenregion | Transfer Executivo Rio',
+  metaTitle: 'Transfers in Rio de Janeiro: Flughäfen, Hotels, Berge und die Seenregion | Transfer Executivo',
   metaDescription:
     'Transfers in Rio de Janeiro im komfortablen, klimatisierten Fahrzeug: Flughäfen Galeão (GIG) und Santos Dumont (SDU), Hotels, Berge und die Seenregion. Sofort eine Preisschätzung sehen und direkt per WhatsApp abstimmen.',
   skipToQuote: "Zur Schätzung",
@@ -278,7 +278,7 @@ const de: Dict = {
 
 const it: Dict = {
   langName: 'Italiano',
-  metaTitle: 'Transfer a Rio de Janeiro: aeroporti, hotel, la montagna e la Regione dei Laghi | Transfer Executivo Rio',
+  metaTitle: 'Transfer a Rio de Janeiro: aeroporti, hotel, la montagna e la Regione dei Laghi | Transfer Executivo',
   metaDescription:
     'Transfer a Rio de Janeiro su un veicolo comodo e climatizzato: aeroporti Galeão (GIG) e Santos Dumont (SDU), hotel, la montagna e la Regione dei Laghi. Vedi subito la stima del prezzo e accordati direttamente su WhatsApp.',
   skipToQuote: "Vai al preventivo",
@@ -332,7 +332,7 @@ const it: Dict = {
 
 const nl: Dict = {
   langName: 'Nederlands',
-  metaTitle: 'Transfers in Rio de Janeiro: luchthavens, hotels, de bergen en de Merenregio | Transfer Executivo Rio',
+  metaTitle: 'Transfers in Rio de Janeiro: luchthavens, hotels, de bergen en de Merenregio | Transfer Executivo',
   metaDescription:
     'Transfers in Rio de Janeiro in een comfortabel voertuig met airconditioning: luchthavens Galeão (GIG) en Santos Dumont (SDU), hotels, de bergen en de Merenregio. Zie direct een prijsschatting en regel het rechtstreeks via WhatsApp.',
   skipToQuote: "Naar de prijsindicatie",
@@ -386,7 +386,7 @@ const nl: Dict = {
 
 const pl: Dict = {
   langName: 'Polski',
-  metaTitle: 'Transfery w Rio de Janeiro: lotniska, hotele, góry i Region Jezior | Transfer Executivo Rio',
+  metaTitle: 'Transfery w Rio de Janeiro: lotniska, hotele, góry i Region Jezior | Transfer Executivo',
   metaDescription:
     'Transfery w Rio de Janeiro wygodnym, klimatyzowanym samochodem: lotniska Galeão (GIG) i Santos Dumont (SDU), hotele, góry i Region Jezior. Zobacz wycenę od razu i ustal szczegóły bezpośrednio przez WhatsApp.',
   skipToQuote: "Przejdź do wyceny",
@@ -440,7 +440,7 @@ const pl: Dict = {
 
 const ru: Dict = {
   langName: 'Русский',
-  metaTitle: 'Трансфер в Рио-де-Жанейро: аэропорты, отели, горы и Озёрный регион | Transfer Executivo Rio',
+  metaTitle: 'Трансфер в Рио-де-Жанейро: аэропорты, отели, горы и Озёрный регион | Transfer Executivo',
   metaDescription:
     'Трансфер в Рио-де-Жанейро на комфортном автомобиле с кондиционером: аэропорты Galeão (GIG) и Santos Dumont (SDU), отели, горы и Озёрный регион. Узнайте примерную стоимость сразу и договоритесь напрямую в WhatsApp.',
   skipToQuote: "Перейти к расчёту",
@@ -494,7 +494,7 @@ const ru: Dict = {
 
 const tr: Dict = {
   langName: 'Türkçe',
-  metaTitle: 'Rio de Janeiro’da transfer: havalimanları, oteller, dağlar ve Göller Bölgesi | Transfer Executivo Rio',
+  metaTitle: 'Rio de Janeiro’da transfer: havalimanları, oteller, dağlar ve Göller Bölgesi | Transfer Executivo',
   metaDescription:
     'Rio de Janeiro’da konforlu ve klimalı araçla transfer: Galeão (GIG) ve Santos Dumont (SDU) havalimanları, oteller, dağlar ve Göller Bölgesi. Tahmini fiyatı hemen görün, WhatsApp üzerinden doğrudan anlaşın.',
   skipToQuote: "Tahmine geç",
@@ -548,7 +548,7 @@ const tr: Dict = {
 
 const ar: Dict = {
   langName: 'العربية',
-  metaTitle: 'التنقل في ريو دي جانيرو: المطارات والفنادق والجبال ومنطقة البحيرات | Transfer Executivo Rio',
+  metaTitle: 'التنقل في ريو دي جانيرو: المطارات والفنادق والجبال ومنطقة البحيرات | Transfer Executivo',
   metaDescription:
     'تنقّل في ريو دي جانيرو بسيارة مريحة ومكيّفة: مطارا Galeão (GIG) و Santos Dumont (SDU)، والفنادق والجبال ومنطقة البحيرات. اطّلع على السعر التقديري فورًا ونسّق مباشرة عبر واتساب.',
   skipToQuote: "انتقل إلى التقدير",
@@ -602,7 +602,7 @@ const ar: Dict = {
 
 const hi: Dict = {
   langName: 'हिन्दी',
-  metaTitle: 'रियो दे जनेरो में ट्रांसफ़र: एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र | Transfer Executivo Rio',
+  metaTitle: 'रियो दे जनेरो में ट्रांसफ़र: एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र | Transfer Executivo',
   metaDescription:
     'रियो दे जनेरो में आरामदायक, वातानुकूलित वाहन से ट्रांसफ़र: Galeão (GIG) और Santos Dumont (SDU) एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र। तुरंत अनुमानित किराया देखें और सीधे WhatsApp पर तय करें।',
   skipToQuote: "अनुमान पर जाएँ",
@@ -656,7 +656,7 @@ const hi: Dict = {
 
 const zh: Dict = {
   langName: '中文',
-  metaTitle: '里约热内卢接送：机场、酒店、山区和湖区 | Transfer Executivo Rio',
+  metaTitle: '里约热内卢接送：机场、酒店、山区和湖区 | Transfer Executivo',
   metaDescription:
     '里约热内卢接送服务，车辆舒适并配有空调：Galeão (GIG) 机场和 Santos Dumont (SDU) 机场、酒店、山区和湖区。即时查看预估价格，通过 WhatsApp 直接沟通。',
   skipToQuote: "跳转至估价",
@@ -710,7 +710,7 @@ const zh: Dict = {
 
 const ja: Dict = {
   langName: '日本語',
-  metaTitle: 'リオデジャネイロの送迎：空港、ホテル、山間部、湖水地方 | Transfer Executivo Rio',
+  metaTitle: 'リオデジャネイロの送迎：空港、ホテル、山間部、湖水地方 | Transfer Executivo',
   metaDescription:
     'リオデジャネイロの送迎を、快適でエアコン完備の車両で：Galeão (GIG) 空港と Santos Dumont (SDU) 空港、ホテル、山間部、湖水地方へ。料金の見積もりをすぐに確認し、WhatsApp で直接やり取りできます。',
   skipToQuote: "見積もりへ移動",
@@ -764,7 +764,7 @@ const ja: Dict = {
 
 const ko: Dict = {
   langName: '한국어',
-  metaTitle: '리우데자네이루 픽업 서비스: 공항, 호텔, 산간 지역, 호수 지역 | Transfer Executivo Rio',
+  metaTitle: '리우데자네이루 픽업 서비스: 공항, 호텔, 산간 지역, 호수 지역 | Transfer Executivo',
   metaDescription:
     '리우데자네이루 픽업 서비스, 편안하고 에어컨이 갖춰진 차량으로: Galeão (GIG) 공항과 Santos Dumont (SDU) 공항, 호텔, 산간 지역, 호수 지역까지. 예상 요금을 바로 확인하고 WhatsApp으로 직접 조율하세요.',
   skipToQuote: "견적으로 이동",
