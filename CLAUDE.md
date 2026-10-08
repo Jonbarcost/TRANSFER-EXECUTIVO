@@ -28,4 +28,11 @@ Arquivos previstos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/
 
 ## Estado atual
 
-PASSO 0: validar o Geoapify com `GEOAPIFY_API_KEY=... node scripts/check-geoapify.mjs` (7 trajetos reais). Requer `api.geoapify.com` liberado na rede do ambiente. Só depois disso começa a implementação.
+PASSO 0 concluído (2026-10-08): `scripts/check-geoapify.mjs` rodou os 7 trajetos sem erro. Constatações:
+- Autocomplete devolve `state_code` ("RJ") e `city`, suficientes para a regra de área atendida.
+- A 1ª sugestão nem sempre é a pretendida (ex.: "Copacabana Palace" → Windsor Palace; "Ipanema" → hotel em Copacabana; "Paraty" traz "Araquari, SC" na 3ª): o cliente precisa escolher na lista, nunca usar a 1ª automaticamente.
+- Rota com vários pontos (base → origem → destino → base) funciona numa chamada e devolve `legs` por trecho.
+- `traffic=approximated` aumenta o tempo em ~2× (ex.: Galeão → Copacabana 25 → 61 min). Decidir qual tempo exibir.
+- Pedágio: só vem a indicação `toll` no trecho, sem valor. Valores, se usados, ficam em `PRICING`.
+
+Próximo passo: implementação.
