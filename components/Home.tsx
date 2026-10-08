@@ -1,7 +1,8 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import QuoteForm from '@/components/QuoteForm';
-import { LANGS, langPath, type Lang } from '@/lib/i18n';
+import { LANGS, browserLang, langPath, type Lang } from '@/lib/i18n';
 import { SITE } from '@/lib/site';
 
 const ICONS = [
@@ -17,6 +18,12 @@ export default function Home({ lang }: { lang: Lang }) {
   const t = LANGS[lang];
   // Trocar de idioma é ir para a URL daquele idioma, mantendo o ?origem=.
   const go = (next: Lang) => window.location.assign(langPath(next) + window.location.search);
+  // Atalho para o idioma do navegador quando ele é diferente do da página. É um link: nada redireciona sozinho.
+  const [hint, setHint] = useState<{ lang: Lang; href: string }>();
+  useEffect(() => {
+    const preferred = browserLang(navigator.languages ?? [navigator.language]);
+    if (preferred && preferred !== lang) setHint({ lang: preferred, href: langPath(preferred) + window.location.search });
+  }, [lang]);
   return (
     <main>
       <a className="skip-link" href="#quote">{t.skipToQuote}</a>
@@ -37,6 +44,7 @@ export default function Home({ lang }: { lang: Lang }) {
         <header className="hero-intro">
           <div className="hero-scenery"><Image src="/images/rio.webp" alt="" fill loading="eager" fetchPriority="high" sizes="(max-width: 760px) 100vw, (max-width: 1280px) 55vw, 660px" /></div>
           <div className="hero-copy">
+            {hint && <a className="lang-hint" href={hint.href} hrefLang={hint.lang} lang={hint.lang} dir="ltr">{LANGS[hint.lang].langName}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a>}
             <p className="eyebrow" dir="ltr"><span /> Rio de Janeiro</p>
             <h1 id="hero-title">{t.heroTitle}</h1>
             <p className="hero-description">{t.heroText}</p>

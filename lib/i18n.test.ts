@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { LANGS, fill, langPath } from './i18n.ts';
+import { LANGS, browserLang, fill, langPath } from './i18n.ts';
 
 const shape = (o: object): unknown =>
   Object.fromEntries(Object.entries(o).map(([k, v]) => [k, Array.isArray(v) ? v.map((x) => x.length) : typeof v === 'object' ? shape(v) : typeof v]));
@@ -16,7 +16,9 @@ test('todos os idiomas têm as mesmas chaves e placeholders', () => {
   }
 });
 
-test('caminho de cada idioma e preenchimento', () => {
+test('idioma do navegador, caminho de cada idioma e preenchimento', () => {
+  assert.equal(browserLang(['fr-CA', 'en']), 'fr');
+  assert.equal(browserLang(['sv-SE', 'constructor']), undefined);
   assert.equal(langPath('pt'), '/');
   assert.equal(langPath('ar'), '/ar');
   assert.equal(fill('{min} a {max}', { min: 1, max: 2 }), '1 a 2');

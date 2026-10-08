@@ -146,6 +146,28 @@ h1,h2 {
   background:currentColor;
   width:30px;
   height:1px}
+.lang-hint {
+  color:#ecd7ab;
+  background:#12372dd9;
+  border:1px solid #d5bd8966;
+  border-radius:24px;
+  align-items:center;
+  gap:10px;
+  min-height:44px;
+  padding-inline:18px 14px;
+  font-size:13px;
+  font-weight:500;
+  text-decoration:none;
+  display:inline-flex;
+  position:absolute;
+  top:-14px;
+  inset-inline-end:32px}
+.lang-hint:hover {
+  color:#fff;
+  border-color:#fff}
+.lang-hint svg {
+  width:18px;
+  height:18px}
 .hero h1 {
   letter-spacing:-.035em;
   text-wrap:balance;

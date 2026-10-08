@@ -822,5 +822,13 @@ export const RTL: Lang[] = ['ar'];
 // Cada idioma tem a sua URL: português em "/", os demais em "/en", "/es"…
 export const langPath = (lang: Lang) => (lang === 'pt' ? '/' : `/${lang}`);
 
+// Primeiro idioma do navegador que o site tem (undefined se nenhum). Serve só para oferecer o atalho de idioma.
+export function browserLang(preferred: readonly string[]): Lang | undefined {
+  for (const tag of preferred) {
+    const code = tag.toLowerCase().split('-')[0];
+    if (Object.hasOwn(LANGS, code)) return code as Lang;
+  }
+}
+
 export const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
