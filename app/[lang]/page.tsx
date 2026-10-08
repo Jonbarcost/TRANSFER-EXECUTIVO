@@ -2,8 +2,8 @@ import Home from '@/components/Home';
 import { LANGS, type Lang } from '@/lib/i18n';
 import { SITE } from '@/lib/site';
 
-// Dados estruturados (schema.org) para buscadores: só o que o site já mostra ou o motorista confirmou.
-// Sem rua, horário, preço, avaliações ou fotos do carro enquanto o motorista não informar.
+// Dados estruturados (schema.org) para buscadores: só o que o site já mostra ou o responsável confirmou.
+// Sem rua, horário, preço, avaliações ou fotos do carro enquanto ele não informar. Nada sobre motorista.
 const business = `${SITE.url}/#business`;
 const areaServed = { '@type': 'State', name: 'Rio de Janeiro', containedInPlace: { '@type': 'Country', name: 'Brasil' } };
 const jsonLd = (lang: Lang) => ({
@@ -18,7 +18,7 @@ const jsonLd = (lang: Lang) => ({
       url: SITE.url,
       address: { '@type': 'PostalAddress', addressLocality: 'Rio de Janeiro', addressRegion: 'RJ', addressCountry: 'BR' },
       areaServed,
-      // O pedido chega ao motorista em português (ver whatsappNote em lib/i18n.ts).
+      // O pedido é enviado em português (ver whatsappNote em lib/i18n.ts).
       ...(SITE.whatsapp && {
         telephone: `+${SITE.whatsapp}`,
         contactPoint: {
@@ -30,7 +30,7 @@ const jsonLd = (lang: Lang) => ({
         },
       }),
     },
-    { '@type': 'TaxiService', serviceType: 'Transfer com motorista', provider: { '@id': business }, areaServed },
+    { '@type': 'TaxiService', serviceType: 'Transfer executivo', provider: { '@id': business }, areaServed },
   ],
 });
 
