@@ -45,3 +45,5 @@ MVP implementado (2026-10-08): `npm test` (6 testes), `npm run build`, fluxo com
 
 Confirmado pelo motorista: R$ 3,50/km, máximo 4 passageiros, cidades vizinhas = todos os 38 municípios de MG/SP/ES que fazem divisa com o RJ (calculado pela malha municipal do IBGE).
 Também confirmados: espera R$ 40/h, faixa ±10%. Taxa fixa removida. Mínimo de R$ 50 e soma dos pedágios confirmados pelo motorista. Pendências dos pedágios estão no campo `check` de cada praça.
+
+Liberado para divulgação (2026-10-08): o motorista testou o site publicado no celular (cotação + WhatsApp), conferiu as licenças das fotos e resolveu a autorização da imagem do Cristo. Proteção contra uso abusivo da API não foi feita por decisão dele; refazer se o consumo do Geoapify (3.000 créditos/dia no plano grátis, ~8–14 por cotação) ficar alto.
