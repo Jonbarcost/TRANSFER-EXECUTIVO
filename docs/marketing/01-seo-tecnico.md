@@ -13,11 +13,13 @@ Entrega de 8 de outubro de 2026. Publicado em <https://transfer-executivo-amber.
 | Origem da visita (`?origem=`) na mensagem do WhatsApp | Publicado |
 | Desempenho no celular | Publicado. Medição local: Performance entre 91 e 98 e SEO 100 nas 15 páginas |
 | Um endereço por idioma (`/en`, `/es`…), com hreflang | Publicado. Opção A, aprovada pelo responsável em 8/10 (seção 4) |
+| Textos no posicionamento executivo: sem a palavra motorista e com o veículo | Publicado. Aprovado pelo responsável em 8/10 |
 
 ### Como o site aparece para buscadores e ao compartilhar o link
 
 - **Título:** "Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio", e o equivalente em cada idioma. Antes era só o nome do site.
-- **Descrição:** diz o que o site faz (aeroportos Galeão e Santos Dumont, hotéis, Serra, Região dos Lagos, estimativa na hora, combinar pelo WhatsApp).
+- **Descrição:** diz o que o site faz (aeroportos Galeão e Santos Dumont, hotéis, Serra, Região dos Lagos, estimativa na hora, combinar pelo WhatsApp) e, desde 8/10, que o veículo é confortável e climatizado.
+- **Posicionamento (8/10, aprovado pelo responsável):** os textos do site não citam mais motorista. O topo fala em "veículo confortável e climatizado", o segundo item do quadro de vantagens virou "Veículo executivo: confortável, climatizado e limpo", o aviso abaixo do preço ficou "Estimativa sujeita a confirmação" e o do WhatsApp, "O pedido é enviado em português". Vale para os 15 idiomas.
 - **Imagem de compartilhamento:** é a imagem que redes sociais e aplicativos de mensagem mostram quando alguém compartilha o link (padrão Open Graph). É um recorte da foto do site (cidade e Enseada de Botafogo) com o nome "Transfer Executivo". A estátua do Cristo fica fora do quadro.
 - **Ícone:** a bússola da marca, em PNG. Também acabou com o erro 404 do `favicon.ico` que aparecia no console do navegador.
 - **Canonical:** as variações de um endereço (por exemplo, com `?origem=instagram`) apontam para a página daquele idioma, para o Google não tratar como páginas repetidas.
@@ -42,7 +44,7 @@ O site informa aos buscadores, em formato padrão (schema.org):
 
 - o nome do site e os 15 idiomas da interface;
 - o negócio: nome, cidade/estado/país (Rio de Janeiro, RJ, BR), área atendida (estado do Rio de Janeiro), telefone e link do WhatsApp, atendimento em português;
-- o serviço: transfer com motorista, prestado por esse negócio.
+- o serviço: transfer executivo, prestado por esse negócio. O tipo técnico usado é `TaxiService`, que no schema.org significa serviço de veículo com motorista, em geral cobrado por distância; ele não aparece para o visitante.
 
 Só entrou o que o site já mostra ou o motorista confirmou. **Não entraram:** rua, horário de atendimento, preço, avaliações, fotos do carro, idiomas falados pelo motorista. Esses dados estão na lista de pendências (seção 3).
 
@@ -271,6 +273,7 @@ O ambiente em que trabalhei não alcança `google.com`, `fonts.googleapis.com`, 
 - **Como o Google vai mostrar o site.** Título, descrição, ícone e destaque de empresa são decisões do Google; a documentação diz que nada disso é garantido.
 - **Página do WhatsApp sobre o link `wa.me`:** não consegui abrir. O formato do link é o que o site já usava.
 - **Títulos e descrições traduzidos:** não passaram por revisão de falante nativo.
+- **Textos de 8/10 sobre o veículo, nos outros 14 idiomas:** escritos por mim, sem revisão de falante nativo. "Veículo executivo" ficou literal em inglês, espanhol, italiano e hindi. Nos outros dez idiomas virou uma expressão de padrão elevado, escolhida para não afirmar classe nem modelo de carro (em `lib/i18n.ts`, segundo item de `trust`).
 - **Plano da conta na Vercel: não sei qual é.** Não tenho acesso à conta onde o site está e o plano não foi informado. O responsável decidiu manter o plano como está por enquanto (seção 3).
 - **Outras hospedagens: nada foi testado.** Só li as páginas oficiais citadas na seção 5. Na Netlify, não encontrei na documentação atual a frase sobre uso comercial no plano Free; na Cloudflare, não encontrei declaração oficial sobre o assunto.
 - **Regras do Registro.br para registrar um domínio (por exemplo, documentos exigidos): não consegui ler.** As páginas só abriram o resumo, que traz o preço.

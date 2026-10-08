@@ -43,7 +43,7 @@ Alterados:
 - `public/images/CREDITS.md`: registro do logotipo.
 - `CLAUDE.md`: posicionamento e estado atual.
 
-O código do site não mudou nesta etapa. A etiqueta do Search Console entra no código quando o responsável mandar a dele (passo A3).
+Este kit não mexe no código do site. Em 8/10, com aprovação do responsável, os textos do site passaram a seguir o mesmo posicionamento (registro em `01-seo-tecnico.md`). A etiqueta do Search Console entra no código quando o responsável mandar a dele (passo A3).
 
 ## 3. O responsável precisa fazer ou fornecer
 
