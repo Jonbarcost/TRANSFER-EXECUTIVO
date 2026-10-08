@@ -1,7 +1,6 @@
 # SEO técnico (Agente 1)
 
 Entrega de 8 de outubro de 2026. Publicado em <https://transfer-executivo-amber.vercel.app>.
-Falta uma decisão do responsável: a estrutura de URLs por idioma (seção 4).
 
 ## 1. O que foi feito
 
@@ -12,16 +11,30 @@ Falta uma decisão do responsável: a estrutura de URLs por idioma (seção 4).
 | `robots.txt` e `sitemap.xml` | Publicado |
 | Dados estruturados (JSON-LD) | Publicado. Falta rodar o teste do Google (seção 6) |
 | Origem da visita (`?origem=`) na mensagem do WhatsApp | Publicado |
-| Desempenho no celular | Publicado. Medição local: Performance 95, SEO 100 |
-| URLs por idioma (`/en`, `/es`…) | Proposta pronta e testada em protótipo. **Aguarda aprovação** |
+| Desempenho no celular | Publicado. Medição local: Performance entre 91 e 98 e SEO 100 nas 15 páginas |
+| Um endereço por idioma (`/en`, `/es`…), com hreflang | Publicado. Opção A, aprovada pelo responsável em 8/10 (seção 4) |
 
 ### Como o site aparece para buscadores e ao compartilhar o link
 
-- **Título:** "Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio". Antes era só o nome do site.
+- **Título:** "Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio", e o equivalente em cada idioma. Antes era só o nome do site.
 - **Descrição:** diz o que o site faz (aeroportos Galeão e Santos Dumont, hotéis, Serra, Região dos Lagos, estimativa na hora, combinar pelo WhatsApp).
 - **Imagem de compartilhamento:** é a imagem que redes sociais e aplicativos de mensagem mostram quando alguém compartilha o link (padrão Open Graph). É um recorte da foto do site (cidade e Enseada de Botafogo) com o nome "Transfer Executivo". A estátua do Cristo fica fora do quadro.
 - **Ícone:** a bússola da marca, em PNG. Também acabou com o erro 404 do `favicon.ico` que aparecia no console do navegador.
-- **Canonical:** todas as variações do endereço (por exemplo, com `?origem=instagram`) apontam para a página principal, para o Google não tratar como páginas repetidas.
+- **Canonical:** as variações de um endereço (por exemplo, com `?origem=instagram`) apontam para a página daquele idioma, para o Google não tratar como páginas repetidas.
+
+### Um endereço por idioma
+
+| Idioma | Endereço |
+| --- | --- |
+| Português | `/` (o endereço de sempre) |
+| Inglês, espanhol, francês, alemão, italiano, holandês, polonês | `/en`, `/es`, `/fr`, `/de`, `/it`, `/nl`, `/pl` |
+| Russo, turco, árabe, hindi, chinês, japonês, coreano | `/ru`, `/tr`, `/ar`, `/hi`, `/zh`, `/ja`, `/ko` |
+
+- Cada página já vem do servidor no seu idioma, com título e descrição traduzidos, e informa ao Google quais são as outras versões (hreflang). O `sitemap.xml` lista as 15.
+- O seletor de idioma leva para o endereço do idioma e mantém o `?origem=`.
+- **O site não troca mais de idioma sozinho.** Quem abre uma página com o celular em outro idioma vê um atalho de um toque no topo ("Français →", "English →"). O Google pede para oferecer o link em vez de redirecionar.
+- Em divulgação para estrangeiros, use o endereço do idioma: `/en?origem=instagram`, `/es?origem=hotel-x`.
+- `/pt` não é um endereço à parte: leva para `/`.
 
 ### Dados estruturados
 
@@ -37,11 +50,11 @@ O WhatsApp passou a aparecer no rodapé do site. Motivo: o Google pede que o que
 
 ### Origem da visita
 
-Qualquer link do site pode levar `?origem=` no fim:
+Qualquer link do site, em qualquer idioma, pode levar `?origem=` no fim:
 
 ```text
 https://transfer-executivo-amber.vercel.app/?origem=instagram
-https://transfer-executivo-amber.vercel.app/?origem=hotel-atlantico
+https://transfer-executivo-amber.vercel.app/en?origem=hotel-atlantico
 ```
 
 Quando o cliente envia o pedido, a mensagem do WhatsApp termina com:
@@ -74,26 +87,30 @@ Medição local, Lighthouse 13.5 no modo celular, mediana de 5 execuções (entr
 
 "Antes" foi medido logo antes das duas mudanças de desempenho. A nota 96 de boas práticas é do site original, por causa do erro 404 do ícone.
 
+Depois da mudança para um endereço por idioma, medi as 15 páginas (39 execuções): SEO, acessibilidade e boas práticas deram 100 em todas, e Performance ficou entre 91 e 98. Numa bateria anterior, uma execução da página em polonês deu 84. O deslocamento de layout (CLS) é zero em 14 idiomas e 0,024 em russo, porque a fonte cirílica chega depois do texto (o limite do Google é 0,1).
+
 A nota muda de uma execução para outra e de um computador para outro. O número que vale é o do PageSpeed Insights no site publicado (seção 6).
 
 ## 2. Arquivos
 
 Criados:
 
-- `app/robots.ts`: libera o site e bloqueia `/api/` (as APIs só servem ao formulário e cada chamada gasta créditos do Geoapify).
-- `app/sitemap.ts`: lista a URL do site.
-- `app/opengraph-image.jpg` e `app/opengraph-image.alt.txt`: imagem de compartilhamento e seu texto alternativo.
+- `app/[lang]/layout.tsx` e `app/[lang]/page.tsx`: a página de cada idioma, com metadados, hreflang e dados estruturados. Substituem `app/layout.tsx` e `app/page.tsx`.
+- `app/[lang]/opengraph-image.jpg` e `app/[lang]/opengraph-image.alt.txt`: imagem de compartilhamento e seu texto alternativo.
 - `app/icon.png`: ícone do site.
+- `app/robots.ts`: libera o site e bloqueia `/api/` (as APIs só servem ao formulário e cada chamada gasta créditos do Geoapify).
+- `app/sitemap.ts`: lista os 15 endereços.
+- `next.config.ts`: faz `/` mostrar a página em português e `/pt` levar para `/`.
 - `lib/site.test.ts`: teste da leitura de `?origem=`.
 - `docs/marketing/01-seo-tecnico.md`: este documento.
 
 Alterados:
 
-- `lib/site.ts`: endereço público (`SITE.url`), título, descrição e a função que lê `?origem=`.
-- `app/layout.tsx`: metadados; fontes com pré-carregamento só da faixa latina.
-- `app/page.tsx`: dados estruturados.
-- `components/Home.tsx`: prioridade da foto principal; WhatsApp no rodapé.
+- `lib/i18n.ts`: título e descrição nos 15 idiomas (`metaTitle`, `metaDescription`), caminho de cada idioma e idioma do navegador para o atalho. O teste `lib/i18n.test.ts` acompanha.
+- `lib/site.ts`: endereço público (`SITE.url`) e a função que lê `?origem=`.
+- `components/Home.tsx`: idioma vindo do endereço, seletor que navega, atalho de idioma, prioridade da foto principal, WhatsApp no rodapé.
 - `components/QuoteForm.tsx`: linha "Origem do contato" na mensagem.
+- `app/globals.css`: estilo do atalho de idioma.
 - `public/images/CREDITS.md`: registro da imagem de compartilhamento e do ícone.
 - `CLAUDE.md`: regras e estado atual.
 
@@ -101,60 +118,60 @@ Não foram alterados: preços (`lib/pricing.ts`), APIs e validações. Nenhuma d
 
 ## 3. O motorista precisa fazer ou fornecer
 
+Já decidido pelo responsável em 8/10: um endereço por idioma (opção A) e WhatsApp visível no rodapé.
+
 Em ordem de prioridade:
 
-1. **Aprovar a estrutura de URLs por idioma** (seção 4).
-2. **Fazer uma cotação de verdade no celular** (origem, destino, data, calcular, abrir o WhatsApp). O fluxo foi testado aqui com respostas simuladas das APIs; a cotação real no site publicado não pôde ser testada deste ambiente (seção 6).
-3. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
-4. **Dizer se o WhatsApp pode ficar no rodapé.**
-5. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio. Trocar depois exige redirecionar o endereço antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* um domínio próprio é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
-6. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
+1. **Fazer uma cotação de verdade no celular** (origem, destino, data, calcular, abrir o WhatsApp) e trocar de idioma uma vez pelo seletor. O fluxo foi testado aqui com respostas simuladas das APIs; a cotação real no site publicado não pôde ser testada deste ambiente (seção 6).
+2. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
+3. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio. Trocar depois exige redirecionar o endereço antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* um domínio próprio é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
+4. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
    - Horário de atendimento: [PREENCHER PELO MOTORISTA]
    - Idiomas que o motorista fala além do português: [PREENCHER PELO MOTORISTA]
    - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
    - Existe endereço comercial que possa ser público? Se não, fica só "Rio de Janeiro, RJ": [PREENCHER PELO MOTORISTA]
    - Fotos reais do carro e do motorista, tiradas por ele: [PREENCHER PELO MOTORISTA]
    - Quer divulgar um preço "a partir de"? Hoje o site só mostra a faixa calculada: [PREENCHER PELO MOTORISTA]
-7. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
+5. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
+6. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
 
-## 4. Proposta: URLs por idioma (aguarda aprovação)
+## 4. Decisão: um endereço por idioma
+
+Aprovada pelo responsável em 8 de outubro de 2026 e publicada no mesmo dia.
 
 ### O problema
 
-Hoje o site tem um endereço só. Ele carrega em português e o navegador troca o texto para o idioma do aparelho. O Google recomenda o contrário: um endereço para cada idioma. Para páginas que mudam conforme o visitante, ele avisa que pode não rastrear, indexar nem classificar todas as versões. E a documentação não diz com qual idioma de navegador o robô abre a página.
+O site tinha um endereço só. Ele carregava em português e o navegador trocava o texto para o idioma do aparelho. O Google recomenda o contrário: um endereço para cada idioma. Para páginas que mudam conforme o visitante, ele avisa que pode não rastrear, indexar nem classificar todas as versões. E a documentação não diz com qual idioma de navegador o robô abre a página.
 
-Além disso, só o texto da página troca de idioma. O título, a descrição e o cartão de compartilhamento são sempre os em português, porque vêm prontos do servidor.
+Além disso, só o texto da página trocava de idioma. O título, a descrição e o cartão de compartilhamento eram sempre os em português, porque vêm prontos do servidor.
 
-### Opção A (recomendada): português em `/`, os outros em `/en`, `/es`…
+### Opção A (escolhida): português em `/`, os outros em `/en`, `/es`…
 
-- `/` continua sendo a página em português. O endereço que já foi divulgado não muda.
-- 14 endereços novos: `/en`, `/es`, `/fr`, `/de`, `/it`, `/nl`, `/pl`, `/ru`, `/tr`, `/ar`, `/hi`, `/zh`, `/ja`, `/ko`.
-- Cada página já vem do servidor no seu idioma, com título e descrição traduzidos, e avisa ao Google quais são as outras versões (hreflang).
-- O seletor de idioma passa a levar para o endereço do idioma e mantém o `?origem=`.
-- **O que muda para o visitante:** o site deixa de trocar de idioma sozinho. Quem abrir `/` com o celular em francês vê a página em português com um atalho de um toque, "Français →", no topo. O Google pede para não redirecionar sozinho pelo idioma e sim oferecer o link.
-- Todas as páginas continuam estáticas (rápidas).
+- `/` continua sendo a página em português. O endereço que já tinha sido divulgado não mudou.
+- Todas as páginas são estáticas.
+- O site deixou de trocar de idioma sozinho; no lugar, o atalho de um toque.
 
-### Opção B: todos com prefixo (`/pt`, `/en`…) e `/` redireciona pelo idioma do navegador
+### Opção B (não escolhida): todos com prefixo e `/` redirecionando pelo idioma do navegador
 
-- Mantém a troca automática de hoje: quem abre `/` vai para `/fr`, `/en`…
-- A página em português passa a ser `/pt`. O endereço `/` vira só um redirecionamento, o que acrescenta um passo a cada visita e exige uma função no servidor.
+- Manteria a troca automática, com um redirecionamento a cada visita em `/` e uma função no servidor.
 - O Google prevê esse desenho (página inicial que redireciona, marcada como `x-default`). Na minha avaliação, fica menos claro o que acontece com o nome do site e o ícone nos resultados, que o Google lê da página inicial.
 
-### Por que a A
+### O que foi conferido
 
-É a mais simples, é a que segue ao pé da letra a recomendação do Google e mantém `/` como uma página de verdade. A B só vale se a troca automática de idioma for indispensável.
+No build local, igual ao publicado:
 
-### O que já foi testado da opção A
+- As 15 páginas: idioma e direção do texto, título, descrição, canonical, as 16 marcações hreflang (15 idiomas e `x-default`), Open Graph e dados estruturados.
+- `/pt` leva para `/` mantendo o `?origem=`; endereço inexistente dá 404; o sitemap lista os 15 endereços.
+- Fluxo de cotação e WhatsApp em português, inglês e árabe, a 390 px e 1280 px, sem rolagem horizontal e sem erro no console.
+- Seletor de idioma, botão voltar do navegador e atalho de idioma em oito combinações de idioma de navegador e página.
+- Deslocamento de layout: antes, simulando um celular lento, era zero com o navegador em português e 0,013, 0,023 e 0,011 em inglês, francês e alemão, porque o texto mudava de tamanho ao trocar de idioma. Agora é zero nesses casos.
 
-Em um protótipo local, fora do repositório:
+No site publicado: `/`, `/en`, `/ar` e `/ru` com título e canonical do idioma certo; `/pt` levando para `/`; sitemap com os 15 endereços; endereço inexistente com 404.
 
-- 15 páginas estáticas geradas; `/pt` redireciona para `/`; endereço inexistente dá 404.
-- Fluxo de cotação e WhatsApp em português, inglês, árabe, russo e chinês, a 390 px e 1280 px, sem rolagem horizontal e sem erro no console.
-- Lighthouse em `/`, `/en` e `/ar` (3 execuções cada): SEO 100; Performance com mediana 93, 95 e 96.
-- Deslocamento de layout (CLS) zero em qualquer idioma de navegador. Hoje, simulando um celular lento, ele é zero com o navegador em português e 0,013, 0,023 e 0,011 com o navegador em inglês, francês e alemão: a página aparece em português e o texto muda de tamanho ao trocar de idioma. São valores pequenos (o limite do Google é 0,1).
-- O atalho de idioma não desloca a página.
+### Limites conhecidos
 
-Títulos e descrições nos 14 idiomas foram escritos seguindo o vocabulário que o site já usa. Não passaram por revisão de falante nativo.
+- A página de endereço inexistente (404) é a padrão do Next.js, em inglês.
+- Russo, polonês e turco usam faixas de fonte que não são pré-carregadas. Em russo isso causa o deslocamento de layout de 0,024 citado na seção 1.
 
 ## 5. Fontes
 
@@ -195,7 +212,7 @@ Outros:
 - Vercel, [implantação a partir do Git](https://vercel.com/docs/git): cada envio para a branch de produção gera uma publicação.
 - Next.js 16.4, documentação que acompanha o pacote instalado (`node_modules/next/dist/docs`): [metadados](https://nextjs.org/docs/app/api-reference/functions/generate-metadata), [imagem Open Graph](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image), [ícones](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons), [robots](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots), [sitemap](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap), [JSON-LD](https://nextjs.org/docs/app/guides/json-ld), [internacionalização](https://nextjs.org/docs/app/guides/internationalization), [imagem](https://nextjs.org/docs/app/api-reference/components/image).
 
-Sem fonte oficial (opinião ou escolha minha, marcada no texto): recomendar domínio próprio; incluir o tipo `TaxiService`, que o Google não lista entre os que geram destaque; pedir revisão de falante nativo.
+Sem fonte oficial (opinião ou escolha minha, marcada no texto): recomendar domínio próprio; incluir o tipo `TaxiService`, que o Google não lista entre os que geram destaque; pedir revisão de falante nativo; a avaliação sobre a opção B.
 
 ## 6. O que não foi possível verificar
 
@@ -203,11 +220,11 @@ O ambiente em que trabalhei não alcança `google.com`, `fonts.googleapis.com`, 
 
 - **Teste de Pesquisa Aprimorada do Google: não rodei.** O que fiz no lugar: conferi os dados contra o vocabulário do schema.org (pacote `schema-dts`, sem erros) e contra os campos obrigatórios da documentação do Google. Para rodar: [abrir o teste já com o endereço do site](https://search.google.com/test/rich-results?url=https%3A%2F%2Ftransfer-executivo-amber.vercel.app%2F). O teste pode listar campos opcionais ausentes (rua, horário, preço, imagem). São os dados que não temos e que não foram inventados.
 - **PageSpeed Insights no site publicado: não rodei.** As notas acima são de um Lighthouse local. Para rodar: [abrir o PageSpeed Insights já com o endereço do site](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Ftransfer-executivo-amber.vercel.app%2F) e olhar a aba "Celular".
-- **Cotação real no site publicado: não testei.** No site publicado conferi a página, o `robots.txt`, o `sitemap.xml` e a busca de endereços (`/api/places` respondeu com sugestões reais). O cálculo (`/api/quote`) não pôde ser chamado daqui. O código das APIs não foi alterado.
+- **Cotação real no site publicado: não testei.** O cálculo (`/api/quote`) não pôde ser chamado daqui. A busca de endereços (`/api/places`) respondeu com sugestões reais depois da primeira publicação do dia; depois da última não pude repetir, porque o `robots.txt` novo bloqueia `/api/` e a minha ferramenta de leitura obedece a ele. O código das APIs não foi alterado.
+- **Marcações hreflang no site publicado: não li diretamente.** A ferramenta que usei para abrir o site publicado não mostra essas marcações. Elas foram conferidas nas 15 páginas do build local, que é o mesmo código. Para conferir: no PageSpeed Insights, grupo SEO, item sobre `hreflang` válido.
 - **Build local.** Rodou com cópias locais das fontes do Google, porque o ambiente não alcança o Google Fonts. O build de verdade rodou na Vercel e terminou com sucesso.
 - **Como o Google vai mostrar o site.** Título, descrição, ícone e destaque de empresa são decisões do Google; a documentação diz que nada disso é garantido.
-- **Qual idioma o Google enxerga hoje** na URL única. A documentação não diz com qual idioma de navegador o robô renderiza.
 - **Página do WhatsApp sobre o link `wa.me`:** não consegui abrir. O formato do link é o que o site já usava.
-- **Opção B da seção 4:** não foi testada em protótipo. Segue o exemplo do guia de internacionalização do Next.js.
+- **Títulos e descrições traduzidos:** não passaram por revisão de falante nativo.
 
 Fora do escopo, mas visto na medição: o link da marca no topo tem nome acessível "Transfer Executivo Rio" e texto visível "Transfer Executivo / Rio de Janeiro". O Lighthouse aponta a diferença (não afeta a nota).
