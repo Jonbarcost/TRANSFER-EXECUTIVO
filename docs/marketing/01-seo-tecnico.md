@@ -128,7 +128,7 @@ Em ordem de prioridade:
 
 1. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
 2. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
-   - Horário de atendimento: [PREENCHER PELO MOTORISTA]
+   - Horário de atendimento: [PREENCHER PELO MOTORISTA]. No Perfil da Empresa, o Google orienta serviços de transporte e quem só atende com hora marcada a não informar horário (kit `02-perfil-google-e-search-console.md`, passo D3). *Recomendação minha:* se o perfil ficar sem horário, deixar o site sem horário também.
    - Idiomas que o motorista fala além do português: [PREENCHER PELO MOTORISTA]
    - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
    - Existe endereço comercial que possa ser público? Se não, fica só "Rio de Janeiro, RJ": [PREENCHER PELO MOTORISTA]
