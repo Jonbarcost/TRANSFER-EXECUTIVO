@@ -122,28 +122,32 @@ Já decidido pelo responsável em 8/10: um endereço por idioma (opção A) e Wh
 
 Já feito pelo responsável em 8/10: o teste do site publicado no celular (cotação real aberta com `?origem=teste`, mensagem do WhatsApp e troca de idioma pelo seletor). Ele informou que deu tudo certo.
 
+Também decidido pelo responsável em 8/10: o plano da conta na Vercel e o endereço `transfer-executivo-amber.vercel.app` ficam como estão por enquanto. Ele vai rever os dois quando o serviço começar a dar receita. O que pesar nessa revisão está abaixo, em "Para rever quando houver receita".
+
 Em ordem de prioridade:
 
-1. **Conferir o plano da conta na Vercel**, que é onde o site está hospedado: em vercel.com, `Settings` → `Billing` → `Plan`. Plano da conta: [PREENCHER PELO MOTORISTA]. O plano gratuito (Hobby) não permite uso comercial e a Vercel pode desativar o site. Os detalhes e os caminhos estão logo abaixo, em "Hospedagem".
-2. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio (R$ 40,00 por ano no Registro.br). O endereço `vercel.app` é gerado pela Vercel: só existe enquanto o site estiver hospedado lá. Com domínio próprio, o endereço continua o mesmo se a hospedagem mudar. Trocar de endereço depois exige redirecionar o antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* domínio próprio, que também é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
-3. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
-4. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
+1. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
+2. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
    - Horário de atendimento: [PREENCHER PELO MOTORISTA]
    - Idiomas que o motorista fala além do português: [PREENCHER PELO MOTORISTA]
    - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
    - Existe endereço comercial que possa ser público? Se não, fica só "Rio de Janeiro, RJ": [PREENCHER PELO MOTORISTA]
    - Fotos reais do carro e do motorista, tiradas por ele: [PREENCHER PELO MOTORISTA]
    - Quer divulgar um preço "a partir de"? Hoje o site só mostra a faixa calculada: [PREENCHER PELO MOTORISTA]
-5. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
-6. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
+3. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
+4. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
 
-### Hospedagem: o plano gratuito da Vercel não permite uso comercial
+### Para rever quando houver receita
 
-Constatado em 8/10, ao conferir as regras da hospedagem. Eu não tenho acesso à conta da Vercel, então não sei qual é o plano.
+São os dois pontos que o responsável decidiu deixar como estão em 8/10. Ficam registrados para a revisão.
+
+**Endereço do site.** Um domínio próprio custa R$ 40,00 por ano no Registro.br. O endereço `vercel.app` é gerado pela Vercel: só existe enquanto o site estiver hospedado lá. Com domínio próprio, o endereço continua o mesmo se a hospedagem mudar. Trocar de endereço exige redirecionar o antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança; quanto mais lugares tiverem o endereço antigo (Perfil da Empresa, Search Console, QR codes, cartões), mais trabalho dá a troca. *Recomendação minha, não regra do Google:* domínio próprio, que também é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
+
+**Plano da Vercel.** Constatado em 8/10, ao conferir as regras da hospedagem. Eu não tenho acesso à conta e o plano não foi informado.
 
 - O plano gratuito (Hobby) só permite uso pessoal, não comercial. A Vercel cita "anunciar a venda de um produto ou serviço" como exemplo de uso comercial, e uso comercial exige o plano Pro ou o Enterprise.
 - Pelos termos de serviço, a Vercel pode desativar ou remover um site do plano Hobby com ou sem aviso. Quem visita um site pausado vê o erro `503 DEPLOYMENT_PAUSED`.
-- Se o plano já for Pro, não há o que fazer.
+- O plano aparece em vercel.com, `Settings` → `Billing` → `Plan`. Se já for Pro, não há o que fazer.
 
 Se for Hobby, os caminhos são:
 
@@ -265,7 +269,7 @@ O ambiente em que trabalhei não alcança `google.com`, `fonts.googleapis.com`, 
 - **Como o Google vai mostrar o site.** Título, descrição, ícone e destaque de empresa são decisões do Google; a documentação diz que nada disso é garantido.
 - **Página do WhatsApp sobre o link `wa.me`:** não consegui abrir. O formato do link é o que o site já usava.
 - **Títulos e descrições traduzidos:** não passaram por revisão de falante nativo.
-- **Plano da conta na Vercel: não sei qual é.** Não tenho acesso à conta onde o site está. Por isso a parte "Hospedagem" da seção 3 depende de o responsável conferir.
+- **Plano da conta na Vercel: não sei qual é.** Não tenho acesso à conta onde o site está e o plano não foi informado. O responsável decidiu manter o plano como está por enquanto (seção 3).
 - **Outras hospedagens: nada foi testado.** Só li as páginas oficiais citadas na seção 5. Na Netlify, não encontrei na documentação atual a frase sobre uso comercial no plano Free; na Cloudflare, não encontrei declaração oficial sobre o assunto.
 - **Regras do Registro.br para registrar um domínio (por exemplo, documentos exigidos): não consegui ler.** As páginas só abriram o resumo, que traz o preço.
 
