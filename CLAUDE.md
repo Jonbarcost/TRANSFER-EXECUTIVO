@@ -41,4 +41,4 @@ MVP implementado (2026-10-08): `npm test` (6 testes), `npm run build`, fluxo com
 - Pedágio: exibido "valor não incluído" quando algum passo do trecho tem `toll`.
 
 Confirmado pelo motorista: R$ 3,50/km, máximo 4 passageiros, cidades vizinhas = todos os 38 municípios de MG/SP/ES que fazem divisa com o RJ (calculado pela malha municipal do IBGE).
-Pendente: demais valores de `PRICING` (taxa fixa, mínimo, espera, faixa) ainda são exemplos.
+Também confirmados: taxa fixa R$ 50, mínimo R$ 120, espera R$ 40/h, faixa ±10%.

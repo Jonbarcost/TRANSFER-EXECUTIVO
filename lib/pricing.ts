@@ -1,5 +1,4 @@
-// Única fonte de preços e regras de área. perKm confirmado pelo motorista;
-// os demais valores ainda são de EXEMPLO.
+// Única fonte de preços e regras de área. Valores confirmados pelo motorista em 2026-10-08.
 export const PRICING = {
   baseFee: 50, // R$ fixo por corrida
   perKm: 3.5, // R$ por km operacional (base → origem → destino → base)
