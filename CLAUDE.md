@@ -40,4 +40,5 @@ MVP implementado (2026-10-08): `npm test` (6 testes), `npm run build`, fluxo com
 - Ida e volta: cenário escolhido em `PRICING.sameDayRoundTrip`; volta em outro dia = duas operações completas.
 - Pedágio: exibido "valor não incluído" quando algum passo do trecho tem `toll`.
 
-Pendente de confirmação pelo motorista: valores de `PRICING` (são exemplos), `NEIGHBOR_CITIES` (vazia), `SITE.maxPassengers` (4).
+Confirmado pelo motorista: R$ 3,50/km, máximo 4 passageiros, cidades vizinhas = todos os 38 municípios de MG/SP/ES que fazem divisa com o RJ (calculado pela malha municipal do IBGE).
+Pendente: demais valores de `PRICING` (taxa fixa, mínimo, espera, faixa) ainda são exemplos.

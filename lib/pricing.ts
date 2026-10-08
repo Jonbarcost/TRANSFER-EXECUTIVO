@@ -1,8 +1,8 @@
-// Única fonte de preços e regras de área. Todos os valores abaixo são de EXEMPLO
-// e precisam ser confirmados pelo motorista antes de publicar.
+// Única fonte de preços e regras de área. perKm confirmado pelo motorista;
+// os demais valores ainda são de EXEMPLO.
 export const PRICING = {
   baseFee: 50, // R$ fixo por corrida
-  perKm: 3, // R$ por km operacional (base → origem → destino → base)
+  perKm: 3.5, // R$ por km operacional (base → origem → destino → base)
   minimumFare: 120, // R$ mínimo por trajeto
   waitPerHour: 40, // R$ por hora de espera (ida e volta no mesmo dia, cenário "espera")
   rangeSpread: 0.1, // faixa exibida: ±10% em torno do valor calculado
@@ -13,13 +13,28 @@ export const PRICING = {
 // Base do motorista: Copacabana (coordenada aproximada).
 export const BASE = { lat: -22.9711, lon: -43.1863 };
 
-// Cidades de outros estados aceitas como origem somente se o destino for no RJ.
-// Preencher com as cidades que o motorista atende, ex.: { city: 'Juiz de Fora', state: 'MG' }.
-export const NEIGHBOR_CITIES: { city: string; state: string }[] = [];
+// Cidades de outros estados aceitas como origem somente se o destino for no RJ:
+// todos os municípios que fazem divisa com o RJ (malha municipal do IBGE).
+const NEIGHBORS: Record<string, string[]> = {
+  MG: [
+    'Além Paraíba', 'Antônio Prado de Minas', 'Barão de Monte Alto', 'Belmiro Braga', 'Bocaina de Minas',
+    'Caiana', 'Chiador', 'Estrela Dalva', 'Eugenópolis', 'Faria Lemos', 'Itamonte', 'Itanhandu', 'Palma',
+    'Passa-Vinte', 'Patrocínio do Muriaé', 'Pirapetinga', 'Recreio', 'Rio Preto', 'Santa Bárbara do Monte Verde',
+    'Santana do Deserto', 'Santa Rita de Jacutinga', 'Simão Pereira', 'Tombos', 'Volta Grande',
+  ],
+  SP: ['Arapeí', 'Areias', 'Bananal', 'Cunha', 'Queluz', 'São José do Barreiro', 'Ubatuba'],
+  ES: [
+    'Apiacá', 'Bom Jesus do Norte', 'Dores do Rio Preto', 'Guaçuí', 'Mimoso do Sul', 'Presidente Kennedy',
+    'São José do Calçado',
+  ],
+};
+export const NEIGHBOR_CITIES = Object.entries(NEIGHBORS).flatMap(([state, cities]) =>
+  cities.map((city) => ({ city, state })),
+);
 
 export type Place = { city?: string; state_code?: string };
 
-const norm = (s = '') => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+const norm = (s = '') => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/-/g, ' ').toLowerCase().trim();
 
 export function isServed(origin: Place, destination: Place): boolean {
   if (origin.state_code === 'RJ') return true;

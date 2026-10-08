@@ -8,15 +8,13 @@ test('área atendida: origem no RJ sempre aceita', () => {
   assert.equal(isServed({ state_code: 'RJ' }, { state_code: 'SP' }), true);
 });
 
-test('área atendida: outro estado só se for cidade vizinha com destino no RJ', () => {
-  NEIGHBOR_CITIES.push({ city: 'Juiz de Fora', state: 'MG' });
-  try {
-    assert.equal(isServed({ city: 'Juiz de Fora', state_code: 'MG' }, { state_code: 'RJ' }), true);
-    assert.equal(isServed({ city: 'JUIZ DE FORA', state_code: 'MG' }, { state_code: 'SP' }), false);
-    assert.equal(isServed({ city: 'Belo Horizonte', state_code: 'MG' }, { state_code: 'RJ' }), false);
-  } finally {
-    NEIGHBOR_CITIES.pop();
-  }
+test('área atendida: outro estado só se for cidade de divisa com destino no RJ', () => {
+  assert.equal(isServed({ city: 'Passa Vinte', state_code: 'MG' }, { state_code: 'RJ' }), true);
+  assert.equal(isServed({ city: 'UBATUBA', state_code: 'SP' }, { state_code: 'RJ' }), true);
+  assert.equal(isServed({ city: 'Ubatuba', state_code: 'SP' }, { state_code: 'SP' }), false);
+  assert.equal(isServed({ city: 'Juiz de Fora', state_code: 'MG' }, { state_code: 'RJ' }), false);
+  assert.equal(isServed({ city: 'Ubatuba', state_code: 'MG' }, { state_code: 'RJ' }), false);
+  assert.equal(NEIGHBOR_CITIES.length, 38);
 });
 
 test('só ida usa a distância operacional base → O → D → base', () => {

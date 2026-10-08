@@ -31,7 +31,7 @@ export async function POST(req: Request) {
   const { origin, destination, date, time, roundTrip, returnDate, returnTime, passengers } = body;
 
   if (!isPoint(origin) || !isPoint(destination)) return fail('Escolha origem e destino na lista de sugestões.');
-  if (!isServed(origin, destination)) return fail('Por enquanto atendemos apenas saídas do estado do Rio de Janeiro.');
+  if (!isServed(origin, destination)) return fail('Atendemos saídas do estado do RJ ou de cidades que fazem divisa com o RJ, com destino no RJ.');
   if (!Number.isInteger(passengers) || passengers < 1 || passengers > SITE.maxPassengers)
     return fail(`Informe de 1 a ${SITE.maxPassengers} passageiros.`);
 
