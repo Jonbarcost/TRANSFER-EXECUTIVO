@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { PRICING, NEIGHBOR_CITIES, isServed, quote, scenarios } from './pricing.ts';
+import { PRICING, NEIGHBOR_CITIES, isServed, quote } from './pricing.ts';
 
-const legs = { a: 10_000, b: 30_000, c: 20_000 };
+const within = (r: { min: number; max: number }, v: number) => r.min <= v && v <= r.max;
 
 test('área atendida: origem no RJ sempre aceita', () => {
   assert.equal(isServed({ state_code: 'RJ' }, { state_code: 'SP' }), true);
@@ -17,29 +17,23 @@ test('área atendida: outro estado só se for cidade de divisa com destino no RJ
   assert.equal(NEIGHBOR_CITIES.length, 38);
 });
 
-test('só ida usa a distância operacional base → O → D → base', () => {
-  const km = (legs.a + legs.b + legs.c) / 1000;
-  const v = Math.max(PRICING.minimumFare, PRICING.baseFee + km * PRICING.perKm);
-  const r = quote({ legs, roundTrip: false, sameDay: false, waitHours: 0 });
-  assert.ok(r.min <= v && v <= r.max);
+test('só ida cobra apenas o km do passageiro', () => {
+  const r = quote({ meters: 80_000, roundTrip: false, sameDay: false, waitHours: 0 });
+  assert.ok(within(r, 80 * PRICING.perKm));
   assert.ok(r.min < r.max);
 });
 
 test('preço mínimo vale para trajetos curtos', () => {
-  const r = quote({ legs: { a: 100, b: 100, c: 100 }, roundTrip: false, sameDay: false, waitHours: 0 });
-  assert.ok(r.min <= PRICING.minimumFare && PRICING.minimumFare <= r.max);
+  const r = quote({ meters: 3_000, roundTrip: false, sameDay: false, waitHours: 0 });
+  assert.ok(within(r, PRICING.minimumFare));
 });
 
-test('cenários de ida e volta no mesmo dia saem dos mesmos trechos', () => {
-  const s = scenarios(legs, 2);
-  const oneWay = Math.max(PRICING.minimumFare, PRICING.baseFee + 60 * PRICING.perKm);
-  assert.equal(s.return, 2 * oneWay);
-  const waitKm = (2 * legs.a + 2 * legs.b) / 1000;
-  assert.equal(s.wait, Math.max(PRICING.minimumFare, PRICING.baseFee + waitKm * PRICING.perKm) + 2 * PRICING.waitPerHour);
+test('ida e volta no mesmo dia soma a espera', () => {
+  const r = quote({ meters: 80_000, roundTrip: true, sameDay: true, waitHours: 3 });
+  assert.ok(within(r, 2 * 80 * PRICING.perKm + 3 * PRICING.waitPerHour));
 });
 
-test('ida e volta em dias diferentes = duas operações', () => {
-  const r = quote({ legs, roundTrip: true, sameDay: false, waitHours: 5 });
-  const v = scenarios(legs, 0).return;
-  assert.ok(r.min <= v && v <= r.max);
+test('ida e volta em dias diferentes não cobra espera', () => {
+  const r = quote({ meters: 80_000, roundTrip: true, sameDay: false, waitHours: 30 });
+  assert.ok(within(r, 2 * 80 * PRICING.perKm));
 });

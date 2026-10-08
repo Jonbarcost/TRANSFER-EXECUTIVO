@@ -19,8 +19,8 @@ Arquivos previstos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/
 
 - **Área atendida:** origem no estado do RJ. Origem em cidade vizinha de outro estado só é aceita se o destino for no RJ (lista de cidades em `pricing.ts`).
 - **Base do motorista:** Copacabana (o Centro é próximo; um único ponto basta por enquanto).
-- **Distância do passageiro** = origem → destino. **Distância operacional** = base → origem → destino → base (uma chamada de rota com vários pontos). O retorno vazio já está incluído.
-- **Ida e volta no mesmo dia:** a função de preço calcula os cenários "motorista espera" e "volta vazio e busca de novo" a partir dos mesmos trechos; o MVP usa um deles, escolhido por configuração.
+- **Preço = km do passageiro (origem → destino) × R$ 3,50**, com mínimo por trajeto. Sem taxa fixa e sem cobrar o deslocamento vazio do motorista (decisão de 2026-10-08: com eles o preço ficava alto demais).
+- **Ida e volta:** 2 trajetos; no mesmo dia soma a espera (horas entre a chegada e a volta × R$/h).
 - **Preços somente em `lib/pricing.ts`** (objeto `PRICING`). Nenhum valor de API assumido sem confirmação no painel do provedor.
 - O resultado mostra uma **faixa sujeita a confirmação**, nunca um preço fechado.
 - Campo **Observações** opcional (voo, cadeirinha, necessidades especiais), incluído na mensagem do WhatsApp.
@@ -36,9 +36,8 @@ PASSO 0 concluído (2026-10-08): `scripts/check-geoapify.mjs` rodou os 7 trajeto
 - Pedágio: só vem a indicação `toll` no trecho, sem valor. Valores, se usados, ficam em `PRICING`.
 
 MVP implementado (2026-10-08): `npm test` (6 testes), `npm run build`, fluxo completo testado no navegador com a API real.
-- Cotação faz 2 chamadas de rota (sem trânsito e `traffic=approximated`); o tempo é exibido como faixa entre as duas.
-- Ida e volta: cenário escolhido em `PRICING.sameDayRoundTrip`; volta em outro dia = duas operações completas.
+- Cotação faz 2 chamadas de rota origem → destino (sem trânsito e `traffic=approximated`); o tempo é exibido como faixa entre as duas.
 - Pedágio: exibido "valor não incluído" quando algum passo do trecho tem `toll`.
 
 Confirmado pelo motorista: R$ 3,50/km, máximo 4 passageiros, cidades vizinhas = todos os 38 municípios de MG/SP/ES que fazem divisa com o RJ (calculado pela malha municipal do IBGE).
-Também confirmados: taxa fixa R$ 50, mínimo R$ 120, espera R$ 40/h, faixa ±10%.
+Também confirmados: espera R$ 40/h, faixa ±10%. Taxa fixa removida. Pendente: manter ou não o mínimo de R$ 120; como incluir o valor dos pedágios.

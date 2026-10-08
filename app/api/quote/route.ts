@@ -1,4 +1,4 @@
-import { BASE, isServed, quote } from '@/lib/pricing';
+import { isServed, quote } from '@/lib/pricing';
 import { SITE } from '@/lib/site';
 
 type Point = { label: string; lat: number; lon: number; city?: string; state_code?: string };
@@ -8,7 +8,7 @@ const isPoint = (p: Point) => p && typeof p.lat === 'number' && typeof p.lon ===
 const toDate = (date: string, time: string) => new Date(`${date}T${time}:00-03:00`);
 const fail = (error: string, status = 400) => Response.json({ error }, { status });
 
-// Uma rota com vários pontos: base → origem → destino → base. Devolve um trecho (leg) por par.
+// Rota origem → destino.
 async function route(points: Point[], traffic: boolean) {
   const params = new URLSearchParams({
     waypoints: points.map((p) => `${p.lat},${p.lon}`).join('|'),
@@ -20,8 +20,8 @@ async function route(points: Point[], traffic: boolean) {
   const res = await fetch(`https://api.geoapify.com/v1/routing?${params}`);
   if (!res.ok) return null;
   const json = await res.json();
-  return (json.features?.[0]?.properties?.legs ?? null) as
-    | { distance: number; time: number; steps: { toll?: boolean }[] }[]
+  return (json.features?.[0]?.properties?.legs?.[0] ?? null) as
+    | { distance: number; time: number; steps: { toll?: boolean }[] }
     | null;
 }
 
@@ -39,15 +39,13 @@ export async function POST(req: Request) {
   if (isNaN(pickup.getTime())) return fail('Informe data e horário.');
   if (pickup.getTime() < Date.now()) return fail('A data e o horário precisam ser no futuro.');
 
-  const [free, traffic] = await Promise.all([
-    route([BASE, origin, destination, BASE] as Point[], false),
-    route([BASE, origin, destination, BASE] as Point[], true),
+  const [ride, traffic] = await Promise.all([
+    route([origin, destination], false),
+    route([origin, destination], true),
   ]);
-  if (!free || !traffic || free.length !== 3) return fail('Não foi possível calcular a rota. Tente outro endereço.', 502);
+  if (!ride || !traffic) return fail('Não foi possível calcular a rota. Tente outro endereço.', 502);
 
-  const ride = free[1];
-  const legs = { a: free[0].distance, b: ride.distance, c: free[2].distance };
-  const maxMinutes = Math.round(Math.max(ride.time, traffic[1].time) / 60);
+  const maxMinutes = Math.round(Math.max(ride.time, traffic.time) / 60);
 
   let sameDay = false;
   let waitHours = 0;
@@ -62,8 +60,8 @@ export async function POST(req: Request) {
 
   return Response.json({
     km: Math.round(ride.distance / 100) / 10,
-    minutes: { min: Math.round(Math.min(ride.time, traffic[1].time) / 60), max: maxMinutes },
+    minutes: { min: Math.round(Math.min(ride.time, traffic.time) / 60), max: maxMinutes },
     toll: ride.steps.some((s) => s.toll),
-    price: quote({ legs, roundTrip: !!roundTrip, sameDay, waitHours }),
+    price: quote({ meters: ride.distance, roundTrip: !!roundTrip, sameDay, waitHours }),
   });
 }

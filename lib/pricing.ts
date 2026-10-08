@@ -1,12 +1,10 @@
 // Única fonte de preços e regras de área. Valores confirmados pelo motorista em 2026-10-08.
+// Cobra só o km do passageiro (origem → destino); o deslocamento vazio do motorista não entra.
 export const PRICING = {
-  baseFee: 50, // R$ fixo por corrida
-  perKm: 3.5, // R$ por km operacional (base → origem → destino → base)
+  perKm: 3.5, // R$ por km do passageiro
   minimumFare: 120, // R$ mínimo por trajeto
-  waitPerHour: 40, // R$ por hora de espera (ida e volta no mesmo dia, cenário "espera")
+  waitPerHour: 40, // R$ por hora de espera (ida e volta no mesmo dia: o motorista espera)
   rangeSpread: 0.1, // faixa exibida: ±10% em torno do valor calculado
-  // Ida e volta no mesmo dia: 'wait' = motorista espera; 'return' = volta vazio e busca de novo.
-  sameDayRoundTrip: 'return' as 'wait' | 'return',
 };
 
 // Base do motorista: Copacabana (coordenada aproximada).
@@ -43,34 +41,18 @@ export function isServed(origin: Place, destination: Place): boolean {
   );
 }
 
-// Trechos em metros: a = base → origem, b = origem → destino, c = destino → base.
-export type Legs = { a: number; b: number; c: number };
-
-const tripPrice = (meters: number) =>
-  Math.max(PRICING.minimumFare, PRICING.baseFee + (meters / 1000) * PRICING.perKm);
-
-export function scenarios(legs: Legs, waitHours: number) {
-  const { a, b, c } = legs;
-  return {
-    // Leva, espera no destino, traz de volta: base → O → D (espera) → O → base.
-    wait: tripPrice(a + b + b + a) + Math.max(0, waitHours) * PRICING.waitPerHour,
-    // Duas operações completas: base → O → D → base, depois base → D → O → base.
-    return: 2 * tripPrice(a + b + c),
-  };
-}
+const tripPrice = (meters: number) => Math.max(PRICING.minimumFare, (meters / 1000) * PRICING.perKm);
 
 export type QuoteInput = {
-  legs: Legs;
+  meters: number; // origem → destino
   roundTrip: boolean;
   sameDay: boolean;
-  waitHours: number; // usado só no cenário "espera"
+  waitHours: number; // cobrado só em ida e volta no mesmo dia
 };
 
-export function quote({ legs, roundTrip, sameDay, waitHours }: QuoteInput) {
-  let value: number;
-  if (!roundTrip) value = tripPrice(legs.a + legs.b + legs.c);
-  else if (!sameDay) value = scenarios(legs, 0).return;
-  else value = scenarios(legs, waitHours)[PRICING.sameDayRoundTrip];
+export function quote({ meters, roundTrip, sameDay, waitHours }: QuoteInput) {
+  let value = tripPrice(meters);
+  if (roundTrip) value = 2 * value + (sameDay ? Math.max(0, waitHours) * PRICING.waitPerHour : 0);
 
   const round10 = (n: number) => Math.round(n / 10) * 10;
   return {
