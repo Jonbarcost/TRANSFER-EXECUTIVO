@@ -11,6 +11,8 @@ const ICONS = [
   'M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0ZM15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z',
   'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18M12 3c-5 5-5 13 0 18 5-5 5-13 0-18Z',
 ];
+// Contato visível no rodapé (o mesmo dos dados estruturados): '5521999879096' → '+55 21 99987-9096'.
+const PHONE = SITE.whatsapp.replace(/^(\d{2})(\d{2})(\d{5})(\d{4})$/, '+$1 $2 $3-$4');
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('pt');
@@ -65,6 +67,7 @@ export default function Home() {
         </li>)}</ul>
       </section>
       <footer><span className="footer-brand" dir="ltr">{SITE.name}</span><div className="footer-links">
+        {SITE.whatsapp && <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener noreferrer" dir="ltr">WhatsApp {PHONE}</a>}
         <a href="/images/CREDITS.md" target="_blank" rel="noopener noreferrer">{t.imageCredits}</a>
         <a href="https://www.geoapify.com/" target="_blank" rel="noopener noreferrer" dir="ltr">Powered by Geoapify</a>
       </div></footer>

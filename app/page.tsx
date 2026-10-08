@@ -1,5 +1,44 @@
 import Home from '@/components/Home';
+import { LANGS } from '@/lib/i18n';
+import { SITE } from '@/lib/site';
+
+// Dados estruturados (schema.org) para buscadores: só o que o site já mostra ou o motorista confirmou.
+// Sem rua, horário, preço, avaliações ou fotos do carro enquanto o motorista não informar.
+const business = `${SITE.url}/#business`;
+const areaServed = { '@type': 'State', name: 'Rio de Janeiro', containedInPlace: { '@type': 'Country', name: 'Brasil' } };
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', name: SITE.name, url: SITE.url, inLanguage: Object.keys(LANGS).map((l) => (l === 'pt' ? 'pt-BR' : l)) },
+    {
+      '@type': 'LocalBusiness',
+      '@id': business,
+      name: SITE.name,
+      description: SITE.description,
+      url: SITE.url,
+      address: { '@type': 'PostalAddress', addressLocality: 'Rio de Janeiro', addressRegion: 'RJ', addressCountry: 'BR' },
+      areaServed,
+      // O pedido chega ao motorista em português (ver whatsappNote em lib/i18n.ts).
+      ...(SITE.whatsapp && {
+        telephone: `+${SITE.whatsapp}`,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'reservations',
+          telephone: `+${SITE.whatsapp}`,
+          url: `https://wa.me/${SITE.whatsapp}`,
+          availableLanguage: 'pt-BR',
+        },
+      }),
+    },
+    { '@type': 'TaxiService', serviceType: 'Transfer com motorista', provider: { '@id': business }, areaServed },
+  ],
+};
 
 export default function Page() {
-  return <Home />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
+      <Home />
+    </>
+  );
 }
