@@ -1,8 +1,7 @@
 'use client';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import QuoteForm from '@/components/QuoteForm';
-import { LANGS, RTL, detectLang, type Lang } from '@/lib/i18n';
+import { LANGS, langPath, type Lang } from '@/lib/i18n';
 import { SITE } from '@/lib/site';
 
 const ICONS = [
@@ -14,19 +13,10 @@ const ICONS = [
 // Contato visível no rodapé (o mesmo dos dados estruturados): '5521999879096' → '+55 21 99987-9096'.
 const PHONE = SITE.whatsapp.replace(/^(\d{2})(\d{2})(\d{5})(\d{4})$/, '+$1 $2 $3-$4');
 
-export default function Home() {
-  const [lang, setLang] = useState<Lang>('pt');
+export default function Home({ lang }: { lang: Lang }) {
   const t = LANGS[lang];
-  useEffect(() => {
-    let saved: string | null = null;
-    try { saved = localStorage.getItem('lang'); } catch {}
-    setLang(saved && saved in LANGS ? saved as Lang : detectLang(navigator.languages ?? [navigator.language]));
-  }, []);
-  useEffect(() => {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = RTL.includes(lang) ? 'rtl' : 'ltr';
-    try { localStorage.setItem('lang', lang); } catch {}
-  }, [lang]);
+  // Trocar de idioma é ir para a URL daquele idioma, mantendo o ?origem=.
+  const go = (next: Lang) => window.location.assign(langPath(next) + window.location.search);
   return (
     <main>
       <a className="skip-link" href="#quote">{t.skipToQuote}</a>
@@ -38,7 +28,7 @@ export default function Home() {
         <label className="lang">
           <span className="sr-only">{t.language}</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d={ICONS[3]} /></svg>
-          <select value={lang} onChange={e => setLang(e.target.value as Lang)} aria-label={t.language}>
+          <select value={lang} onChange={e => go(e.target.value as Lang)} aria-label={t.language}>
             {Object.entries(LANGS).map(([code, d]) => <option key={code} value={code}>{d.langName}</option>)}
           </select>
         </label>

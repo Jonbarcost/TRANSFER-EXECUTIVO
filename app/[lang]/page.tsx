@@ -1,12 +1,12 @@
 import Home from '@/components/Home';
-import { LANGS } from '@/lib/i18n';
+import { LANGS, type Lang } from '@/lib/i18n';
 import { SITE } from '@/lib/site';
 
 // Dados estruturados (schema.org) para buscadores: só o que o site já mostra ou o motorista confirmou.
 // Sem rua, horário, preço, avaliações ou fotos do carro enquanto o motorista não informar.
 const business = `${SITE.url}/#business`;
 const areaServed = { '@type': 'State', name: 'Rio de Janeiro', containedInPlace: { '@type': 'Country', name: 'Brasil' } };
-const jsonLd = {
+const jsonLd = (lang: Lang) => ({
   '@context': 'https://schema.org',
   '@graph': [
     { '@type': 'WebSite', name: SITE.name, url: SITE.url, inLanguage: Object.keys(LANGS).map((l) => (l === 'pt' ? 'pt-BR' : l)) },
@@ -14,7 +14,7 @@ const jsonLd = {
       '@type': 'LocalBusiness',
       '@id': business,
       name: SITE.name,
-      description: SITE.description,
+      description: LANGS[lang].metaDescription,
       url: SITE.url,
       address: { '@type': 'PostalAddress', addressLocality: 'Rio de Janeiro', addressRegion: 'RJ', addressCountry: 'BR' },
       areaServed,
@@ -32,13 +32,14 @@ const jsonLd = {
     },
     { '@type': 'TaxiService', serviceType: 'Transfer com motorista', provider: { '@id': business }, areaServed },
   ],
-};
+});
 
-export default function Page() {
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = (await params).lang as Lang;
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
-      <Home />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(lang)).replace(/</g, '\\u003c') }} />
+      <Home lang={lang} />
     </>
   );
 }

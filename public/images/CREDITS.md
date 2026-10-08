@@ -19,7 +19,7 @@ Licenças conferidas nas páginas individuais em 8 de outubro de 2026. Todas as 
 
 ## Imagem de compartilhamento e ícone
 
-- `app/opengraph-image.jpg` (1200 × 630 px) aparece quando o link do site é compartilhado. É um recorte de `rio.webp` (a cidade e a Enseada de Botafogo, abaixo do Corcovado) com um degradê verde e o nome do site. A estátua do Cristo Redentor fica fora do quadro. Fotografia e licença: as mesmas de `rio.webp` (CC0).
+- `app/[lang]/opengraph-image.jpg` (1200 × 630 px) aparece quando o link do site é compartilhado. É um recorte de `rio.webp` (a cidade e a Enseada de Botafogo, abaixo do Corcovado) com um degradê verde e o nome do site. A estátua do Cristo Redentor fica fora do quadro. Fotografia e licença: as mesmas de `rio.webp` (CC0).
 - `app/icon.png` (192 × 192 px) é o ícone do site, desenhado para este projeto a partir da bússola da marca. Não usa fotografia.
 
 ## Cristo Redentor — direitos separados

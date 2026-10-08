@@ -1,7 +1,12 @@
 // Textos da interface. O pedido enviado ao motorista é sempre montado em português (ver QuoteForm).
 // Placeholders: {min}, {max}, {value}, {names}. O 4º item de trust só tem título; o texto é whatsappNote.
+// metaTitle e metaDescription são o título e a descrição de cada idioma para buscadores e para o cartão que aparece
+// ao compartilhar o link.
 const pt = {
   langName: 'Português',
+  metaTitle: 'Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo Rio',
+  metaDescription:
+    'Transfer executivo no Rio de Janeiro: aeroportos Galeão e Santos Dumont, hotéis, Serra e Região dos Lagos. Veja a estimativa de preço na hora e combine direto com o motorista pelo WhatsApp.',
   skipToQuote: "Ir para a estimativa",
   quoteTitle: "Planeje seu trajeto",
   planTransfer: "Planejar meu transfer",
@@ -56,6 +61,9 @@ export type ErrorCode = keyof Dict['errors'];
 
 const en: Dict = {
   langName: 'English',
+  metaTitle: 'Rio de Janeiro transfers: airports, hotels, the mountains and the Lakes Region | Transfer Executivo Rio',
+  metaDescription:
+    'Transfers with a driver in Rio de Janeiro: Galeão (GIG) and Santos Dumont (SDU) airports, hotels, the mountains and the Lakes Region. See a price estimate instantly and arrange it directly with the driver on WhatsApp.',
   skipToQuote: "Skip to estimate",
   quoteTitle: "Plan your journey",
   planTransfer: "Plan my transfer",
@@ -107,6 +115,9 @@ const en: Dict = {
 
 const es: Dict = {
   langName: 'Español',
+  metaTitle: 'Traslados en Río de Janeiro: aeropuertos, hoteles, la Sierra y la Región de los Lagos | Transfer Executivo Rio',
+  metaDescription:
+    'Traslados con conductor en Río de Janeiro: aeropuertos Galeão (GIG) y Santos Dumont (SDU), hoteles, la Sierra y la Región de los Lagos. Mira la estimación de precio al instante y coordina directo con el conductor por WhatsApp.',
   skipToQuote: "Ir a la estimación",
   quoteTitle: "Planifica tu trayecto",
   planTransfer: "Planificar mi traslado",
@@ -158,6 +169,9 @@ const es: Dict = {
 
 const fr: Dict = {
   langName: 'Français',
+  metaTitle: 'Transferts à Rio de Janeiro : aéroports, hôtels, la montagne et la Région des Lacs | Transfer Executivo Rio',
+  metaDescription:
+    'Transferts avec chauffeur à Rio de Janeiro : aéroports Galeão (GIG) et Santos Dumont (SDU), hôtels, la montagne et la Région des Lacs. Obtenez une estimation de prix immédiate et organisez tout directement avec le chauffeur sur WhatsApp.',
   skipToQuote: "Aller à l’estimation",
   quoteTitle: "Planifiez votre trajet",
   planTransfer: "Planifier mon transfert",
@@ -209,6 +223,9 @@ const fr: Dict = {
 
 const de: Dict = {
   langName: 'Deutsch',
+  metaTitle: 'Transfers in Rio de Janeiro: Flughäfen, Hotels, Berge und die Seenregion | Transfer Executivo Rio',
+  metaDescription:
+    'Transfers mit Fahrer in Rio de Janeiro: Flughäfen Galeão (GIG) und Santos Dumont (SDU), Hotels, Berge und die Seenregion. Sofort eine Preisschätzung sehen und direkt per WhatsApp mit dem Fahrer abstimmen.',
   skipToQuote: "Zur Schätzung",
   quoteTitle: "Planen Sie Ihre Fahrt",
   planTransfer: "Meinen Transfer planen",
@@ -260,6 +277,9 @@ const de: Dict = {
 
 const it: Dict = {
   langName: 'Italiano',
+  metaTitle: 'Transfer a Rio de Janeiro: aeroporti, hotel, la montagna e la Regione dei Laghi | Transfer Executivo Rio',
+  metaDescription:
+    'Transfer con autista a Rio de Janeiro: aeroporti Galeão (GIG) e Santos Dumont (SDU), hotel, la montagna e la Regione dei Laghi. Vedi subito la stima del prezzo e accordati direttamente con l’autista su WhatsApp.',
   skipToQuote: "Vai al preventivo",
   quoteTitle: "Pianifica il tuo viaggio",
   planTransfer: "Pianifica il mio transfer",
@@ -311,6 +331,9 @@ const it: Dict = {
 
 const nl: Dict = {
   langName: 'Nederlands',
+  metaTitle: 'Transfers in Rio de Janeiro: luchthavens, hotels, de bergen en de Merenregio | Transfer Executivo Rio',
+  metaDescription:
+    'Transfers met chauffeur in Rio de Janeiro: luchthavens Galeão (GIG) en Santos Dumont (SDU), hotels, de bergen en de Merenregio. Zie direct een prijsschatting en regel het rechtstreeks met de chauffeur via WhatsApp.',
   skipToQuote: "Naar de prijsindicatie",
   quoteTitle: "Plan uw reis",
   planTransfer: "Mijn transfer plannen",
@@ -362,6 +385,9 @@ const nl: Dict = {
 
 const pl: Dict = {
   langName: 'Polski',
+  metaTitle: 'Transfery w Rio de Janeiro: lotniska, hotele, góry i Region Jezior | Transfer Executivo Rio',
+  metaDescription:
+    'Transfery z kierowcą w Rio de Janeiro: lotniska Galeão (GIG) i Santos Dumont (SDU), hotele, góry i Region Jezior. Zobacz wycenę od razu i ustal szczegóły bezpośrednio z kierowcą przez WhatsApp.',
   skipToQuote: "Przejdź do wyceny",
   quoteTitle: "Zaplanuj podróż",
   planTransfer: "Zaplanuj mój transfer",
@@ -413,6 +439,9 @@ const pl: Dict = {
 
 const ru: Dict = {
   langName: 'Русский',
+  metaTitle: 'Трансфер в Рио-де-Жанейро: аэропорты, отели, горы и Озёрный регион | Transfer Executivo Rio',
+  metaDescription:
+    'Трансфер с водителем в Рио-де-Жанейро: аэропорты Galeão (GIG) и Santos Dumont (SDU), отели, горы и Озёрный регион. Узнайте примерную стоимость сразу и договоритесь напрямую с водителем в WhatsApp.',
   skipToQuote: "Перейти к расчёту",
   quoteTitle: "Спланируйте поездку",
   planTransfer: "Запланировать трансфер",
@@ -464,6 +493,9 @@ const ru: Dict = {
 
 const tr: Dict = {
   langName: 'Türkçe',
+  metaTitle: 'Rio de Janeiro’da transfer: havalimanları, oteller, dağlar ve Göller Bölgesi | Transfer Executivo Rio',
+  metaDescription:
+    'Rio de Janeiro’da şoförlü transfer: Galeão (GIG) ve Santos Dumont (SDU) havalimanları, oteller, dağlar ve Göller Bölgesi. Tahmini fiyatı hemen görün, WhatsApp üzerinden doğrudan şoförle anlaşın.',
   skipToQuote: "Tahmine geç",
   quoteTitle: "Yolculuğunuzu planlayın",
   planTransfer: "Transferimi planla",
@@ -515,6 +547,9 @@ const tr: Dict = {
 
 const ar: Dict = {
   langName: 'العربية',
+  metaTitle: 'التنقل في ريو دي جانيرو: المطارات والفنادق والجبال ومنطقة البحيرات | Transfer Executivo Rio',
+  metaDescription:
+    'تنقّل مع سائق في ريو دي جانيرو: مطارا Galeão (GIG) و Santos Dumont (SDU)، والفنادق والجبال ومنطقة البحيرات. اطّلع على السعر التقديري فورًا ونسّق مباشرة مع السائق عبر واتساب.',
   skipToQuote: "انتقل إلى التقدير",
   quoteTitle: "خطط لرحلتك",
   planTransfer: "خطط لتنقلي",
@@ -566,6 +601,9 @@ const ar: Dict = {
 
 const hi: Dict = {
   langName: 'हिन्दी',
+  metaTitle: 'रियो दे जनेरो में ट्रांसफ़र: एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र | Transfer Executivo Rio',
+  metaDescription:
+    'रियो दे जनेरो में ड्राइवर के साथ ट्रांसफ़र: Galeão (GIG) और Santos Dumont (SDU) एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र। तुरंत अनुमानित किराया देखें और WhatsApp पर सीधे ड्राइवर से तय करें।',
   skipToQuote: "अनुमान पर जाएँ",
   quoteTitle: "अपनी यात्रा की योजना बनाएँ",
   planTransfer: "मेरे ट्रांसफ़र की योजना बनाएँ",
@@ -617,6 +655,9 @@ const hi: Dict = {
 
 const zh: Dict = {
   langName: '中文',
+  metaTitle: '里约热内卢接送：机场、酒店、山区和湖区 | Transfer Executivo Rio',
+  metaDescription:
+    '里约热内卢配司机接送服务：Galeão (GIG) 机场和 Santos Dumont (SDU) 机场、酒店、山区和湖区。即时查看预估价格，通过 WhatsApp 直接与司机沟通。',
   skipToQuote: "跳转至估价",
   quoteTitle: "规划您的行程",
   planTransfer: "规划我的接送",
@@ -668,6 +709,9 @@ const zh: Dict = {
 
 const ja: Dict = {
   langName: '日本語',
+  metaTitle: 'リオデジャネイロの送迎：空港、ホテル、山間部、湖水地方 | Transfer Executivo Rio',
+  metaDescription:
+    'リオデジャネイロのドライバー付き送迎：Galeão (GIG) 空港と Santos Dumont (SDU) 空港、ホテル、山間部、湖水地方へ。料金の見積もりをすぐに確認し、WhatsApp でドライバーと直接やり取りできます。',
   skipToQuote: "見積もりへ移動",
   quoteTitle: "旅程を計画",
   planTransfer: "送迎を計画する",
@@ -719,6 +763,9 @@ const ja: Dict = {
 
 const ko: Dict = {
   langName: '한국어',
+  metaTitle: '리우데자네이루 픽업 서비스: 공항, 호텔, 산간 지역, 호수 지역 | Transfer Executivo Rio',
+  metaDescription:
+    '리우데자네이루 기사 포함 픽업 서비스: Galeão (GIG) 공항과 Santos Dumont (SDU) 공항, 호텔, 산간 지역, 호수 지역까지. 예상 요금을 바로 확인하고 WhatsApp으로 기사님과 직접 조율하세요.',
   skipToQuote: "견적으로 이동",
   quoteTitle: "여정을 계획하세요",
   planTransfer: "내 이동 계획하기",
@@ -772,14 +819,8 @@ export const LANGS = { pt, en, es, fr, de, it, nl, pl, ru, tr, ar, hi, zh, ja, k
 export type Lang = keyof typeof LANGS;
 export const RTL: Lang[] = ['ar'];
 
-// Escolhe o idioma do navegador quando suportado; senão português.
-export function detectLang(preferred: readonly string[]): Lang {
-  for (const tag of preferred) {
-    const code = tag.toLowerCase().split('-')[0];
-    if (code in LANGS) return code as Lang;
-  }
-  return 'pt';
-}
+// Cada idioma tem a sua URL: português em "/", os demais em "/en", "/es"…
+export const langPath = (lang: Lang) => (lang === 'pt' ? '/' : `/${lang}`);
 
 export const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''));
