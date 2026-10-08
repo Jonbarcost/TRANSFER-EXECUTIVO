@@ -13,7 +13,7 @@ Fora do MVP: banco de dados, login, painel, pagamento, mapa visual, bibliotecas 
 Next.js (App Router) + TypeScript, CSS puro, `next/font`, testes com `node:test`. Dependências: só `next`, `react`, `react-dom`, `typescript`.
 Mapas: **Geoapify** (Address Autocomplete + Routing), chamado só pelo servidor. Google descartado por falta de faturamento. Exibir "Powered by Geoapify" com link.
 
-Arquivos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/route.ts`, `app/api/quote/route.ts`, `components/{Home,QuoteForm}.tsx`, `lib/pricing.ts` (+ teste), `lib/i18n.ts` (+ teste), `lib/site.ts`, `public/images/` (fotos + `CREDITS.md`). Ambiente do Codex: `AGENTS.md`, `CODEX.md`, `scripts/setup-codex.sh`.
+Arquivos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/route.ts`, `app/api/quote/route.ts`, `app/{robots,sitemap}.ts`, `app/opengraph-image.jpg` (+ `.alt.txt`), `app/icon.png`, `components/{Home,QuoteForm}.tsx`, `lib/pricing.ts` (+ teste), `lib/i18n.ts` (+ teste), `lib/site.ts` (+ teste), `public/images/` (fotos + `CREDITS.md`), `docs/marketing/` (entregas e kits de divulgação). Ambiente do Codex: `AGENTS.md`, `CODEX.md`, `scripts/setup-codex.sh`.
 
 ## Regras de negócio
 
@@ -29,6 +29,8 @@ Arquivos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/route.ts`,
 - **Imagens:** fotos reais licenciadas em `public/images/` (créditos em `CREDITS.md`, link no rodapé). A imagem do Cristo tem direitos da Mitra Arquiepiscopal do Rio; para uso comercial, a autorização por escrito é o caminho seguro.
 - **Pedágios:** tabela `TOLLS` em `lib/pricing.ts` (posição, tarifa de automóvel, sentido, fim de semana, fonte/pendência em `check`). A praça é cobrada quando a geometria da rota passa perto dela; a volta usa a rota invertida. Somados fora da margem de ±10%. Se a rota tem trecho pedagiado sem praça conhecida, ou sai do RJ, o site avisa que pode haver pedágio não incluído. Tarifas mudam todo ano: revisar a tabela a cada reajuste.
 - **Mensagens de confiança:** só afirmações verdadeiras pelo funcionamento do site. Nada sobre carro, seguro, credenciais ou pontualidade sem o motorista confirmar.
+- **Origem da visita:** `?origem=instagram`, `?origem=hotel-x` (letras sem acento, números, `-` e `_`, até 40 caracteres) vira a linha "Origem do contato: ..." no fim da mensagem do WhatsApp. Nada é guardado no site.
+- **SEO:** `SITE.url` é o endereço público usado no canonical, no sitemap, no Open Graph e nos dados estruturados; trocar ali se houver domínio próprio. Os dados estruturados (`app/page.tsx`) só levam dados reais, e o que estiver neles precisa estar visível na página (por isso o WhatsApp no rodapé). O `robots.txt` bloqueia só `/api/`. Na imagem principal usar `loading="eager"` e `fetchPriority="high"` (`priority` ficou obsoleto no Next.js 16). `subsets` das fontes define só o que é pré-carregado.
 
 ## Estado atual
 
@@ -47,3 +49,6 @@ Confirmado pelo motorista: R$ 3,50/km, máximo 4 passageiros, cidades vizinhas =
 Também confirmados: espera R$ 40/h, faixa ±10%. Taxa fixa removida. Mínimo de R$ 50 e soma dos pedágios confirmados pelo motorista. Pendências dos pedágios estão no campo `check` de cada praça.
 
 Liberado para divulgação (2026-10-08): o motorista testou o site publicado no celular (cotação + WhatsApp), conferiu as licenças das fotos e resolveu a autorização da imagem do Cristo. Proteção contra uso abusivo da API não foi feita por decisão dele; refazer se o consumo do Geoapify (3.000 créditos/dia no plano grátis, ~8–14 por cotação) ficar alto.
+
+SEO técnico (2026-10-08, detalhes e pendências em `docs/marketing/01-seo-tecnico.md`): metadados, imagem de compartilhamento, ícone, `robots.txt`, `sitemap.xml`, dados estruturados, `?origem=` e ajustes de desempenho publicados. Conferido com `npm test`, `npm run build` e navegador (390 e 1280 px; PT, EN e AR) com as APIs simuladas; no site publicado, página, `robots.txt`, `sitemap.xml` e `/api/places`. Não conferidos: Teste de Pesquisa Aprimorada, PageSpeed Insights e cotação real no site publicado.
+**Aguardando aprovação do responsável:** URLs por idioma (`/` em português, `/en`, `/es`… para os outros, com hreflang). Muda a arquitetura (`app/[lang]/`), então só implementar depois do "sim".
