@@ -35,4 +35,9 @@ PASSO 0 concluído (2026-10-08): `scripts/check-geoapify.mjs` rodou os 7 trajeto
 - `traffic=approximated` aumenta o tempo em ~2× (ex.: Galeão → Copacabana 25 → 61 min). Decidir qual tempo exibir.
 - Pedágio: só vem a indicação `toll` no trecho, sem valor. Valores, se usados, ficam em `PRICING`.
 
-Próximo passo: implementação.
+MVP implementado (2026-10-08): `npm test` (6 testes), `npm run build`, fluxo completo testado no navegador com a API real.
+- Cotação faz 2 chamadas de rota (sem trânsito e `traffic=approximated`); o tempo é exibido como faixa entre as duas.
+- Ida e volta: cenário escolhido em `PRICING.sameDayRoundTrip`; volta em outro dia = duas operações completas.
+- Pedágio: exibido "valor não incluído" quando algum passo do trecho tem `toll`.
+
+Pendente de confirmação pelo motorista: valores de `PRICING` (são exemplos), `NEIGHBOR_CITIES` (vazia), `SITE.whatsapp` (vazio), `SITE.maxPassengers` (4).
