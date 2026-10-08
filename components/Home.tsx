@@ -45,7 +45,7 @@ export default function Home() {
       </nav>
       <section className="hero" aria-labelledby="hero-title">
         <header className="hero-intro">
-          <div className="hero-scenery"><Image src="/images/rio.webp" alt="" fill priority sizes="(max-width: 760px) 100vw, (max-width: 1280px) 55vw, 660px" /></div>
+          <div className="hero-scenery"><Image src="/images/rio.webp" alt="" fill loading="eager" fetchPriority="high" sizes="(max-width: 760px) 100vw, (max-width: 1280px) 55vw, 660px" /></div>
           <div className="hero-copy">
             <p className="eyebrow" dir="ltr"><span /> Rio de Janeiro</p>
             <h1 id="hero-title">{t.heroTitle}</h1>
