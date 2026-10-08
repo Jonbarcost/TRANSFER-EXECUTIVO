@@ -40,4 +40,4 @@ MVP implementado (2026-10-08): `npm test` (6 testes), `npm run build`, fluxo com
 - Ida e volta: cenário escolhido em `PRICING.sameDayRoundTrip`; volta em outro dia = duas operações completas.
 - Pedágio: exibido "valor não incluído" quando algum passo do trecho tem `toll`.
 
-Pendente de confirmação pelo motorista: valores de `PRICING` (são exemplos), `NEIGHBOR_CITIES` (vazia), `SITE.whatsapp` (vazio), `SITE.maxPassengers` (4).
+Pendente de confirmação pelo motorista: valores de `PRICING` (são exemplos), `NEIGHBOR_CITIES` (vazia), `SITE.maxPassengers` (4).
