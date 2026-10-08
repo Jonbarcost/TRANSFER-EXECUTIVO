@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <!-- Arara em voo, virada para a direita; cores nas variáveis c1 (corpo), c2 (asa) e c3 (detalhe) -->
+    <g id="macaw">
+      <path d="M-150 30 C-110 18 -70 10 -40 6 L-36 20 C-70 26 -110 34 -150 30 Z" fill="var(--c1)"/>
+      <path d="M-160 44 C-118 36 -78 28 -42 22 L-40 30 C-80 38 -120 46 -160 44 Z" fill="var(--c2)"/>
+      <ellipse cx="0" cy="10" rx="48" ry="17" fill="var(--c1)" transform="rotate(-8)"/>
+      <circle cx="48" cy="-6" r="15" fill="var(--c1)"/>
+      <circle cx="52" cy="-9" r="5" fill="#fff"/>
+      <circle cx="53" cy="-9" r="2.2" fill="#222"/>
+      <path d="M60 -12 C76 -14 82 0 72 12 C70 4 66 0 58 0 Z" fill="#2b2b2b"/>
+      <path d="M-12 2 C10 -40 40 -86 92 -112 C70 -70 52 -36 30 0 Z" fill="var(--c2)"/>
+      <path d="M-10 4 C6 -24 26 -54 58 -78 C46 -50 34 -26 18 2 Z" fill="var(--c3)"/>
+      <path d="M-20 14 C-4 46 18 82 64 104 C50 70 36 44 20 16 Z" fill="var(--c2)" opacity=".85"/>
+    </g>
+    <!-- Macaco-prego sentado: corpo escuro, rosto claro e o topete ("prego") -->
+    <g id="monkey">
+      <path d="M-6 40 C-60 60 -70 120 -30 140 C-10 150 6 134 -8 124 C-36 112 -30 74 4 56 Z" fill="#5a3b22"/>
+      <ellipse cx="10" cy="30" rx="30" ry="40" fill="#6b4728"/>
+      <circle cx="12" cy="-22" r="24" fill="#6b4728"/>
+      <ellipse cx="14" cy="-16" rx="16" ry="15" fill="#e8c9a0"/>
+      <path d="M-6 -36 C2 -54 24 -54 32 -36 C22 -44 6 -44 -6 -36 Z" fill="#2e1d10"/>
+      <circle cx="8" cy="-20" r="2.6" fill="#2e1d10"/>
+      <circle cx="20" cy="-20" r="2.6" fill="#2e1d10"/>
+      <path d="M9 -8 C12 -5 16 -5 19 -8" stroke="#2e1d10" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M30 10 C50 22 56 44 46 62" stroke="#6b4728" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M-10 14 C-24 30 -22 50 -12 62" stroke="#6b4728" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M-6 66 C-10 76 -2 82 8 80 M30 66 C34 76 26 82 16 80" stroke="#5a3b22" stroke-width="13" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+
+  <!-- Céu: araras -->
+  <use href="#macaw" transform="translate(250 170) rotate(-10) scale(1.15)" style="--c1:#1f63c6;--c2:#164a9a;--c3:#f2c230"/>
+  <use href="#macaw" transform="translate(470 110) rotate(-4) scale(.85)" style="--c1:#d3262b;--c2:#2a6fd6;--c3:#f2c230"/>
+
+  <!-- Pão de Açúcar e Urca -->
+  <path d="M930 800 C950 640 990 470 1060 452 C1120 440 1150 560 1170 800 Z" fill="#2f6f5e"/>
+  <path d="M860 800 C880 720 900 690 930 690 C960 690 975 740 985 800 Z" fill="#3f8a6f"/>
+
+  <!-- Corcovado com o Cristo Redentor -->
+  <path d="M420 800 C520 700 600 560 700 470 C760 410 790 360 812 344 C826 336 838 344 848 362 C890 440 960 560 1000 800 Z" fill="#2e6150"/>
+  <g fill="#e9e4da" stroke="#cfc8b8" stroke-width="1">
+    <rect x="814" y="318" width="22" height="26" rx="2"/>
+    <path d="M813 318 L837 318 L832 256 L818 256 Z"/>
+    <path d="M766 252 C790 248 810 247 825 247 C840 247 860 248 884 252 L884 260 C860 258 840 258 825 258 C810 258 790 258 766 260 Z"/>
+    <circle cx="825" cy="238" r="9"/>
+  </g>
+
+  <!-- Galho com folhas e macacos-prego -->
+  <path d="M-20 640 C120 610 240 620 380 588" stroke="#4a3320" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <g fill="#3f8a4a">
+    <path d="M300 596 C320 560 360 556 380 566 C360 588 330 600 300 596 Z"/>
+    <path d="M200 616 C210 650 250 664 272 656 C258 632 230 616 200 616 Z"/>
+    <path d="M60 632 C70 596 104 588 124 594 C110 618 86 632 60 632 Z"/>
+    <path d="M330 590 C350 620 384 626 400 616 C386 596 360 588 330 590 Z"/>
+  </g>
+  <use href="#monkey" transform="translate(150 548) scale(.95)"/>
+  <use href="#monkey" transform="translate(288 520) scale(.75) translate(30 0) scale(-1 1)"/>
+</svg>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from 'react';
 import { SITE } from '@/lib/site';
+import { fill, type Dict, type ErrorCode, type Lang } from '@/lib/i18n';
 
 type Place = { label: string; lat: number; lon: number; city?: string; state_code?: string };
 type Result = {
@@ -11,10 +12,13 @@ type Result = {
   price: { min: number; max: number };
 };
 
-const brl = (n: number) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+const brl = (n: number, locale = 'pt-BR') =>
+  n.toLocaleString(locale, { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
 const brDate = (d: string) => d.split('-').reverse().join('/');
 
-function PlaceInput({ label, value, onChange }: { label: string; value: Place | null; onChange: (p: Place | null) => void }) {
+type PlaceProps = { label: string; placeholder: string; value: Place | null; onChange: (p: Place | null) => void };
+
+function PlaceInput({ label, placeholder, value, onChange }: PlaceProps) {
   const [text, setText] = useState('');
   const [options, setOptions] = useState<Place[]>([]);
 
@@ -37,8 +41,9 @@ function PlaceInput({ label, value, onChange }: { label: string; value: Place | 
           onChange(null);
           setText(e.target.value);
         }}
-        placeholder="Digite e escolha na lista"
+        placeholder={placeholder}
         autoComplete="off"
+        dir="auto"
         required
       />
       {options.length > 0 && (
@@ -56,7 +61,7 @@ function PlaceInput({ label, value, onChange }: { label: string; value: Place | 
   );
 }
 
-export default function QuoteForm() {
+export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
   const [origin, setOrigin] = useState<Place | null>(null);
   const [destination, setDestination] = useState<Place | null>(null);
   const [date, setDate] = useState('');
@@ -67,7 +72,7 @@ export default function QuoteForm() {
   const [passengers, setPassengers] = useState(1);
   const [notes, setNotes] = useState('');
   const [result, setResult] = useState<Result | null>(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState<ErrorCode | ''>('');
   const [loading, setLoading] = useState(false);
 
   // Qualquer mudança invalida a estimativa anterior.
@@ -76,7 +81,7 @@ export default function QuoteForm() {
   async function submit(e: FormEvent) {
     e.preventDefault();
     setError('');
-    if (!origin || !destination) return setError('Escolha origem e destino na lista de sugestões.');
+    if (!origin || !destination) return setError('pick');
     setLoading(true);
     try {
       const res = await fetch('/api/quote', {
@@ -84,16 +89,17 @@ export default function QuoteForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ origin, destination, date, time, roundTrip, returnDate, returnTime, passengers }),
       });
-      const data = await res.json().catch(() => ({ error: 'Erro inesperado. Tente novamente.' }));
-      if (!res.ok) setError(data.error);
+      const data = await res.json().catch(() => ({ error: 'route' }));
+      if (!res.ok) setError(data.error in t.errors ? data.error : 'route');
       else setResult(data);
     } catch {
-      setError('Sem conexão. Tente novamente.');
+      setError('network');
     } finally {
       setLoading(false);
     }
   }
 
+  const langPt = new Intl.DisplayNames(['pt-BR'], { type: 'language' }).of(lang) ?? lang;
   const message =
     result && origin && destination
       ? [
@@ -103,7 +109,8 @@ export default function QuoteForm() {
           `Ida: ${brDate(date)} às ${time}`,
           roundTrip ? `Volta: ${brDate(returnDate)} às ${returnTime}` : 'Somente ida',
           `Passageiros: ${passengers}`,
-          notes.trim() && `Observações: ${notes.trim()}`,
+          notes.trim() && `Observações${lang === 'pt' ? '' : ` (escritas em ${langPt})`}: ${notes.trim()}`,
+          lang !== 'pt' && `Idioma do cliente: ${langPt}`,
           `Estimativa do site: ${brl(result.price.min)} a ${brl(result.price.max)} (${result.km.toLocaleString('pt-BR')} km)`,
         ]
           .filter(Boolean)
@@ -112,30 +119,30 @@ export default function QuoteForm() {
 
   return (
     <form className="card" onSubmit={submit}>
-      <PlaceInput label="Origem" value={origin} onChange={setOrigin} />
-      <PlaceInput label="Destino" value={destination} onChange={setDestination} />
+      <PlaceInput label={t.origin} placeholder={t.placePlaceholder} value={origin} onChange={setOrigin} />
+      <PlaceInput label={t.destination} placeholder={t.placePlaceholder} value={destination} onChange={setDestination} />
 
       <div className="row">
         <label className="field">
-          <span>Data</span>
+          <span>{t.date}</span>
           <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
         </label>
         <label className="field">
-          <span>Horário</span>
+          <span>{t.time}</span>
           <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
         </label>
       </div>
 
       <div className="row">
         <label className="field">
-          <span>Trajeto</span>
+          <span>{t.trip}</span>
           <select value={roundTrip ? 'ida-volta' : 'ida'} onChange={(e) => setRoundTrip(e.target.value === 'ida-volta')}>
-            <option value="ida">Somente ida</option>
-            <option value="ida-volta">Ida e volta</option>
+            <option value="ida">{t.oneWay}</option>
+            <option value="ida-volta">{t.roundTrip}</option>
           </select>
         </label>
         <label className="field">
-          <span>Passageiros</span>
+          <span>{t.passengers}</span>
           <select value={passengers} onChange={(e) => setPassengers(Number(e.target.value))}>
             {Array.from({ length: SITE.maxPassengers }, (_, i) => (
               <option key={i + 1}>{i + 1}</option>
@@ -147,48 +154,55 @@ export default function QuoteForm() {
       {roundTrip && (
         <div className="row">
           <label className="field">
-            <span>Data da volta</span>
+            <span>{t.returnDate}</span>
             <input type="date" value={returnDate} min={date} onChange={(e) => setReturnDate(e.target.value)} required />
           </label>
           <label className="field">
-            <span>Horário da volta</span>
+            <span>{t.returnTime}</span>
             <input type="time" value={returnTime} onChange={(e) => setReturnTime(e.target.value)} required />
           </label>
         </div>
       )}
 
       <label className="field">
-        <span>Observações (opcional)</span>
+        <span>{t.notes}</span>
         <textarea
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           rows={2}
-          placeholder="Número do voo, cadeirinha, necessidades especiais…"
+          dir="auto"
+          placeholder={t.notesPlaceholder}
         />
       </label>
 
-      <button className="primary" disabled={loading}>{loading ? 'Calculando…' : 'Calcular estimativa'}</button>
-      {error && <p className="error" role="alert">{error}</p>}
+      <button className="primary" disabled={loading}>{loading ? t.calculating : t.submit}</button>
+      {error && (
+        <p className="error" role="alert">
+          {fill(t.errors[error], { max: SITE.maxPassengers })}
+        </p>
+      )}
 
       {result && (
         <div className="result" aria-live="polite">
           <p className="price">
-            {brl(result.price.min)} a {brl(result.price.max)}
+            {brl(result.price.min, lang)} – {brl(result.price.max, lang)}
           </p>
           <p>
-            {result.km.toLocaleString('pt-BR')} km · {result.minutes.min === result.minutes.max ? result.minutes.min : `${result.minutes.min} a ${result.minutes.max}`} min
-            conforme o trânsito{roundTrip && ' (cada trecho)'}
+            {result.km.toLocaleString(lang)} km ·{' '}
+            {fill(t.duration, { min: result.minutes.min, max: result.minutes.max })}
+            {roundTrip && ` ${t.eachWay}`}
           </p>
-          {result.toll && <p>Trajeto com pedágio (valor não incluído).</p>}
-          <p className="muted">Estimativa sujeita a confirmação pelo motorista.</p>
+          {result.toll && <p>{t.toll}</p>}
+          <p className="muted">{t.disclaimer}</p>
           <a
             className="primary whatsapp"
             href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Enviar pedido pelo WhatsApp
+            {t.whatsapp}
           </a>
+          <p className="muted center">{t.whatsappNote}</p>
         </div>
       )}
     </form>

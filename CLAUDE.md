@@ -13,7 +13,7 @@ Fora do MVP: banco de dados, login, painel, pagamento, mapa visual, bibliotecas 
 Next.js (App Router) + TypeScript, CSS puro, `next/font`, testes com `node:test`. Dependências: só `next`, `react`, `react-dom`, `typescript`.
 Mapas: **Geoapify** (Address Autocomplete + Routing), chamado só pelo servidor. Google descartado por falta de faturamento. Exibir "Powered by Geoapify" com link.
 
-Arquivos previstos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/route.ts`, `app/api/quote/route.ts`, `components/QuoteForm.tsx`, `lib/pricing.ts` (+ teste), `lib/site.ts`.
+Arquivos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/route.ts`, `app/api/quote/route.ts`, `components/{Home,QuoteForm}.tsx`, `lib/pricing.ts` (+ teste), `lib/i18n.ts` (+ teste), `lib/site.ts`, `public/watermark.svg`.
 
 ## Regras de negócio
 
@@ -25,6 +25,9 @@ Arquivos previstos: `app/{layout,page}.tsx`, `app/globals.css`, `app/api/places/
 - O resultado mostra uma **faixa sujeita a confirmação**, nunca um preço fechado.
 - Campo **Observações** opcional (voo, cadeirinha, necessidades especiais), incluído na mensagem do WhatsApp.
 - Horários em `-03:00` (America/Sao_Paulo, sem horário de verão).
+- **Idiomas:** interface em 15 idiomas (`lib/i18n.ts`, detecta o navegador, seletor no topo, árabe em RTL). A API devolve códigos de erro; o texto é traduzido no navegador. A mensagem do WhatsApp é sempre em português; as Observações vão como o cliente escreveu, marcadas com o idioma.
+- **Marca-d'água:** `public/watermark.svg` (desenho próprio: araras, macacos-prego, Corcovado com Cristo estilizado, Pão de Açúcar). A imagem do Cristo tem direitos da Mitra Arquiepiscopal do Rio; uso ilustrativo da cidade, mas para uso comercial a autorização por escrito é o caminho seguro.
+- **Mensagens de confiança:** só afirmações verdadeiras pelo funcionamento do site. Nada sobre carro, seguro, credenciais ou pontualidade sem o motorista confirmar.
 
 ## Estado atual
 
