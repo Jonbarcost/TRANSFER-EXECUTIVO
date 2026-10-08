@@ -12,6 +12,7 @@ test('todos os idiomas têm as mesmas chaves e placeholders', () => {
     assert.deepEqual(shape(d), ref, code);
     assert.equal(holes(d.duration), holes(LANGS.pt.duration), code);
     assert.equal(holes(d.errors.passengers), holes(LANGS.pt.errors.passengers), code);
+    assert.equal(holes(d.tollIncluded), holes(LANGS.pt.tollIncluded), code);
   }
 });
 

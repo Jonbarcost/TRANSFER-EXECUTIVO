@@ -8,12 +8,14 @@ type Place = { label: string; lat: number; lon: number; city?: string; state_cod
 type Result = {
   km: number;
   minutes: { min: number; max: number };
-  toll: boolean;
+  tolls: { total: number; names: string[] };
+  tollUnknown: boolean;
   price: { min: number; max: number };
 };
 
 const brl = (n: number, locale = 'pt-BR') =>
   n.toLocaleString(locale, { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+const brlCents = (n: number, locale = 'pt-BR') => n.toLocaleString(locale, { style: 'currency', currency: 'BRL' });
 const brDate = (d: string) => d.split('-').reverse().join('/');
 
 type PlaceProps = { label: string; placeholder: string; value: Place | null; onChange: (p: Place | null) => void };
@@ -114,6 +116,8 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
           notes.trim() && `Observações${lang === 'pt' ? '' : ` (escritas em ${langPt})`}: ${notes.trim()}`,
           lang !== 'pt' && `Idioma do cliente: ${langPt}`,
           `Estimativa do site: ${brl(result.price.min)} a ${brl(result.price.max)} (${result.km.toLocaleString('pt-BR')} km)`,
+          result.tolls.total > 0 && `Pedágios incluídos: ${brlCents(result.tolls.total)} (${result.tolls.names.join(', ')})`,
+          result.tollUnknown && 'Pode haver pedágio não incluído.',
         ]
           .filter(Boolean)
           .join('\n')
@@ -183,7 +187,7 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
       </label>
 
       <button className="primary" disabled={loading}>{loading ? t.calculating : t.submit}</button>
-      <p className="form-note">{t.disclaimer}</p>
+      {!result && <p className="form-note">{t.disclaimer}</p>}
       {error && (
         <p className="error" role="alert">
           {fill(t.errors[error], { max: SITE.maxPassengers })}
@@ -200,7 +204,10 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
             {fill(t.duration, { min: result.minutes.min, max: result.minutes.max })}
             {roundTrip && ` ${t.eachWay}`}
           </p>
-          {result.toll && <p>{t.toll}</p>}
+          {result.tolls.total > 0 && (
+            <p>{fill(t.tollIncluded, { value: brlCents(result.tolls.total, lang), names: result.tolls.names.join(', ') })}</p>
+          )}
+          {result.tollUnknown && <p>{t.tollUnknown}</p>}
           <p className="muted">{t.disclaimer}</p>
           <a
             className="primary whatsapp"

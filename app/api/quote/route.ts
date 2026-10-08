@@ -1,4 +1,4 @@
-import { isServed, quote } from '@/lib/pricing';
+import { isServed, quote, tollsOnRoute } from '@/lib/pricing';
 import { SITE } from '@/lib/site';
 import type { ErrorCode } from '@/lib/i18n';
 
@@ -21,10 +21,12 @@ async function route(points: Point[], traffic: boolean) {
   if (traffic) params.set('traffic', 'approximated');
   const res = await fetch(`https://api.geoapify.com/v1/routing?${params}`);
   if (!res.ok) return null;
-  const json = await res.json();
-  return (json.features?.[0]?.properties?.legs?.[0] ?? null) as
-    | { distance: number; time: number; steps: { toll?: boolean }[] }
-    | null;
+  const feature = (await res.json()).features?.[0];
+  const leg = feature?.properties?.legs?.[0];
+  if (!leg) return null;
+  // Geometria em [lat, lon], na ordem da viagem (a API devolve [lon, lat]).
+  const line: [number, number][] = (feature.geometry?.coordinates ?? []).flat().map(([lon, lat]: number[]) => [lat, lon]);
+  return { ...(leg as { distance: number; time: number; steps: { toll?: boolean }[] }), line };
 }
 
 export async function POST(req: Request) {
@@ -49,21 +51,29 @@ export async function POST(req: Request) {
 
   const maxMinutes = Math.round(Math.max(ride.time, traffic.time) / 60);
 
+  const go = tollsOnRoute(ride.line, pickup);
+  let back = { total: 0, names: [] as string[] };
   let sameDay = false;
   let waitHours = 0;
   if (roundTrip) {
-    const back = toDate(returnDate, returnTime);
-    if (isNaN(back.getTime())) return fail('returnDate');
+    const returnAt = toDate(returnDate, returnTime);
+    if (isNaN(returnAt.getTime())) return fail('returnDate');
     const arrival = pickup.getTime() + maxMinutes * 60_000;
-    if (back.getTime() <= arrival) return fail('returnBefore');
+    if (returnAt.getTime() <= arrival) return fail('returnBefore');
     sameDay = returnDate === date;
-    waitHours = (back.getTime() - arrival) / 3_600_000;
+    waitHours = (returnAt.getTime() - arrival) / 3_600_000;
+    // A volta usa o mesmo caminho ao contrário (o sentido importa nas praças unidirecionais).
+    back = tollsOnRoute([...ride.line].reverse(), returnAt);
   }
+  const tolls = Math.round((go.total + back.total) * 100) / 100;
+  const tollFlag = ride.steps.some((s) => s.toll);
 
   return Response.json({
     km: Math.round(ride.distance / 100) / 10,
     minutes: { min: Math.round(Math.min(ride.time, traffic.time) / 60), max: maxMinutes },
-    toll: ride.steps.some((s) => s.toll),
-    price: quote({ meters: ride.distance, roundTrip: !!roundTrip, sameDay, waitHours }),
+    tolls: { total: tolls, names: [...new Set([...go.names, ...back.names])] },
+    // A rota tem trecho pedagiado que a tabela pode não cobrir (nenhuma praça achada ou fora do RJ).
+    tollUnknown: tollFlag && (tolls === 0 || origin.state_code !== 'RJ' || destination.state_code !== 'RJ'),
+    price: quote({ meters: ride.distance, roundTrip: !!roundTrip, sameDay, waitHours, tolls }),
   });
 }
