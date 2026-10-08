@@ -123,6 +123,8 @@ Em ordem de prioridade:
 
 Hoje o site tem um endereço só. Ele carrega em português e o navegador troca o texto para o idioma do aparelho. O Google recomenda o contrário: um endereço para cada idioma. Para páginas que mudam conforme o visitante, ele avisa que pode não rastrear, indexar nem classificar todas as versões. E a documentação não diz com qual idioma de navegador o robô abre a página.
 
+Além disso, só o texto da página troca de idioma. O título, a descrição e o cartão de compartilhamento são sempre os em português, porque vêm prontos do servidor.
+
 ### Opção A (recomendada): português em `/`, os outros em `/en`, `/es`…
 
 - `/` continua sendo a página em português. O endereço que já foi divulgado não muda.
