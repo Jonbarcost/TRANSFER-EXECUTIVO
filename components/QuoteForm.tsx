@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useState, useId, type FormEvent } from 'react';
 import { SITE } from '@/lib/site';
 import { fill, type Dict, type ErrorCode, type Lang } from '@/lib/i18n';
 
@@ -19,6 +19,7 @@ const brDate = (d: string) => d.split('-').reverse().join('/');
 type PlaceProps = { label: string; placeholder: string; value: Place | null; onChange: (p: Place | null) => void };
 
 function PlaceInput({ label, placeholder, value, onChange }: PlaceProps) {
+  const id = useId();
   const [text, setText] = useState('');
   const [options, setOptions] = useState<Place[]>([]);
 
@@ -33,9 +34,10 @@ function PlaceInput({ label, placeholder, value, onChange }: PlaceProps) {
   }, [text, value]);
 
   return (
-    <label className="field place">
-      <span>{label}</span>
+    <div className="field place">
+      <label htmlFor={id}>{label}</label>
       <input
+        id={id}
         value={value ? value.label : text}
         onChange={(e) => {
           onChange(null);
@@ -57,7 +59,7 @@ function PlaceInput({ label, placeholder, value, onChange }: PlaceProps) {
           ))}
         </ul>
       )}
-    </label>
+    </div>
   );
 }
 
@@ -118,32 +120,37 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
       : '';
 
   return (
-    <form className="card" onSubmit={submit}>
+    <form className="card" id="quote" tabIndex={-1} aria-labelledby="quote-title" onSubmit={submit}>
+      <div className="card-heading">
+        <span className="card-kicker">{t.trust[0][0]}</span>
+        <h2 id="quote-title">{t.quoteTitle}</h2>
+        <p>{t.trust[0][1]}</p>
+      </div>
       <PlaceInput label={t.origin} placeholder={t.placePlaceholder} value={origin} onChange={setOrigin} />
       <PlaceInput label={t.destination} placeholder={t.placePlaceholder} value={destination} onChange={setDestination} />
 
       <div className="row">
         <label className="field">
           <span>{t.date}</span>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+          <input dir="auto" type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
         </label>
         <label className="field">
           <span>{t.time}</span>
-          <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
+          <input dir="auto" type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
         </label>
       </div>
 
       <div className="row">
         <label className="field">
           <span>{t.trip}</span>
-          <select value={roundTrip ? 'ida-volta' : 'ida'} onChange={(e) => setRoundTrip(e.target.value === 'ida-volta')}>
+          <select dir="auto" value={roundTrip ? 'ida-volta' : 'ida'} onChange={(e) => setRoundTrip(e.target.value === 'ida-volta')}>
             <option value="ida">{t.oneWay}</option>
             <option value="ida-volta">{t.roundTrip}</option>
           </select>
         </label>
         <label className="field">
           <span>{t.passengers}</span>
-          <select value={passengers} onChange={(e) => setPassengers(Number(e.target.value))}>
+          <select dir="auto" value={passengers} onChange={(e) => setPassengers(Number(e.target.value))}>
             {Array.from({ length: SITE.maxPassengers }, (_, i) => (
               <option key={i + 1}>{i + 1}</option>
             ))}
@@ -155,11 +162,11 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
         <div className="row">
           <label className="field">
             <span>{t.returnDate}</span>
-            <input type="date" value={returnDate} min={date} onChange={(e) => setReturnDate(e.target.value)} required />
+            <input dir="auto" type="date" value={returnDate} min={date} onChange={(e) => setReturnDate(e.target.value)} required />
           </label>
           <label className="field">
             <span>{t.returnTime}</span>
-            <input type="time" value={returnTime} onChange={(e) => setReturnTime(e.target.value)} required />
+            <input dir="auto" type="time" value={returnTime} onChange={(e) => setReturnTime(e.target.value)} required />
           </label>
         </div>
       )}
@@ -176,6 +183,7 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
       </label>
 
       <button className="primary" disabled={loading}>{loading ? t.calculating : t.submit}</button>
+      <p className="form-note">{t.disclaimer}</p>
       {error && (
         <p className="error" role="alert">
           {fill(t.errors[error], { max: SITE.maxPassengers })}

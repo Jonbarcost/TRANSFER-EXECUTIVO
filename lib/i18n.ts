@@ -2,6 +2,10 @@
 // Placeholders: {min}, {max}. O 4º item de trust só tem título; o texto é whatsappNote.
 const pt = {
   langName: 'Português',
+  skipToQuote: "Ir para a estimativa",
+  quoteTitle: "Planeje seu trajeto",
+  planTransfer: "Planejar meu transfer",
+  imageCredits: "Créditos das imagens",
   language: 'Idioma',
   heroTitle: 'Seu transfer no Rio com conforto e tranquilidade',
   heroText: 'Aeroportos, hotéis, Serra e Região dos Lagos. Veja a estimativa na hora e combine direto com o motorista.',
@@ -51,6 +55,10 @@ export type ErrorCode = keyof Dict['errors'];
 
 const en: Dict = {
   langName: 'English',
+  skipToQuote: "Skip to estimate",
+  quoteTitle: "Plan your journey",
+  planTransfer: "Plan my transfer",
+  imageCredits: "Image credits",
   language: 'Language',
   heroTitle: 'Your Rio transfer, comfortable and stress-free',
   heroText: 'Airports, hotels, the mountains and the Lakes Region. See an estimate instantly and arrange it directly with the driver.',
@@ -97,6 +105,10 @@ const en: Dict = {
 
 const es: Dict = {
   langName: 'Español',
+  skipToQuote: "Ir a la estimación",
+  quoteTitle: "Planifica tu trayecto",
+  planTransfer: "Planificar mi traslado",
+  imageCredits: "Créditos de las imágenes",
   language: 'Idioma',
   heroTitle: 'Tu traslado en Río con comodidad y tranquilidad',
   heroText: 'Aeropuertos, hoteles, la Sierra y la Región de los Lagos. Mira la estimación al instante y coordina directo con el conductor.',
@@ -143,6 +155,10 @@ const es: Dict = {
 
 const fr: Dict = {
   langName: 'Français',
+  skipToQuote: "Aller à l’estimation",
+  quoteTitle: "Planifiez votre trajet",
+  planTransfer: "Planifier mon transfert",
+  imageCredits: "Crédits des images",
   language: 'Langue',
   heroTitle: 'Votre transfert à Rio, confortable et serein',
   heroText: 'Aéroports, hôtels, la montagne et la Région des Lacs. Obtenez une estimation immédiate et organisez tout directement avec le chauffeur.',
@@ -189,6 +205,10 @@ const fr: Dict = {
 
 const de: Dict = {
   langName: 'Deutsch',
+  skipToQuote: "Zur Schätzung",
+  quoteTitle: "Planen Sie Ihre Fahrt",
+  planTransfer: "Meinen Transfer planen",
+  imageCredits: "Bildnachweise",
   language: 'Sprache',
   heroTitle: 'Ihr Transfer in Rio – bequem und entspannt',
   heroText: 'Flughäfen, Hotels, Berge und die Seenregion. Sofort eine Schätzung sehen und direkt mit dem Fahrer abstimmen.',
@@ -235,6 +255,10 @@ const de: Dict = {
 
 const it: Dict = {
   langName: 'Italiano',
+  skipToQuote: "Vai al preventivo",
+  quoteTitle: "Pianifica il tuo viaggio",
+  planTransfer: "Pianifica il mio transfer",
+  imageCredits: "Crediti delle immagini",
   language: 'Lingua',
   heroTitle: 'Il tuo transfer a Rio, comodo e tranquillo',
   heroText: 'Aeroporti, hotel, la montagna e la Regione dei Laghi. Vedi subito la stima e accordati direttamente con l’autista.',
@@ -281,6 +305,10 @@ const it: Dict = {
 
 const nl: Dict = {
   langName: 'Nederlands',
+  skipToQuote: "Naar de prijsindicatie",
+  quoteTitle: "Plan uw reis",
+  planTransfer: "Mijn transfer plannen",
+  imageCredits: "Afbeeldingscredits",
   language: 'Taal',
   heroTitle: 'Uw transfer in Rio, comfortabel en zorgeloos',
   heroText: 'Luchthavens, hotels, de bergen en de Merenregio. Zie direct een schatting en regel het rechtstreeks met de chauffeur.',
@@ -327,6 +355,10 @@ const nl: Dict = {
 
 const pl: Dict = {
   langName: 'Polski',
+  skipToQuote: "Przejdź do wyceny",
+  quoteTitle: "Zaplanuj podróż",
+  planTransfer: "Zaplanuj mój transfer",
+  imageCredits: "Autorzy zdjęć",
   language: 'Język',
   heroTitle: 'Twój transfer w Rio – wygodnie i bez stresu',
   heroText: 'Lotniska, hotele, góry i Region Jezior. Zobacz wycenę od razu i ustal szczegóły bezpośrednio z kierowcą.',
@@ -373,6 +405,10 @@ const pl: Dict = {
 
 const ru: Dict = {
   langName: 'Русский',
+  skipToQuote: "Перейти к расчёту",
+  quoteTitle: "Спланируйте поездку",
+  planTransfer: "Запланировать трансфер",
+  imageCredits: "Авторы фотографий",
   language: 'Язык',
   heroTitle: 'Трансфер в Рио — комфортно и спокойно',
   heroText: 'Аэропорты, отели, горы и Озёрный регион. Узнайте примерную стоимость сразу и договоритесь напрямую с водителем.',
@@ -419,6 +455,10 @@ const ru: Dict = {
 
 const tr: Dict = {
   langName: 'Türkçe',
+  skipToQuote: "Tahmine geç",
+  quoteTitle: "Yolculuğunuzu planlayın",
+  planTransfer: "Transferimi planla",
+  imageCredits: "Görsel kaynakları",
   language: 'Dil',
   heroTitle: 'Rio’da konforlu ve huzurlu transfer',
   heroText: 'Havalimanları, oteller, dağlar ve Göller Bölgesi. Tahmini fiyatı hemen görün, doğrudan şoförle anlaşın.',
@@ -465,6 +505,10 @@ const tr: Dict = {
 
 const ar: Dict = {
   langName: 'العربية',
+  skipToQuote: "انتقل إلى التقدير",
+  quoteTitle: "خطط لرحلتك",
+  planTransfer: "خطط لتنقلي",
+  imageCredits: "مصادر الصور",
   language: 'اللغة',
   heroTitle: 'تنقّلك في ريو براحة وطمأنينة',
   heroText: 'المطارات والفنادق والجبال ومنطقة البحيرات. اطّلع على السعر التقديري فورًا ونسّق مباشرة مع السائق.',
@@ -511,6 +555,10 @@ const ar: Dict = {
 
 const hi: Dict = {
   langName: 'हिन्दी',
+  skipToQuote: "अनुमान पर जाएँ",
+  quoteTitle: "अपनी यात्रा की योजना बनाएँ",
+  planTransfer: "मेरे ट्रांसफ़र की योजना बनाएँ",
+  imageCredits: "चित्र श्रेय",
   language: 'भाषा',
   heroTitle: 'रियो में आरामदायक और निश्चिंत ट्रांसफ़र',
   heroText: 'एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र। तुरंत अनुमानित किराया देखें और सीधे ड्राइवर से तय करें।',
@@ -557,6 +605,10 @@ const hi: Dict = {
 
 const zh: Dict = {
   langName: '中文',
+  skipToQuote: "跳转至估价",
+  quoteTitle: "规划您的行程",
+  planTransfer: "规划我的接送",
+  imageCredits: "图片来源",
   language: '语言',
   heroTitle: '里约接送，舒适又安心',
   heroText: '机场、酒店、山区和湖区。即时查看预估价格，直接与司机沟通。',
@@ -603,6 +655,10 @@ const zh: Dict = {
 
 const ja: Dict = {
   langName: '日本語',
+  skipToQuote: "見積もりへ移動",
+  quoteTitle: "旅程を計画",
+  planTransfer: "送迎を計画する",
+  imageCredits: "画像クレジット",
   language: '言語',
   heroTitle: 'リオでの送迎を、快適に安心して',
   heroText: '空港、ホテル、山間部、湖水地方へ。見積もりをすぐに確認し、ドライバーと直接やり取りできます。',
@@ -649,6 +705,10 @@ const ja: Dict = {
 
 const ko: Dict = {
   langName: '한국어',
+  skipToQuote: "견적으로 이동",
+  quoteTitle: "여정을 계획하세요",
+  planTransfer: "내 이동 계획하기",
+  imageCredits: "이미지 출처",
   language: '언어',
   heroTitle: '리우에서 편안하고 안심되는 픽업 서비스',
   heroText: '공항, 호텔, 산간 지역과 호수 지역까지. 예상 요금을 바로 확인하고 기사님과 직접 조율하세요.',
