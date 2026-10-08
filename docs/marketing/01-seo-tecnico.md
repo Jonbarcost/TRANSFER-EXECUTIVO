@@ -124,17 +124,41 @@ Já feito pelo responsável em 8/10: o teste do site publicado no celular (cota�
 
 Em ordem de prioridade:
 
-1. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio. Trocar depois exige redirecionar o endereço antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* um domínio próprio é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
-2. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
-3. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
+1. **Conferir o plano da conta na Vercel**, que é onde o site está hospedado: em vercel.com, `Settings` → `Billing` → `Plan`. Plano da conta: [PREENCHER PELO MOTORISTA]. O plano gratuito (Hobby) não permite uso comercial e a Vercel pode desativar o site. Os detalhes e os caminhos estão logo abaixo, em "Hospedagem".
+2. **Decidir o endereço definitivo do site** antes de cadastrar no Search Console e no Perfil da Empresa e antes de imprimir QR codes: continuar em `transfer-executivo-amber.vercel.app` ou registrar um domínio próprio (R$ 40,00 por ano no Registro.br). O endereço `vercel.app` é gerado pela Vercel: só existe enquanto o site estiver hospedado lá. Com domínio próprio, o endereço continua o mesmo se a hospedagem mudar. Trocar de endereço depois exige redirecionar o antigo por pelo menos um ano e o Google avisa que a posição pode oscilar durante a mudança. *Recomendação minha, não regra do Google:* domínio próprio, que também é mais fácil de falar, de lembrar e de colocar em cartão. No código é uma linha (`SITE.url` em `lib/site.ts`).
+3. **Rodar os dois testes do Google** (links na seção 6) e mandar o resultado ou um print. Leva dois minutos.
+4. **Dados que faltam** (todos opcionais; sem eles o site funciona, só fica com menos informação para o Google):
    - Horário de atendimento: [PREENCHER PELO MOTORISTA]
    - Idiomas que o motorista fala além do português: [PREENCHER PELO MOTORISTA]
    - O número do WhatsApp também atende ligação? [PREENCHER PELO MOTORISTA]
    - Existe endereço comercial que possa ser público? Se não, fica só "Rio de Janeiro, RJ": [PREENCHER PELO MOTORISTA]
    - Fotos reais do carro e do motorista, tiradas por ele: [PREENCHER PELO MOTORISTA]
    - Quer divulgar um preço "a partir de"? Hoje o site só mostra a faixa calculada: [PREENCHER PELO MOTORISTA]
-4. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
-5. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
+5. **Pedir a um falante nativo que leia o título e a descrição** dos idiomas mais importantes para o negócio (estão em `lib/i18n.ts`, chaves `metaTitle` e `metaDescription`). Foram escritos seguindo o vocabulário que o site já usa, sem revisão de nativo. *Recomendação minha.*
+6. **Código de verificação do Search Console** (quando o Agente 3 chegar nessa etapa). O site está em um endereço `vercel.app`, então a verificação é por uma etiqueta no código ou por um arquivo na raiz do site. O motorista copia o código que o Search Console mostrar e ele é colocado no site.
+
+### Hospedagem: o plano gratuito da Vercel não permite uso comercial
+
+Constatado em 8/10, ao conferir as regras da hospedagem. Eu não tenho acesso à conta da Vercel, então não sei qual é o plano.
+
+- O plano gratuito (Hobby) só permite uso pessoal, não comercial. A Vercel cita "anunciar a venda de um produto ou serviço" como exemplo de uso comercial, e uso comercial exige o plano Pro ou o Enterprise.
+- Pelos termos de serviço, a Vercel pode desativar ou remover um site do plano Hobby com ou sem aviso. Quem visita um site pausado vê o erro `503 DEPLOYMENT_PAUSED`.
+- Se o plano já for Pro, não há o que fazer.
+
+Se for Hobby, os caminhos são:
+
+| Caminho | Custo | O que muda |
+| --- | --- | --- |
+| Passar para o plano Pro da Vercel | US$ 20 por mês, sem impostos. Inclui 1 usuário e US$ 20 de crédito de uso; o que passar do crédito é cobrado à parte | Nada no site nem no endereço |
+| Mudar para outra hospedagem | Depende da escolhida | O site precisa ser configurado e testado de novo. Sem domínio próprio, o endereço muda |
+
+Outras hospedagens: nenhuma foi escolhida nem testada. O que conferi nas páginas oficiais:
+
+- **Netlify.** Plano Free de US$ 0 com 300 créditos por mês. Cada publicação em produção gasta 15 créditos, então cabem no máximo 20 publicações por mês, sem contar as visitas. Quando os créditos acabam, o site fica pausado até o ciclo seguinte. Em novembro de 2024 a Netlify declarou que o plano Free aceita projetos comerciais. Não encontrei essa frase na documentação atual, dos planos por créditos, então é preciso confirmar antes. O Next.js roda lá por um adaptador da própria Netlify.
+- **Cloudflare.** Plano grátis com 100.000 requisições por dia e 10 ms de CPU por requisição. Exige dois pacotes novos no projeto (`@opennextjs/cloudflare` e `wrangler`), o que a regra do projeto hoje não permite. Não encontrei declaração oficial sobre uso comercial no plano grátis.
+- A documentação do Next.js lista as integrações da Netlify e da Cloudflare como não verificadas pela equipe do Next.js: os recursos e a compatibilidade podem variar.
+
+Em caso de dúvida sobre o enquadramento, a Vercel orienta a perguntar ao suporte dela.
 
 ## 4. Decisão: um endereço por idioma
 
@@ -213,6 +237,20 @@ Outros:
 - Vercel, [implantação a partir do Git](https://vercel.com/docs/git): cada envio para a branch de produção gera uma publicação.
 - Next.js 16.4, documentação que acompanha o pacote instalado (`node_modules/next/dist/docs`): [metadados](https://nextjs.org/docs/app/api-reference/functions/generate-metadata), [imagem Open Graph](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image), [ícones](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons), [robots](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots), [sitemap](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap), [JSON-LD](https://nextjs.org/docs/app/guides/json-ld), [internacionalização](https://nextjs.org/docs/app/guides/internationalization), [imagem](https://nextjs.org/docs/app/api-reference/components/image).
 
+Hospedagem e domínio (consultadas em 8/10/2026):
+
+- Vercel, [regras de uso justo](https://vercel.com/docs/limits/fair-use-guidelines#commercial-usage): o plano Hobby é restrito a uso pessoal, não comercial; uso comercial exige Pro ou Enterprise; lista de exemplos de uso comercial; na dúvida, perguntar ao suporte.
+- Vercel, [termos de serviço](https://vercel.com/legal/terms), seção 4 (Hobby Plan): uso pessoal ou não comercial; a Vercel pode desativar ou remover site do plano Hobby com ou sem aviso.
+- Vercel, [por que uma conta ou um site foi pausado](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked): uso comercial no plano Hobby entre as causas; o visitante vê `503 DEPLOYMENT_PAUSED`.
+- Vercel, [plano Hobby](https://vercel.com/docs/plans/hobby): onde ver e trocar o plano (`Settings` → `Billing`); até 50 domínios por projeto.
+- Vercel, [plano Pro](https://vercel.com/docs/plans/pro-plan): US$ 20 por mês, com 1 usuário e US$ 20 de crédito de uso; preços sem impostos.
+- Vercel, [endereços gerados](https://vercel.com/docs/deployments/generated-urls): o endereço `vercel.app` é gerado pela Vercel; um domínio próprio é um endereço a mais.
+- Registro.br, [domínios](https://registro.br/dominio/): registro por R$ 40,00 por ano.
+- Netlify: [planos por créditos](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/) (Free com 300 créditos por mês; 15 créditos por publicação em produção), [perguntas sobre cobrança](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/billing-faq-for-credit-based-plans/) (site pausado quando os créditos acabam), [anúncio do plano Free, de 12/11/2024](https://www.netlify.com/blog/introducing-netlify-free-plan/) (aceita projetos comerciais) e [Next.js na Netlify](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/).
+- Cloudflare: [adaptador OpenNext](https://developers.cloudflare.com/workers/framework-guides/web-apps/opennext/) (pacotes que precisam ser instalados) e [limites do Workers](https://developers.cloudflare.com/workers/platform/limits/).
+- Next.js 16.4, documentação que acompanha o pacote instalado: [implantação](https://nextjs.org/docs/app/getting-started/deploying). Adaptadores verificados: Vercel e Bun. Netlify e Cloudflare aparecem como integrações próprias, não verificadas.
+- Geoapify, [preços](https://www.geoapify.com/pricing/): o plano Free pode ser usado em sites comerciais, com o link de atribuição (o site já mostra "Powered by Geoapify").
+
 Sem fonte oficial (opinião ou escolha minha, marcada no texto): recomendar domínio próprio; incluir o tipo `TaxiService`, que o Google não lista entre os que geram destaque; pedir revisão de falante nativo; a avaliação sobre a opção B.
 
 ## 6. O que não foi possível verificar
@@ -227,5 +265,8 @@ O ambiente em que trabalhei não alcança `google.com`, `fonts.googleapis.com`, 
 - **Como o Google vai mostrar o site.** Título, descrição, ícone e destaque de empresa são decisões do Google; a documentação diz que nada disso é garantido.
 - **Página do WhatsApp sobre o link `wa.me`:** não consegui abrir. O formato do link é o que o site já usava.
 - **Títulos e descrições traduzidos:** não passaram por revisão de falante nativo.
+- **Plano da conta na Vercel: não sei qual é.** Não tenho acesso à conta onde o site está. Por isso a parte "Hospedagem" da seção 3 depende de o responsável conferir.
+- **Outras hospedagens: nada foi testado.** Só li as páginas oficiais citadas na seção 5. Na Netlify, não encontrei na documentação atual a frase sobre uso comercial no plano Free; na Cloudflare, não encontrei declaração oficial sobre o assunto.
+- **Regras do Registro.br para registrar um domínio (por exemplo, documentos exigidos): não consegui ler.** As páginas só abriram o resumo, que traz o preço.
 
 Fora do escopo, mas visto na medição: o link da marca no topo tem nome acessível "Transfer Executivo Rio" e texto visível "Transfer Executivo / Rio de Janeiro". O Lighthouse aponta a diferença (não afeta a nota).
