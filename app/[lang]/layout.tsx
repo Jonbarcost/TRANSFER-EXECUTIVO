@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import { LANGS, RTL, langPath, type Lang } from '@/lib/i18n';
 import { SITE } from '@/lib/site';
+import Measurement from '@/components/Measurement';
+import { measurementId } from '@/lib/analytics';
 import '../globals.css';
 
 // `subsets` define só o que é pré-carregado. As demais faixas (latin-ext, cirílico…) continuam no CSS e o
@@ -38,7 +40,10 @@ export default async function RootLayout({ children, params }: Props & { childre
   const lang = (await params).lang as Lang;
   return (
     <html lang={lang === 'pt' ? 'pt-BR' : lang} dir={RTL.includes(lang) ? 'rtl' : 'ltr'}>
-      <body className={`${inter.variable} ${display.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${display.variable}`}>
+        {children}
+        <Measurement id={measurementId(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, process.env.VERCEL_ENV)} t={LANGS[lang].measurement} />
+      </body>
     </html>
   );
 }

@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState, useId, type FormEvent } from 'react';
+import { useEffect, useState, useRef, useId, type FormEvent } from 'react';
 import { SITE, visitOrigin } from '@/lib/site';
 import { fill, type Dict, type ErrorCode, type Lang } from '@/lib/i18n';
+import { trackEvent } from '@/lib/analytics';
 
 type Place = { label: string; lat: number; lon: number; city?: string; state_code?: string };
 type Result = {
@@ -79,6 +80,8 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
   const [error, setError] = useState<ErrorCode | ''>('');
   const [loading, setLoading] = useState(false);
   const [source, setSource] = useState('');
+  const started = useRef(false);
+  const pending = useRef(false);
 
   // De onde veio a visita (?origem=...), lido uma vez ao abrir a página.
   useEffect(() => setSource(visitOrigin(window.location.search)), []);
@@ -88,8 +91,11 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
 
   async function submit(e: FormEvent) {
     e.preventDefault();
+    if (pending.current) return;
     setError('');
-    if (!origin || !destination) return setError('pick');
+    const fail = (code: ErrorCode) => { setError(code); trackEvent('quote_error', { error_code: code }); };
+    if (!origin || !destination) return fail('pick');
+    pending.current = true;
     setLoading(true);
     try {
       const res = await fetch('/api/quote', {
@@ -98,12 +104,16 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
         body: JSON.stringify({ origin, destination, date, time, roundTrip, returnDate, returnTime, passengers }),
       });
       const data = await res.json().catch(() => ({ error: 'route' }));
-      if (!res.ok) setError(data.error in t.errors ? data.error : 'route');
-      else setResult(data);
+      if (!res.ok || data.error) fail(Object.hasOwn(t.errors, data.error) ? data.error : 'route');
+      else {
+        setResult(data);
+        trackEvent('quote_success', { trip_type: roundTrip ? 'round_trip' : 'one_way' });
+      }
     } catch {
-      setError('network');
+      fail('network');
     } finally {
       setLoading(false);
+      pending.current = false;
     }
   }
 
@@ -130,7 +140,9 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
       : '';
 
   return (
-    <form className="card" id="quote" tabIndex={-1} aria-labelledby="quote-title" onSubmit={submit}>
+    <form className="card" id="quote" tabIndex={-1} aria-labelledby="quote-title" onSubmit={submit} onChange={() => {
+      if (!started.current) started.current = trackEvent('quote_start');
+    }}>
       <div className="card-heading">
         <span className="card-kicker">{t.trust[0][0]}</span>
         <h2 id="quote-title">{t.quoteTitle}</h2>
@@ -220,6 +232,7 @@ export default function QuoteForm({ t, lang }: { t: Dict; lang: Lang }) {
             href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('whatsapp_click', { contact_location: 'quote', trip_type: roundTrip ? 'round_trip' : 'one_way' })}
           >
             {t.whatsapp}
           </a>

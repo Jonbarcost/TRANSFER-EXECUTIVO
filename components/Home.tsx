@@ -4,6 +4,7 @@ import Image from 'next/image';
 import QuoteForm from '@/components/QuoteForm';
 import { LANGS, browserLang, langPath, type Lang } from '@/lib/i18n';
 import { SITE } from '@/lib/site';
+import { trackEvent } from '@/lib/analytics';
 
 const ICONS = [
   'M7 3h10v18l-2-1-3 1-3-1-2 1V3Zm3 5h4m-4 4h4m-4 4h2',
@@ -65,7 +66,7 @@ export default function Home({ lang }: { lang: Lang }) {
         </li>)}</ul>
       </section>
       <footer><span className="footer-brand" dir="ltr">{SITE.name}</span><div className="footer-links">
-        {SITE.whatsapp && <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener noreferrer" dir="ltr">WhatsApp {PHONE}</a>}
+        {SITE.whatsapp && <a href={`https://wa.me/${SITE.whatsapp}`} onClick={() => trackEvent('whatsapp_click', { contact_location: 'footer' })} target="_blank" rel="noopener noreferrer" dir="ltr">WhatsApp {PHONE}</a>}
         <a href="/images/CREDITS.md" target="_blank" rel="noopener noreferrer">{t.imageCredits}</a>
         <a href="https://www.geoapify.com/" target="_blank" rel="noopener noreferrer" dir="ltr">Powered by Geoapify</a>
       </div></footer>

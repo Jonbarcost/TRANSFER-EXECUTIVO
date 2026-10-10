@@ -616,3 +616,10 @@ footer {
   transition:none!important;
   animation:none!important}
 }
+.measurement {
+  max-width:1100px; margin:16px auto; padding:16px 24px; font-size:13px;
+  border-top:1px solid #d8d1c4; line-height:1.6;
+}
+.measurement > span { margin-inline-start:12px; }
+.measurement button { padding:8px 12px; border:1px solid #8f8270; border-radius:4px; background:transparent; color:inherit; cursor:pointer; }
+.measurement-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
