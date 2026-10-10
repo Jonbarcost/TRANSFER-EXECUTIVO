@@ -36,7 +36,7 @@ Arquivos: `app/[lang]/{layout,page}.tsx`, `app/[lang]/opengraph-image.jpg` (+ `.
 
 ## Estado atual
 
-Medição preparada em branch de revisão (2026-10-10): tag GA4 única e opcional por `NEXT_PUBLIC_GA_MEASUREMENT_ID`, escolha de medição e eventos de cotação/clique no WhatsApp. **Ainda não ativada nem validada nos painéis.** Falta confirmar o ID G-… do fluxo existente e desligar a medição otimizada que capturaria a URL do WhatsApp com dados do pedido. Não instalar outro snippet/GTM/Ads em paralelo. Auditoria, contrato de eventos e validação em `docs/marketing/03-analytics-ads.md`. Clique no WhatsApp representa intenção, não mensagem enviada, reserva ou venda.
+Medição publicada (2026-10-10, PR #1, commit `d35bbb0`): tag GA4 única por `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-PR48K0SDPB`, somente em Production. O responsável mostrou o fluxo web `16099040112` e confirmou a desativação da medição otimizada. No site publicado: nenhuma tag antes do aceite/na recusa inicial, uma tag após aceite e reaceite, recusa persistida após recarga, cotação real e troca PT → EN → AR funcionando. **Recebimento no Analytics e conversões Ads ainda não validados:** login Google retornou 502. Nenhuma ação Ads foi criada; revisar as existentes antes de importar `whatsapp_click`. Não instalar outro snippet/GTM/Ads em paralelo. Auditoria e limitações em `docs/marketing/03-analytics-ads.md`. Clique no WhatsApp representa intenção, não mensagem enviada, reserva ou venda.
 
 PASSO 0 concluído (2026-10-08): `scripts/check-geoapify.mjs` rodou os 7 trajetos sem erro. Constatações:
 - Autocomplete devolve `state_code` ("RJ") e `city`, suficientes para a regra de área atendida.

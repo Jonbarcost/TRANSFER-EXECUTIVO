@@ -1,8 +1,24 @@
 # Auditoria de medição — 10/10/2026
 
-## Resultado e evidências
+## Publicação e verificação posterior — 10/10/2026
 
-A vinculação Analytics–Ads está confirmada pelo aviso automático consultado, mas ela não instala a tag no site nem comprova que uma conversão foi recebida. Não foi possível validar os painéis autenticados nesta auditoria: o Analytics redirecionou para o login Google, que retornou **502 / Connection refused**. Não foram alteradas configurações de conta, campanhas, orçamento, conversões ou variáveis de produção.
+O responsável forneceu `G-PR48K0SDPB`, mostrou o fluxo `transfer-executivo-amber.vercel.app` (código `16099040112`) e confirmou que desativou a medição otimizada. O ID foi cadastrado somente em Production na Vercel. O PR #1 foi mesclado na branch de produção, commit `d35bbb00d6d472175180c2b10f2bca19c64f6a74`; deployment `dpl_AmiG78ATJoSjJhBSk6rqjUAVehXq` **READY**. A mudança de medição otimizada foi informada pelo responsável, sem inspeção autenticada do agente.
+
+Verificado no domínio público pelo navegador:
+
+- Zero elementos de script Google antes do aceite e após recusa inicial; após permitir, exatamente um `gtag/js?id=G-PR48K0SDPB`.
+- Retirar e permitir novamente no mesmo documento mantém um único script. Recusar e recarregar mantém a preferência e deixa zero scripts Google.
+- Cotação real Santos Dumont → Hotel Copacabana Palace concluída (9,8 km; estimativa de R$ 50–60); link do WhatsApp acionado apenas para testar a abertura, sem enviar mensagem ou criar reserva.
+- Navegação PT → EN → AR preserva os parâmetros de campanha e origem. Nos três idiomas, uma tag após aceite; árabe com `dir=rtl`, sem rolagem horizontal na largura disponível de 1348 px.
+- [Captura da interface publicada](analytics-validacao-2026-10-10.jpg).
+
+**Limites:** a presença do script e a cotação funcionando não comprovam download bem-sucedido da tag, envio das requisições, ausência de eventos automáticos remotos, uma única visualização recebida ou recebimento dos eventos pelo Google. O navegador de inspeção não expõe a fila de eventos/rede por sua API. O painel Analytics voltou a redirecionar para um login Google com **502 / Connection refused**. DebugView, Tempo real, configuração de destinos, marcação automática, ações existentes e atribuição Ads continuam pendentes. Nenhuma ação de conversão Ads foi criada. Os tamanhos exatos de 390/1280 px e a sincronização entre abas não foram verificados nesta sessão.
+
+Próximo passo: no Analytics da propriedade `558346626`, confirmar os eventos desta visita de teste em DebugView/Tempo real e revisar os parâmetros. Só depois revisar/importar uma ação `whatsapp_click` no Ads, secundária e com contagem Uma, conforme o roteiro abaixo. Não chamar o clique de reserva ou venda.
+
+## Resultado e evidências da inspeção inicial
+
+A vinculação Analytics–Ads está confirmada pelo aviso automático consultado, mas ela não instala a tag no site nem comprova que uma conversão foi recebida. Não foi possível validar os painéis autenticados nesta auditoria: o Analytics redirecionou para o login Google, que retornou **502 / Connection refused**. Na inspeção inicial abaixo, ainda não haviam sido alteradas configurações de conta, campanhas, orçamento, conversões ou variáveis de produção. A publicação posterior está registrada acima.
 
 | Camada | Evidência observada | Situação |
 | --- | --- | --- |
@@ -66,7 +82,7 @@ Não basta observar o e-mail de vinculação ou um HTTP 2xx da coleta. É necess
 8. Voltar a uma URL sem `analytics_debug`. Usar filtro de tráfego de desenvolvedor/teste conforme a configuração da propriedade; o parâmetro debug, sozinho, não garante exclusão de relatórios. Confirmar Tempo real separadamente do DebugView.
 9. No Ads, conferir a origem **Google Analytics (GA4)**, evento exato, ação única e diagnóstico. Uma visita direta de QA não comprova atribuição a anúncio. O recebimento atribuído depende de interação legítima elegível e das janelas/configurações; a importação pode levar até 24h e não inclui histórico anterior à importação. Confrontar “Todas as conversões” para ações secundárias, sem esperar que apareçam automaticamente na coluna “Conversões”.
 
-## Verificado nesta entrega
+## Verificado na preparação do PR, antes da publicação
 
 - Setup do projeto com Node 24 e dependências do lockfile, sem dependências novas.
 - `npm test`: **20 testes aprovados** (13 existentes + 7 de medição).
@@ -75,7 +91,7 @@ Não basta observar o e-mail de vinculação ou um HTTP 2xx da coleta. É necess
 - `git diff --check`: aprovado.
 - HTML publicado e redirecionamento com parâmetros conferidos por HTTP; não foi feita cotação real nem enviada mensagem.
 - Revisão do código React: tag após hidratação/aceite, efeito idempotente, remoção do listener de storage, estados locais e sem novos pacotes.
-- **Não verificado:** inspeção visual responsiva/fluxo no navegador local (o ambiente do navegador recusou a conexão local), requisições reais da tag, DebugView, Tempo real, importação e atribuição no Ads. O PR permanece rascunho até obter o ID, conferir o painel e executar esses passos. A instalação proposta não foi publicada em produção.
+- **Limites naquela etapa:** inspeção visual responsiva/fluxo no navegador local (o ambiente do navegador recusou a conexão local), requisições reais da tag, DebugView, Tempo real, importação e atribuição no Ads. O PR foi inicialmente entregue em rascunho e sem publicação; a seção no início deste documento registra a liberação e verificação posteriores.
 
 ## Reversão
 
