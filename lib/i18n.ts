@@ -4,6 +4,15 @@
 // metaTitle e metaDescription são o título e a descrição de cada idioma para buscadores e para o cartão que aparece
 // ao compartilhar o link.
 const pt = {
+  measurement: {
+    settings: "Preferências de medição",
+    notice: "Permite cookies do Google para medir visitas, estimativas e cliques no WhatsApp e avaliar nossos anúncios? A escolha é opcional e pode ser alterada aqui. Não usamos anúncios personalizados.",
+    details: "Como o Google usa os dados",
+    accept: "Permitir medição",
+    reject: "Recusar medição",
+    enabled: "Medição permitida",
+    disabled: "Medição desativada",
+  },
   langName: 'Português',
   metaTitle: 'Transfer no Rio de Janeiro: aeroportos, hotéis, Serra e Região dos Lagos | Transfer Executivo',
   metaDescription:
@@ -61,6 +70,15 @@ export type Dict = typeof pt;
 export type ErrorCode = keyof Dict['errors'];
 
 const en: Dict = {
+  measurement: {
+    settings: "Measurement preferences",
+    notice: "Allow Google cookies to measure visits, estimates and WhatsApp clicks and evaluate our ads? This is optional and you can change your choice here. We do not use personalized ads.",
+    details: "How Google uses data",
+    accept: "Allow measurement",
+    reject: "Reject measurement",
+    enabled: "Measurement allowed",
+    disabled: "Measurement disabled",
+  },
   langName: 'English',
   metaTitle: 'Rio de Janeiro transfers: airports, hotels, the mountains and the Lakes Region | Transfer Executivo',
   metaDescription:
@@ -115,6 +133,15 @@ const en: Dict = {
 };
 
 const es: Dict = {
+  measurement: {
+    settings: "Preferencias de medición",
+    notice: "¿Permites cookies de Google para medir visitas, estimaciones y clics en WhatsApp y evaluar nuestros anuncios? Es opcional y puedes cambiar tu elección aquí. No usamos anuncios personalizados.",
+    details: "Cómo utiliza Google los datos",
+    accept: "Permitir medición",
+    reject: "Rechazar medición",
+    enabled: "Medición permitida",
+    disabled: "Medición desactivada",
+  },
   langName: 'Español',
   metaTitle: 'Traslados en Río de Janeiro: aeropuertos, hoteles, la Sierra y la Región de los Lagos | Transfer Executivo',
   metaDescription:
@@ -169,6 +196,15 @@ const es: Dict = {
 };
 
 const fr: Dict = {
+  measurement: {
+    settings: "Préférences de mesure",
+    notice: "Autorisez-vous les cookies Google pour mesurer les visites, estimations et clics WhatsApp et évaluer nos annonces ? Ce choix est facultatif et modifiable ici. Nous n’utilisons pas de publicités personnalisées.",
+    details: "Utilisation des données par Google",
+    accept: "Autoriser la mesure",
+    reject: "Refuser la mesure",
+    enabled: "Mesure autorisée",
+    disabled: "Mesure désactivée",
+  },
   langName: 'Français',
   metaTitle: 'Transferts à Rio de Janeiro : aéroports, hôtels, la montagne et la Région des Lacs | Transfer Executivo',
   metaDescription:
@@ -223,6 +259,15 @@ const fr: Dict = {
 };
 
 const de: Dict = {
+  measurement: {
+    settings: "Messeinstellungen",
+    notice: "Google-Cookies erlauben, um Besuche, Preisschätzungen und WhatsApp-Klicks zu messen und unsere Anzeigen auszuwerten? Dies ist freiwillig und hier jederzeit änderbar. Wir nutzen keine personalisierte Werbung.",
+    details: "So verwendet Google Daten",
+    accept: "Messung erlauben",
+    reject: "Messung ablehnen",
+    enabled: "Messung erlaubt",
+    disabled: "Messung deaktiviert",
+  },
   langName: 'Deutsch',
   metaTitle: 'Transfers in Rio de Janeiro: Flughäfen, Hotels, Berge und die Seenregion | Transfer Executivo',
   metaDescription:
@@ -277,6 +322,15 @@ const de: Dict = {
 };
 
 const it: Dict = {
+  measurement: {
+    settings: "Preferenze di misurazione",
+    notice: "Consenti i cookie di Google per misurare visite, preventivi e clic su WhatsApp e valutare i nostri annunci? È facoltativo e puoi cambiare scelta qui. Non usiamo annunci personalizzati.",
+    details: "Come Google utilizza i dati",
+    accept: "Consenti misurazione",
+    reject: "Rifiuta misurazione",
+    enabled: "Misurazione consentita",
+    disabled: "Misurazione disattivata",
+  },
   langName: 'Italiano',
   metaTitle: 'Transfer a Rio de Janeiro: aeroporti, hotel, la montagna e la Regione dei Laghi | Transfer Executivo',
   metaDescription:
@@ -331,6 +385,15 @@ const it: Dict = {
 };
 
 const nl: Dict = {
+  measurement: {
+    settings: "Meetvoorkeuren",
+    notice: "Google-cookies toestaan om bezoeken, prijsindicaties en WhatsApp-klikken te meten en onze advertenties te evalueren? Dit is optioneel en je kunt je keuze hier wijzigen. We gebruiken geen gepersonaliseerde advertenties.",
+    details: "Hoe Google gegevens gebruikt",
+    accept: "Meting toestaan",
+    reject: "Meting weigeren",
+    enabled: "Meting toegestaan",
+    disabled: "Meting uitgeschakeld",
+  },
   langName: 'Nederlands',
   metaTitle: 'Transfers in Rio de Janeiro: luchthavens, hotels, de bergen en de Merenregio | Transfer Executivo',
   metaDescription:
@@ -385,6 +448,15 @@ const nl: Dict = {
 };
 
 const pl: Dict = {
+  measurement: {
+    settings: "Preferencje pomiaru",
+    notice: "Czy zezwalasz na pliki cookie Google do pomiaru wizyt, wycen i kliknięć WhatsApp oraz oceny naszych reklam? To opcjonalne; decyzję możesz zmienić tutaj. Nie stosujemy reklam spersonalizowanych.",
+    details: "Jak Google wykorzystuje dane",
+    accept: "Zezwól na pomiar",
+    reject: "Odrzuć pomiar",
+    enabled: "Pomiar dozwolony",
+    disabled: "Pomiar wyłączony",
+  },
   langName: 'Polski',
   metaTitle: 'Transfery w Rio de Janeiro: lotniska, hotele, góry i Region Jezior | Transfer Executivo',
   metaDescription:
@@ -439,6 +511,15 @@ const pl: Dict = {
 };
 
 const ru: Dict = {
+  measurement: {
+    settings: "Настройки измерения",
+    notice: "Разрешить файлы cookie Google для измерения посещений, расчётов и кликов WhatsApp и оценки нашей рекламы? Это необязательно; выбор можно изменить здесь. Мы не используем персонализированную рекламу.",
+    details: "Как Google использует данные",
+    accept: "Разрешить измерение",
+    reject: "Отклонить измерение",
+    enabled: "Измерение разрешено",
+    disabled: "Измерение отключено",
+  },
   langName: 'Русский',
   metaTitle: 'Трансфер в Рио-де-Жанейро: аэропорты, отели, горы и Озёрный регион | Transfer Executivo',
   metaDescription:
@@ -493,6 +574,15 @@ const ru: Dict = {
 };
 
 const tr: Dict = {
+  measurement: {
+    settings: "Ölçüm tercihleri",
+    notice: "Ziyaretleri, fiyat tahminlerini ve WhatsApp tıklamalarını ölçmek ve reklamlarımızı değerlendirmek için Google çerezlerine izin veriyor musunuz? İsteğe bağlıdır ve seçiminizi burada değiştirebilirsiniz. Kişiselleştirilmiş reklam kullanmıyoruz.",
+    details: "Google verileri nasıl kullanır",
+    accept: "Ölçüme izin ver",
+    reject: "Ölçümü reddet",
+    enabled: "Ölçüme izin verildi",
+    disabled: "Ölçüm kapalı",
+  },
   langName: 'Türkçe',
   metaTitle: 'Rio de Janeiro’da transfer: havalimanları, oteller, dağlar ve Göller Bölgesi | Transfer Executivo',
   metaDescription:
@@ -547,6 +637,15 @@ const tr: Dict = {
 };
 
 const ar: Dict = {
+  measurement: {
+    settings: "تفضيلات القياس",
+    notice: "هل تسمح بملفات تعريف ارتباط Google لقياس الزيارات والتقديرات ونقرات واتساب وتقييم إعلاناتنا؟ هذا اختياري ويمكنك تغيير اختيارك هنا. لا نستخدم إعلانات مخصصة.",
+    details: "كيف تستخدم Google البيانات",
+    accept: "السماح بالقياس",
+    reject: "رفض القياس",
+    enabled: "القياس مسموح",
+    disabled: "القياس معطّل",
+  },
   langName: 'العربية',
   metaTitle: 'التنقل في ريو دي جانيرو: المطارات والفنادق والجبال ومنطقة البحيرات | Transfer Executivo',
   metaDescription:
@@ -601,6 +700,15 @@ const ar: Dict = {
 };
 
 const hi: Dict = {
+  measurement: {
+    settings: "मापन प्राथमिकताएँ",
+    notice: "विज़िट, अनुमान और WhatsApp क्लिक मापने तथा हमारे विज्ञापनों का मूल्यांकन करने के लिए Google कुकी की अनुमति दें? यह वैकल्पिक है और आप यहाँ अपना विकल्प बदल सकते हैं। हम वैयक्तिकृत विज्ञापन नहीं दिखाते।",
+    details: "Google डेटा का उपयोग कैसे करता है",
+    accept: "मापन की अनुमति दें",
+    reject: "मापन अस्वीकार करें",
+    enabled: "मापन की अनुमति है",
+    disabled: "मापन बंद है",
+  },
   langName: 'हिन्दी',
   metaTitle: 'रियो दे जनेरो में ट्रांसफ़र: एयरपोर्ट, होटल, पहाड़ और लेक्स क्षेत्र | Transfer Executivo',
   metaDescription:
@@ -655,6 +763,15 @@ const hi: Dict = {
 };
 
 const zh: Dict = {
+  measurement: {
+    settings: "衡量偏好",
+    notice: "是否允许 Google Cookie 衡量访问、估价及 WhatsApp 点击，并评估我们的广告效果？此项为可选，您可以在此更改选择。我们不使用个性化广告。",
+    details: "Google 如何使用数据",
+    accept: "允许衡量",
+    reject: "拒绝衡量",
+    enabled: "已允许衡量",
+    disabled: "已停用衡量",
+  },
   langName: '中文',
   metaTitle: '里约热内卢接送：机场、酒店、山区和湖区 | Transfer Executivo',
   metaDescription:
@@ -709,6 +826,15 @@ const zh: Dict = {
 };
 
 const ja: Dict = {
+  measurement: {
+    settings: "測定の設定",
+    notice: "訪問、見積もり、WhatsApp のクリックを測定し、広告を評価するための Google Cookie を許可しますか？任意で、ここで変更できます。パーソナライズ広告は使用しません。",
+    details: "Google によるデータの使用",
+    accept: "測定を許可",
+    reject: "測定を拒否",
+    enabled: "測定を許可済み",
+    disabled: "測定は無効",
+  },
   langName: '日本語',
   metaTitle: 'リオデジャネイロの送迎：空港、ホテル、山間部、湖水地方 | Transfer Executivo',
   metaDescription:
@@ -763,6 +889,15 @@ const ja: Dict = {
 };
 
 const ko: Dict = {
+  measurement: {
+    settings: "측정 환경설정",
+    notice: "방문, 예상 요금 조회 및 WhatsApp 클릭을 측정하고 광고를 평가하기 위해 Google 쿠키를 허용하시겠습니까? 선택 사항이며 여기에서 변경할 수 있습니다. 개인 맞춤 광고는 사용하지 않습니다.",
+    details: "Google의 데이터 사용 방식",
+    accept: "측정 허용",
+    reject: "측정 거부",
+    enabled: "측정 허용됨",
+    disabled: "측정 비활성화됨",
+  },
   langName: '한국어',
   metaTitle: '리우데자네이루 픽업 서비스: 공항, 호텔, 산간 지역, 호수 지역 | Transfer Executivo',
   metaDescription:
